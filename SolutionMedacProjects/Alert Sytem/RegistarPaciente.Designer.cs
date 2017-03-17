@@ -40,10 +40,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.BoxOtherContact = new System.Windows.Forms.TextBox();
             this.BoxFirstName = new System.Windows.Forms.TextBox();
             this.BoxLastName = new System.Windows.Forms.TextBox();
-            this.BoxPhone = new System.Windows.Forms.TextBox();
             this.BoxBirthDate = new System.Windows.Forms.TextBox();
             this.BoxEmail = new System.Windows.Forms.TextBox();
             this.BoxCC_BI = new System.Windows.Forms.TextBox();
@@ -54,6 +52,8 @@
             this.BoxGender = new System.Windows.Forms.ComboBox();
             this.save = new System.Windows.Forms.Button();
             this.clean = new System.Windows.Forms.Button();
+            this.BoxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.BoxOtherContact = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -164,13 +164,6 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Other Contact:";
             // 
-            // BoxOtherContact
-            // 
-            this.BoxOtherContact.Location = new System.Drawing.Point(94, 387);
-            this.BoxOtherContact.Name = "BoxOtherContact";
-            this.BoxOtherContact.Size = new System.Drawing.Size(164, 20);
-            this.BoxOtherContact.TabIndex = 12;
-            // 
             // BoxFirstName
             // 
             this.BoxFirstName.Location = new System.Drawing.Point(94, 25);
@@ -184,13 +177,6 @@
             this.BoxLastName.Name = "BoxLastName";
             this.BoxLastName.Size = new System.Drawing.Size(164, 20);
             this.BoxLastName.TabIndex = 14;
-            // 
-            // BoxPhone
-            // 
-            this.BoxPhone.Location = new System.Drawing.Point(94, 83);
-            this.BoxPhone.Name = "BoxPhone";
-            this.BoxPhone.Size = new System.Drawing.Size(164, 20);
-            this.BoxPhone.TabIndex = 15;
             // 
             // BoxBirthDate
             // 
@@ -272,11 +258,29 @@
             this.clean.Text = "Clean Form";
             this.clean.UseVisualStyleBackColor = true;
             // 
+            // BoxPhone
+            // 
+            this.BoxPhone.Location = new System.Drawing.Point(94, 83);
+            this.BoxPhone.Mask = "000000000";
+            this.BoxPhone.Name = "BoxPhone";
+            this.BoxPhone.Size = new System.Drawing.Size(164, 20);
+            this.BoxPhone.TabIndex = 26;
+            // 
+            // BoxOtherContact
+            // 
+            this.BoxOtherContact.Location = new System.Drawing.Point(94, 387);
+            this.BoxOtherContact.Mask = "000000000";
+            this.BoxOtherContact.Name = "BoxOtherContact";
+            this.BoxOtherContact.Size = new System.Drawing.Size(164, 20);
+            this.BoxOtherContact.TabIndex = 27;
+            // 
             // RegistarPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(292, 470);
+            this.ClientSize = new System.Drawing.Size(291, 470);
+            this.Controls.Add(this.BoxOtherContact);
+            this.Controls.Add(this.BoxPhone);
             this.Controls.Add(this.clean);
             this.Controls.Add(this.save);
             this.Controls.Add(this.BoxGender);
@@ -287,10 +291,8 @@
             this.Controls.Add(this.BoxCC_BI);
             this.Controls.Add(this.BoxEmail);
             this.Controls.Add(this.BoxBirthDate);
-            this.Controls.Add(this.BoxPhone);
             this.Controls.Add(this.BoxLastName);
             this.Controls.Add(this.BoxFirstName);
-            this.Controls.Add(this.BoxOtherContact);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
@@ -325,10 +327,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox BoxOtherContact;
         private System.Windows.Forms.TextBox BoxFirstName;
         private System.Windows.Forms.TextBox BoxLastName;
-        private System.Windows.Forms.TextBox BoxPhone;
         private System.Windows.Forms.TextBox BoxBirthDate;
         private System.Windows.Forms.TextBox BoxEmail;
         private System.Windows.Forms.TextBox BoxCC_BI;
@@ -339,5 +339,7 @@
         private System.Windows.Forms.ComboBox BoxGender;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button clean;
+        private System.Windows.Forms.MaskedTextBox BoxPhone;
+        private System.Windows.Forms.MaskedTextBox BoxOtherContact;
     }
 }
