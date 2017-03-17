@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelMedac" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelMedacContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PatientSet" EntityType="ModelMedac.Patient" />
+    <EntitySet Name="MeasurementsSet" EntityType="ModelMedac.Measurements" />
+  </EntityContainer>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="IdPatient" />
+    </Key>
+    <Property Name="IdPatient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Firstname" Type="String" Nullable="false" />
+    <Property Name="Lastname" Type="String" Nullable="false" />
+    <Property Name="Phone" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="true" />
+    <Property Name="Birthdate" Type="DateTime" Nullable="true" />
+    <Property Name="CC_BI" Type="String" Nullable="false" />
+    <Property Name="SNS" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="true" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" />
+    <Property Name="Allergies" Type="String" Nullable="true" />
+    <Property Name="Height" Type="Double" Nullable="true" />
+    <Property Name="OtherContact" Type="Int32" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Measurements">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BloodPressureMin" Type="Int32" Nullable="true" />
+    <Property Name="BloodPressureMax" Type="Int32" Nullable="true" />
+    <Property Name="HeartRate" Type="Int32" Nullable="true" />
+    <Property Name="OxygenSaturation" Type="Int32" Nullable="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Time" Type="Time" Nullable="false" />
+    <Property Name="FK_SNS" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>

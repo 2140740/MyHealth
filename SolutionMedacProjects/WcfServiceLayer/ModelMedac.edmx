@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelMedac.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelMedacStoreContainer">
+    <EntitySet Name="PatientSet" EntityType="ModelMedac.Store.PatientSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeasurementsSet" EntityType="ModelMedac.Store.MeasurementsSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="PatientSet">
+    <Key>
+      <PropertyRef Name="IdPatient" />
+    </Key>
+    <Property Name="IdPatient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lastname" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="int" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Birthdate" Type="datetime" Nullable="true" />
+    <Property Name="CC_BI" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SNS" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="1" />
+    <Property Name="Allergies" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Height" Type="float" Nullable="true" />
+    <Property Name="OtherContact" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="MeasurementsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BloodPressureMin" Type="int" Nullable="true" />
+    <Property Name="BloodPressureMax" Type="int" Nullable="true" />
+    <Property Name="HeartRate" Type="int" Nullable="true" />
+    <Property Name="OxygenSaturation" Type="int" Nullable="true" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Time" Type="time" Nullable="false" />
+    <Property Name="FK_SNS" Type="int" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelMedac" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelMedacContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PatientSet" EntityType="ModelMedac.Patient" />
+          <EntitySet Name="MeasurementsSet" EntityType="ModelMedac.Measurements" />
+        </EntityContainer>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="IdPatient" />
+          </Key>
+          <Property Name="IdPatient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Firstname" Type="String" Nullable="false" />
+          <Property Name="Lastname" Type="String" Nullable="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <Property Name="Birthdate" Type="DateTime" Nullable="true" />
+          <Property Name="CC_BI" Type="String" Nullable="false" />
+          <Property Name="SNS" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" />
+          <Property Name="Allergies" Type="String" Nullable="true" />
+          <Property Name="Height" Type="Double" Nullable="true" />
+          <Property Name="OtherContact" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Measurements">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BloodPressureMin" Type="Int32" Nullable="true" />
+          <Property Name="BloodPressureMax" Type="Int32" Nullable="true" />
+          <Property Name="HeartRate" Type="Int32" Nullable="true" />
+          <Property Name="OxygenSaturation" Type="Int32" Nullable="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="Time" Type="Time" Nullable="false" />
+          <Property Name="FK_SNS" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelMedacStoreContainer" CdmEntityContainer="ModelMedacContainer">
+    <EntitySetMapping Name="PatientSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Patient)">
+        <MappingFragment StoreEntitySet="PatientSet">
+          <ScalarProperty Name="IdPatient" ColumnName="IdPatient" />
+          <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+          <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="CC_BI" ColumnName="CC_BI" />
+          <ScalarProperty Name="SNS" ColumnName="SNS" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Allergies" ColumnName="Allergies" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="OtherContact" ColumnName="OtherContact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MeasurementsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Measurements)">
+        <MappingFragment StoreEntitySet="MeasurementsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BloodPressureMin" ColumnName="BloodPressureMin" />
+          <ScalarProperty Name="BloodPressureMax" ColumnName="BloodPressureMax" />
+          <ScalarProperty Name="HeartRate" ColumnName="HeartRate" />
+          <ScalarProperty Name="OxygenSaturation" ColumnName="OxygenSaturation" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="FK_SNS" ColumnName="FK_SNS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

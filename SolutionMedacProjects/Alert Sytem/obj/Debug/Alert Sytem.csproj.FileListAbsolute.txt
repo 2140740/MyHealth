@@ -1,0 +1,10 @@
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\bin\Debug\Alert Sytem.exe.config
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\bin\Debug\Alert Sytem.exe
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\bin\Debug\Alert Sytem.pdb
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert Sytem.csprojResolveAssemblyReference.cache
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert_Sytem.Form1.resources
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert_Sytem.Properties.Resources.resources
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert Sytem.csproj.GenerateResource.Cache
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert Sytem.exe
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert Sytem.pdb
+C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\Alert Sytem\obj\Debug\Alert_Sytem.RegistarPaciente.resources

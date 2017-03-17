@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHealth", "MyHealth\MyHealth.csproj", "{CFC9759A-981B-4291-9DE9-63D851D67AC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4BD9758C-E87A-4A40-AFE6-A4B31AC17910} = {4BD9758C-E87A-4A40-AFE6-A4B31AC17910}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLayer", "WcfServiceLayer\WcfServiceLayer.csproj", "{4BD9758C-E87A-4A40-AFE6-A4B31AC17910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alert Sytem", "Alert Sytem\Alert Sytem.csproj", "{D830603A-46ED-4B28-9FEB-C549E04D21DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4BD9758C-E87A-4A40-AFE6-A4B31AC17910} = {4BD9758C-E87A-4A40-AFE6-A4B31AC17910}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFC9759A-981B-4291-9DE9-63D851D67AC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC9759A-981B-4291-9DE9-63D851D67AC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC9759A-981B-4291-9DE9-63D851D67AC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC9759A-981B-4291-9DE9-63D851D67AC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD9758C-E87A-4A40-AFE6-A4B31AC17910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD9758C-E87A-4A40-AFE6-A4B31AC17910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD9758C-E87A-4A40-AFE6-A4B31AC17910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD9758C-E87A-4A40-AFE6-A4B31AC17910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D830603A-46ED-4B28-9FEB-C549E04D21DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D830603A-46ED-4B28-9FEB-C549E04D21DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D830603A-46ED-4B28-9FEB-C549E04D21DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D830603A-46ED-4B28-9FEB-C549E04D21DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
