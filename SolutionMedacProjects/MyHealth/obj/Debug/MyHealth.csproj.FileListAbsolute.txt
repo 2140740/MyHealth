@@ -19,3 +19,12 @@ C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\MyHealth\obj\D
 C:\Users\samuel\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\MyHealth\bin\Debug\dw.exe.config
 C:\Users\samuel\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\MyHealth\obj\Debug\dw.exe
 C:\Users\samuel\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\MyHealth\obj\Debug\dw.pdb
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\bin\Debug\dw.exe.config
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\bin\Debug\dw.exe
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\bin\Debug\dw.pdb
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\obj\Debug\MyHealth.csprojResolveAssemblyReference.cache
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\obj\Debug\MyHealth.Form1.resources
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\obj\Debug\MyHealth.Properties.Resources.resources
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\obj\Debug\MyHealth.csproj.GenerateResource.Cache
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\obj\Debug\dw.exe
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\MyHealth\obj\Debug\dw.pdb

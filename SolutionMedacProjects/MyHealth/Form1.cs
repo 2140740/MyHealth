@@ -49,37 +49,56 @@ namespace MyHealth
             //utilizar o valor dos 5000 por exemplo para 12000, deve ser utilizado nas settings
             //a definir pelo paciente
             dll.Initialize(MyProcessMetod,5000,true,true,true);
+            
         }
 
         private void MyProcessMetod(string message)
         {
+            char[] delimiterChars = { ' ', ';','-'};
+
+
             this.BeginInvoke(new MethodInvoker(delegate
-            {
+                {          
+
                 if (checkBoxBP.Checked) {
                     if (message.Contains("BP"))
                     {
-                        textbp.Text = message;
-                    }
-                }
+                        string[] words = message.Split(delimiterChars);
+                            textbp.Text = words[1] + "-" +words[2];
 
-                if (checkBoxSPO.Checked)
-                {
-                    if (message.Contains("SPO2"))
-                    {
-                        textspo.Text = message;
-                    }
-                }
+                            //(Tabela Measurements)BloodPressureMin[1];
+                            //(Tabela Measurements)BloodPressureMax[2];
+                            //textbp.Text=words[3] + "-" + words[4] + "-" + words[5];
+                            //textbp.Text = words[6];
 
-                if (checkBoxHr.Checked)
-                {
-                    if (message.Contains("HR"))
-                    {
-                        texthr.Text = message;
+                        }
                     }
-                }
-                //tudo o que tiver entre as chavetas
+                    
+                    if (checkBoxSPO.Checked)
+                    {
+                        if (message.Contains("SPO2"))
+                        {
+                            string[] words = message.Split(delimiterChars);
+                            foreach (string word in words)
+                            {
+                                richTextBox1.AppendText(word + Environment.NewLine);
+                            }
+                            textspo.Text = words[1] + "-" + words[2];
+                            textspo.Text = message;
+                        }
+                    }
+
+                    if (checkBoxHr.Checked)
+                    {
+                        if (message.Contains("HR"))
+                        {
+                            texthr.Text = message;
+                        }
+                    }
+                    //tudo o que tiver entre as chavetas
                     richTextBox1.AppendText(message + Environment.NewLine);
-            }));
+
+                }));
             
         }
     }

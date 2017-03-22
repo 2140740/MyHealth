@@ -93,16 +93,17 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(134, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "BP";
+            this.label2.Text = "Blood Pressure:";
             // 
             // textbp
             // 
             this.textbp.AutoSize = true;
-            this.textbp.Location = new System.Drawing.Point(192, 106);
+            this.textbp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbp.Location = new System.Drawing.Point(250, 97);
             this.textbp.Name = "textbp";
-            this.textbp.Size = new System.Drawing.Size(36, 13);
+            this.textbp.Size = new System.Drawing.Size(77, 25);
             this.textbp.TabIndex = 5;
             this.textbp.Text = "textbp";
             // 
@@ -111,16 +112,17 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(134, 147);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "SPO2";
+            this.label3.Text = "Oxygen Saturation:";
             // 
             // textspo
             // 
             this.textspo.AutoSize = true;
-            this.textspo.Location = new System.Drawing.Point(192, 147);
+            this.textspo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textspo.Location = new System.Drawing.Point(250, 138);
             this.textspo.Name = "textspo";
-            this.textspo.Size = new System.Drawing.Size(41, 13);
+            this.textspo.Size = new System.Drawing.Size(89, 25);
             this.textspo.TabIndex = 7;
             this.textspo.Text = "textspo";
             // 
@@ -129,16 +131,17 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(134, 184);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(23, 13);
+            this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "HR";
+            this.label5.Text = "Heart Rate:";
             // 
             // texthr
             // 
             this.texthr.AutoSize = true;
-            this.texthr.Location = new System.Drawing.Point(192, 184);
+            this.texthr.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texthr.Location = new System.Drawing.Point(250, 175);
             this.texthr.Name = "texthr";
-            this.texthr.Size = new System.Drawing.Size(33, 13);
+            this.texthr.Size = new System.Drawing.Size(72, 25);
             this.texthr.TabIndex = 9;
             this.texthr.Text = "texthr";
             // 
@@ -176,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 324);
+            this.ClientSize = new System.Drawing.Size(348, 324);
             this.Controls.Add(this.checkBoxHr);
             this.Controls.Add(this.checkBoxSPO);
             this.Controls.Add(this.checkBoxBP);

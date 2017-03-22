@@ -49,8 +49,8 @@ namespace WcfServiceLayer
         [DataMember]
         public string Firstname
         {
-            get { return Firstname; }
-            set { Firstname = value; }
+            get { return firstname; }
+            set { firstname = value; }
         }
 
         [DataMember]
