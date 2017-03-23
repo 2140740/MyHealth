@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/17/2017 08:44:03
--- Generated from EDMX file: C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\WcfServiceLayer\ModelMedac.edmx
+-- Date Created: 03/23/2017 13:57:44
+-- Generated from EDMX file: C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\ModelMedac.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -25,8 +25,8 @@ GO
 IF OBJECT_ID(N'[dbo].[PatientSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PatientSet];
 GO
-IF OBJECT_ID(N'[dbo].[MeasurementsSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[MeasurementsSet];
+IF OBJECT_ID(N'[dbo].[MeasurementSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MeasurementSet];
 GO
 
 -- --------------------------------------------------
@@ -51,16 +51,16 @@ CREATE TABLE [dbo].[PatientSet] (
 );
 GO
 
--- Creating table 'MeasurementsSet'
-CREATE TABLE [dbo].[MeasurementsSet] (
+-- Creating table 'MeasurementSet'
+CREATE TABLE [dbo].[MeasurementSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [BloodPressureMin] int  NULL,
-    [BloodPressureMax] int  NULL,
-    [HeartRate] int  NULL,
-    [OxygenSaturation] int  NULL,
-    [Date] datetime  NOT NULL,
-    [Time] time  NOT NULL,
-    [FK_SNS] int  NOT NULL
+    [BloodPressureMin] int  NOT NULL,
+    [BloodPressureMax] int  NOT NULL,
+    [HeartRate] int  NOT NULL,
+    [OxygenSaturation] int  NOT NULL,
+    [Date] nvarchar(max)  NOT NULL,
+    [Time] nvarchar(max)  NOT NULL,
+    [FK_Sns] int  NOT NULL
 );
 GO
 
@@ -74,9 +74,9 @@ ADD CONSTRAINT [PK_PatientSet]
     PRIMARY KEY CLUSTERED ([IdPatient] ASC);
 GO
 
--- Creating primary key on [Id] in table 'MeasurementsSet'
-ALTER TABLE [dbo].[MeasurementsSet]
-ADD CONSTRAINT [PK_MeasurementsSet]
+-- Creating primary key on [Id] in table 'MeasurementSet'
+ALTER TABLE [dbo].[MeasurementSet]
+ADD CONSTRAINT [PK_MeasurementSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

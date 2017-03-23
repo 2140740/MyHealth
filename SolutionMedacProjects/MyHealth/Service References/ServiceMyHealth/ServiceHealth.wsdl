@@ -13,16 +13,54 @@
   <wsdl:message name="IServiceHealth_ValidadePatient_OutputMessage">
     <wsdl:part name="parameters" element="tns:ValidadePatientResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceHealth_RegisterPatient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPatient" />
+  </wsdl:message>
+  <wsdl:message name="IServiceHealth_RegisterPatient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPatientResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceHealth_RegisterMeasurement_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterMeasurement" />
+  </wsdl:message>
+  <wsdl:message name="IServiceHealth_RegisterMeasurement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterMeasurementResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceHealth">
     <wsdl:operation name="ValidadePatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceHealth/ValidadePatient" message="tns:IServiceHealth_ValidadePatient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceHealth/ValidadePatientResponse" message="tns:IServiceHealth_ValidadePatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceHealth/RegisterPatient" message="tns:IServiceHealth_RegisterPatient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceHealth/RegisterPatientResponse" message="tns:IServiceHealth_RegisterPatient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMeasurement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceHealth/RegisterMeasurement" message="tns:IServiceHealth_RegisterMeasurement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceHealth/RegisterMeasurementResponse" message="tns:IServiceHealth_RegisterMeasurement_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceHealth" type="tns:IServiceHealth">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ValidadePatient">
       <soap:operation soapAction="http://tempuri.org/IServiceHealth/ValidadePatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPatient">
+      <soap:operation soapAction="http://tempuri.org/IServiceHealth/RegisterPatient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterMeasurement">
+      <soap:operation soapAction="http://tempuri.org/IServiceHealth/RegisterMeasurement" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -59,6 +59,27 @@ namespace WcfServiceLayer
             context.PatientSet.Add(pt);
             context.SaveChanges();
         }
+
+
+        public void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
+    int oxygensaturation, string date, string time, int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+            Measurement mt = new Measurement();
+
+            mt.Bloodpressuremax = bloodpressuremax;
+            mt.Bloodpressuremin = bloodpressuremin;
+            mt.Hearrate = hearrate;
+            mt.Oxygensaturation = oxygensaturation;
+            mt.Date1 = date;
+            mt.Time1 = time;
+            mt.Fk_sns = fk_sns;
+
+            context.MeasurementSet.Add(mt);
+            context.SaveChanges();
+
+        }
+
     }
 
 }

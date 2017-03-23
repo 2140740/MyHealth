@@ -23,7 +23,11 @@ namespace WcfServiceLayer
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
             int othercontact);
-
+        
+        [OperationContract]
+        void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
+            int oxygensaturation, string date, string time, int fk_sns);
+            
     }
 
 
@@ -65,156 +69,154 @@ namespace WcfServiceLayer
         [DataMember]
         public string Lastname
         {
-            get
-            {
-                return lastname;
-            }
+            get { return lastname; }
 
-            set
-            {
-                lastname = value;
-            }
+            set { lastname = value; }
         }
 
         [DataMember]
         public int Phone
         {
-            get
-            {
-                return phone;
-            }
+            get { return phone; }
 
-            set
-            {
-                phone = value;
-            }
+            set { phone = value; }
         }
 
         [DataMember]
         public string Email
         {
-            get
-            {
-                return email;
-            }
+            get { return email; }
 
-            set
-            {
-                email = value;
-            }
+            set { email = value; }
         }
 
         [DataMember]
         public DateTime Birthdate
         {
-            get
-            {
-                return birthdate;
-            }
+            get { return birthdate; }
 
-            set
-            {
-                birthdate = value;
-            }
+            set { birthdate = value; }
         }
 
         [DataMember]
         public int Cc_bi
         {
-            get
-            {
-                return cc_bi;
-            }
+            get { return cc_bi; }
 
-            set
-            {
-                cc_bi = value;
-            }
+            set { cc_bi = value; }
         }
 
         [DataMember]
         public int Sns
         {
-            get
-            {
-                return sns;
-            }
+            get { return sns; }
 
-            set
-            {
-                sns = value;
-            }
+            set { sns = value; }
         }
 
         [DataMember]
         public string Address
         {
-            get
-            {
-                return address;
-            }
+            get { return address; }
 
-            set
-            {
-                address = value;
-            }
+            set { address = value; }
         }
 
         [DataMember]
         public char Gender
         {
-            get
-            {
-                return gender;
-            }
+            get { return gender; }
 
-            set
-            {
-                gender = value;
-            }
+            set { gender = value; }
         }
 
         [DataMember]
         public string Allergies
         {
-            get
-            {
-                return allergies;
-            }
+            get { return allergies; }
 
-            set
-            {
-                allergies = value;
-            }
+            set { allergies = value; }
         }
 
         [DataMember]
         public double Height
         {
-            get
-            {
-                return height;
-            }
+            get { return height; }
 
-            set
-            {
-                height = value;
-            }
+            set { height = value; }
         }
 
         [DataMember]
         public int Othercontact
         {
-            get
-            {
-                return othercontact;
-            }
+            get { return othercontact; }
 
-            set
-            {
-                othercontact = value;
-            }
+            set { othercontact = value; }
         }
     }
 
+    [DataContract]
+    public partial class Measurement
+    {
+        private int bloodpressuremin;
+        private int bloodpressuremax;
+        private int hearrate;
+        private int oxygensaturation;
+        private string date;
+        private string time;
+        private int fk_sns;
+
+        public int Bloodpressuremin
+        {
+            get { return bloodpressuremin; }
+
+            set { bloodpressuremin = value; }
+        }
+
+        public int Bloodpressuremax
+        {
+            get { return bloodpressuremax; }
+
+            set { bloodpressuremax = value; }
+        }
+
+        public int Hearrate
+        {
+            get { return hearrate; }
+
+            set { hearrate = value; }
+        }
+
+        public int Oxygensaturation
+        {
+            get { return oxygensaturation; }
+
+            set { oxygensaturation = value; }
+        }
+
+        public string Date1
+        {
+            get { return date; }
+
+            set { date = value; }
+        }
+
+        public string Time1
+        {
+            get { return time; }
+
+            set { time = value; }
+        }
+
+        public int Fk_sns
+        {
+            get { return fk_sns; }
+
+            set { fk_sns = value; }
+        }
+
+    }
+
+
 }
+        

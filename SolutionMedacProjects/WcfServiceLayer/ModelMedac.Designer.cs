@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\david\Dropbox\MedAC\projetoexemplo\SolutionMedacProjects\WcfServiceLayer\ModelMedac.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\ModelMedac.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

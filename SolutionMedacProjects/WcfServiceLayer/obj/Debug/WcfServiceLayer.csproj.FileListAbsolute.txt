@@ -88,3 +88,4 @@ C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\bin\Micros
 C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\bin\Microsoft.ApplicationInsights.xml
 C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\obj\Debug\WcfServiceLayer.dll
 C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\obj\Debug\WcfServiceLayer.pdb
+C:\Users\david\Desktop\MyHealth\SolutionMedacProjects\WcfServiceLayer\obj\Debug\WcfServiceLayer.csprojResolveAssemblyReference.cache

@@ -39,4 +39,22 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegisterMeasurement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bloodpressuremin" type="xs:int" />
+        <xs:element minOccurs="0" name="bloodpressuremax" type="xs:int" />
+        <xs:element minOccurs="0" name="hearrate" type="xs:int" />
+        <xs:element minOccurs="0" name="oxygensaturation" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="time" type="q3:duration" />
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterMeasurementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

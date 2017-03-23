@@ -34,5 +34,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MeasurementSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Measurement)">
+        <MappingFragment StoreEntitySet="MeasurementSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BloodPressureMin" ColumnName="BloodPressureMin" />
+          <ScalarProperty Name="BloodPressureMax" ColumnName="BloodPressureMax" />
+          <ScalarProperty Name="HeartRate" ColumnName="HeartRate" />
+          <ScalarProperty Name="OxygenSaturation" ColumnName="OxygenSaturation" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="FK_Sns" ColumnName="FK_Sns" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

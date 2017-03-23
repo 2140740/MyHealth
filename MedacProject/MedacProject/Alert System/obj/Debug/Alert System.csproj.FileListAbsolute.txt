@@ -1,0 +1,8 @@
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\bin\Debug\Alert System.exe.config
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\bin\Debug\Alert System.exe
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\bin\Debug\Alert System.pdb
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csprojResolveAssemblyReference.cache
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Properties.Resources.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csproj.GenerateResource.Cache
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.exe
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.pdb

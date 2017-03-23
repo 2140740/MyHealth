@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelMedac" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ModelMedacContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PatientSet" EntityType="ModelMedac.Patient" />
+    <EntitySet Name="MeasurementSet" EntityType="ModelMedac.Measurement" />
+    <AssociationSet Name="PatientMeasurement" Association="ModelMedac.PatientMeasurement">
+      <End Role="Patient" EntitySet="PatientSet" />
+      <End Role="Measurement" EntitySet="MeasurementSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" />
+    <Property Name="LastName" Type="String" Nullable="false" />
+    <Property Name="Phone" Type="Int32" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="true" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" />
+    <Property Name="CC_BI" Type="Int32" Nullable="false" />
+    <Property Name="SNS" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="true" />
+    <Property Name="Gender" Type="String" Nullable="false" />
+    <Property Name="Allergies" Type="String" Nullable="true" />
+    <Property Name="Height" Type="Double" Nullable="true" />
+    <Property Name="OtherContact" Type="String" Nullable="true" />
+    <NavigationProperty Name="Measurement" Relationship="ModelMedac.PatientMeasurement" FromRole="Patient" ToRole="Measurement" />
+  </EntityType>
+  <EntityType Name="Measurement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BloodPressureMin" Type="Int32" Nullable="true" />
+    <Property Name="BloodPressureMax" Type="Int32" Nullable="true" />
+    <Property Name="HeartRate" Type="Int32" Nullable="true" />
+    <Property Name="OxygenSaturation" Type="Int32" Nullable="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Time" Type="String" Nullable="false" />
+    <Property Name="FK_SNS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="ModelMedac.PatientMeasurement" FromRole="Measurement" ToRole="Patient" />
+  </EntityType>
+  <Association Name="PatientMeasurement">
+    <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="ModelMedac.Measurement" Role="Measurement" Multiplicity="*" />
+  </Association>
+</Schema>

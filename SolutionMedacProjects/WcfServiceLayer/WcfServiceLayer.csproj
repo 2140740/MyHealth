@@ -116,7 +116,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Measurements.cs">
+    <Compile Include="Measurement.cs">
       <DependentUpon>ModelMedac.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelMedac.Context.cs">

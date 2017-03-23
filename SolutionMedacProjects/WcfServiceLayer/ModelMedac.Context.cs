@@ -26,6 +26,6 @@ namespace WcfServiceLayer
         }
     
         public virtual DbSet<Patient> PatientSet { get; set; }
-        public virtual DbSet<Measurements> MeasurementsSet { get; set; }
+        public virtual DbSet<Measurement> MeasurementSet { get; set; }
     }
 }

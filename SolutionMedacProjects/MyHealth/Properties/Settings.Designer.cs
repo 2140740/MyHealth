@@ -26,9 +26,9 @@ namespace MyHealth.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("12345")]
-        public string Patient {
+        public int Patient {
             get {
-                return ((string)(this["Patient"]));
+                return ((int)(this["Patient"]));
             }
             set {
                 this["Patient"] = value;

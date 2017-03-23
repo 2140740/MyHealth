@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedacProject", "MedacProject\MedacProject.csproj", "{FFBF3DAE-E436-49D2-9749-C4A99339B27A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alert System", "Alert System\Alert System.csproj", "{A564CC04-7297-4BA0-8DC7-78CD35275B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFMedacService", "WCFMedacService\WCFMedacService.csproj", "{D161EE3E-197D-4C1C-8A11-F7E901487AFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFBF3DAE-E436-49D2-9749-C4A99339B27A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFBF3DAE-E436-49D2-9749-C4A99339B27A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFBF3DAE-E436-49D2-9749-C4A99339B27A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFBF3DAE-E436-49D2-9749-C4A99339B27A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A564CC04-7297-4BA0-8DC7-78CD35275B82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A564CC04-7297-4BA0-8DC7-78CD35275B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A564CC04-7297-4BA0-8DC7-78CD35275B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A564CC04-7297-4BA0-8DC7-78CD35275B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D161EE3E-197D-4C1C-8A11-F7E901487AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D161EE3E-197D-4C1C-8A11-F7E901487AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D161EE3E-197D-4C1C-8A11-F7E901487AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D161EE3E-197D-4C1C-8A11-F7E901487AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

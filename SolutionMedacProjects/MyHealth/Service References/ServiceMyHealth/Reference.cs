@@ -23,13 +23,43 @@ namespace MyHealth.ServiceMyHealth {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AllergiesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> BirthdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CC_BIField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string FirstnameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
+        private string GenderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PatientIDField;
+        private System.Nullable<double> HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdPatientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> OtherContactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SNSField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -38,6 +68,71 @@ namespace MyHealth.ServiceMyHealth {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Allergies {
+            get {
+                return this.AllergiesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AllergiesField, value) != true)) {
+                    this.AllergiesField = value;
+                    this.RaisePropertyChanged("Allergies");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Birthdate {
+            get {
+                return this.BirthdateField;
+            }
+            set {
+                if ((this.BirthdateField.Equals(value) != true)) {
+                    this.BirthdateField = value;
+                    this.RaisePropertyChanged("Birthdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CC_BI {
+            get {
+                return this.CC_BIField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CC_BIField, value) != true)) {
+                    this.CC_BIField = value;
+                    this.RaisePropertyChanged("CC_BI");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
             }
         }
         
@@ -55,27 +150,92 @@ namespace MyHealth.ServiceMyHealth {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
+        public string Gender {
             get {
-                return this.LastNameField;
+                return this.GenderField;
             }
             set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
+                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
+                    this.GenderField = value;
+                    this.RaisePropertyChanged("Gender");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PatientID {
+        public System.Nullable<double> Height {
             get {
-                return this.PatientIDField;
+                return this.HeightField;
             }
             set {
-                if ((this.PatientIDField.Equals(value) != true)) {
-                    this.PatientIDField = value;
-                    this.RaisePropertyChanged("PatientID");
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdPatient {
+            get {
+                return this.IdPatientField;
+            }
+            set {
+                if ((this.IdPatientField.Equals(value) != true)) {
+                    this.IdPatientField = value;
+                    this.RaisePropertyChanged("IdPatient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Lastname {
+            get {
+                return this.LastnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastnameField, value) != true)) {
+                    this.LastnameField = value;
+                    this.RaisePropertyChanged("Lastname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> OtherContact {
+            get {
+                return this.OtherContactField;
+            }
+            set {
+                if ((this.OtherContactField.Equals(value) != true)) {
+                    this.OtherContactField = value;
+                    this.RaisePropertyChanged("OtherContact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((this.PhoneField.Equals(value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SNS {
+            get {
+                return this.SNSField;
+            }
+            set {
+                if ((this.SNSField.Equals(value) != true)) {
+                    this.SNSField = value;
+                    this.RaisePropertyChanged("SNS");
                 }
             }
         }
@@ -99,6 +259,18 @@ namespace MyHealth.ServiceMyHealth {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/ValidadePatient", ReplyAction="http://tempuri.org/IServiceHealth/ValidadePatientResponse")]
         System.Threading.Tasks.Task<MyHealth.ServiceMyHealth.Patient> ValidadePatientAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterPatient", ReplyAction="http://tempuri.org/IServiceHealth/RegisterPatientResponse")]
+        void RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterPatient", ReplyAction="http://tempuri.org/IServiceHealth/RegisterPatientResponse")]
+        System.Threading.Tasks.Task RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterMeasurement", ReplyAction="http://tempuri.org/IServiceHealth/RegisterMeasurementResponse")]
+        void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterMeasurement", ReplyAction="http://tempuri.org/IServiceHealth/RegisterMeasurementResponse")]
+        System.Threading.Tasks.Task RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -134,6 +306,22 @@ namespace MyHealth.ServiceMyHealth {
         
         public System.Threading.Tasks.Task<MyHealth.ServiceMyHealth.Patient> ValidadePatientAsync(int id) {
             return base.Channel.ValidadePatientAsync(id);
+        }
+        
+        public void RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
+            base.Channel.RegisterPatient(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        }
+        
+        public System.Threading.Tasks.Task RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
+            return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        }
+        
+        public void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
+            base.Channel.RegisterMeasurement(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
+            return base.Channel.RegisterMeasurementAsync(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
         }
     }
 }

@@ -3,6 +3,7 @@
   <EntityContainer Name="ModelMedacContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="PatientSet" EntityType="ModelMedac.Patient" />
     <EntitySet Name="MeasurementsSet" EntityType="ModelMedac.Measurements" />
+    <EntitySet Name="MeasurementSet" EntityType="ModelMedac.Measurement" />
   </EntityContainer>
   <EntityType Name="Patient">
     <Key>
@@ -34,5 +35,18 @@
     <Property Name="Date" Type="DateTime" Nullable="false" />
     <Property Name="Time" Type="Time" Nullable="false" />
     <Property Name="FK_SNS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Measurement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BloodPressureMin" Type="Int32" Nullable="false" />
+    <Property Name="BloodPressureMax" Type="Int32" Nullable="false" />
+    <Property Name="HeartRate" Type="Int32" Nullable="false" />
+    <Property Name="OxygenSaturation" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="String" Nullable="false" />
+    <Property Name="Time" Type="String" Nullable="false" />
+    <Property Name="FK_Sns" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

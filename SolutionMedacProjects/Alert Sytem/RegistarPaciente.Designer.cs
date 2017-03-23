@@ -169,49 +169,49 @@
             this.BoxFirstName.Location = new System.Drawing.Point(94, 25);
             this.BoxFirstName.Name = "BoxFirstName";
             this.BoxFirstName.Size = new System.Drawing.Size(164, 20);
-            this.BoxFirstName.TabIndex = 13;
+            this.BoxFirstName.TabIndex = 1;
             // 
             // BoxLastName
             // 
             this.BoxLastName.Location = new System.Drawing.Point(94, 54);
             this.BoxLastName.Name = "BoxLastName";
             this.BoxLastName.Size = new System.Drawing.Size(164, 20);
-            this.BoxLastName.TabIndex = 14;
+            this.BoxLastName.TabIndex = 2;
             // 
             // BoxBirthDate
             // 
             this.BoxBirthDate.Location = new System.Drawing.Point(94, 141);
             this.BoxBirthDate.Name = "BoxBirthDate";
             this.BoxBirthDate.Size = new System.Drawing.Size(164, 20);
-            this.BoxBirthDate.TabIndex = 16;
+            this.BoxBirthDate.TabIndex = 5;
             // 
             // BoxEmail
             // 
             this.BoxEmail.Location = new System.Drawing.Point(94, 112);
             this.BoxEmail.Name = "BoxEmail";
             this.BoxEmail.Size = new System.Drawing.Size(164, 20);
-            this.BoxEmail.TabIndex = 17;
+            this.BoxEmail.TabIndex = 4;
             // 
             // BoxCC_BI
             // 
             this.BoxCC_BI.Location = new System.Drawing.Point(94, 170);
             this.BoxCC_BI.Name = "BoxCC_BI";
             this.BoxCC_BI.Size = new System.Drawing.Size(164, 20);
-            this.BoxCC_BI.TabIndex = 18;
+            this.BoxCC_BI.TabIndex = 6;
             // 
             // BoxSNS
             // 
             this.BoxSNS.Location = new System.Drawing.Point(94, 202);
             this.BoxSNS.Name = "BoxSNS";
             this.BoxSNS.Size = new System.Drawing.Size(164, 20);
-            this.BoxSNS.TabIndex = 19;
+            this.BoxSNS.TabIndex = 7;
             // 
             // BoxAddress
             // 
             this.BoxAddress.Location = new System.Drawing.Point(94, 228);
             this.BoxAddress.Name = "BoxAddress";
             this.BoxAddress.Size = new System.Drawing.Size(164, 20);
-            this.BoxAddress.TabIndex = 20;
+            this.BoxAddress.TabIndex = 8;
             // 
             // BoxAllergies
             // 
@@ -219,14 +219,14 @@
             this.BoxAllergies.Multiline = true;
             this.BoxAllergies.Name = "BoxAllergies";
             this.BoxAllergies.Size = new System.Drawing.Size(164, 66);
-            this.BoxAllergies.TabIndex = 21;
+            this.BoxAllergies.TabIndex = 10;
             // 
             // BoxHeight
             // 
             this.BoxHeight.Location = new System.Drawing.Point(94, 358);
             this.BoxHeight.Name = "BoxHeight";
             this.BoxHeight.Size = new System.Drawing.Size(164, 20);
-            this.BoxHeight.TabIndex = 22;
+            this.BoxHeight.TabIndex = 11;
             // 
             // BoxGender
             // 
@@ -237,14 +237,14 @@
             this.BoxGender.Location = new System.Drawing.Point(94, 257);
             this.BoxGender.Name = "BoxGender";
             this.BoxGender.Size = new System.Drawing.Size(164, 21);
-            this.BoxGender.TabIndex = 23;
+            this.BoxGender.TabIndex = 9;
             // 
             // save
             // 
             this.save.Location = new System.Drawing.Point(15, 424);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(80, 34);
-            this.save.TabIndex = 24;
+            this.save.TabIndex = 13;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
@@ -254,7 +254,7 @@
             this.clean.Location = new System.Drawing.Point(178, 424);
             this.clean.Name = "clean";
             this.clean.Size = new System.Drawing.Size(80, 34);
-            this.clean.TabIndex = 25;
+            this.clean.TabIndex = 14;
             this.clean.Text = "Clean Form";
             this.clean.UseVisualStyleBackColor = true;
             // 
@@ -264,7 +264,7 @@
             this.BoxPhone.Mask = "000000000";
             this.BoxPhone.Name = "BoxPhone";
             this.BoxPhone.Size = new System.Drawing.Size(164, 20);
-            this.BoxPhone.TabIndex = 26;
+            this.BoxPhone.TabIndex = 3;
             // 
             // BoxOtherContact
             // 
@@ -272,7 +272,7 @@
             this.BoxOtherContact.Mask = "000000000";
             this.BoxOtherContact.Name = "BoxOtherContact";
             this.BoxOtherContact.Size = new System.Drawing.Size(164, 20);
-            this.BoxOtherContact.TabIndex = 27;
+            this.BoxOtherContact.TabIndex = 12;
             // 
             // RegistarPaciente
             // 

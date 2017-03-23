@@ -26,6 +26,12 @@ namespace Alert_Sytem.ServiceMyHealthAlert {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterPatient", ReplyAction="http://tempuri.org/IServiceHealth/RegisterPatientResponse")]
         System.Threading.Tasks.Task RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterMeasurement", ReplyAction="http://tempuri.org/IServiceHealth/RegisterMeasurementResponse")]
+        void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceHealth/RegisterMeasurement", ReplyAction="http://tempuri.org/IServiceHealth/RegisterMeasurementResponse")]
+        System.Threading.Tasks.Task RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace Alert_Sytem.ServiceMyHealthAlert {
         
         public System.Threading.Tasks.Task RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
             return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        }
+        
+        public void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
+            base.Channel.RegisterMeasurement(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
+            return base.Channel.RegisterMeasurementAsync(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
         }
     }
 }
