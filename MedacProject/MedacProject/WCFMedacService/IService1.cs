@@ -153,63 +153,102 @@ namespace WCFMedacService
     {
         private int bloodpressuremin;
         private int bloodpressuremax;
-        private int hearrate;
+        private int heartrate;
         private int oxygensaturation;
-        private string date;
+        private DateTime date;
         private string time;
         private int fk_sns;
 
         public int Bloodpressuremin
         {
-            get { return bloodpressuremin; }
+            get
+            {
+                return bloodpressuremin;
+            }
 
-            set { bloodpressuremin = value; }
+            set
+            {
+                bloodpressuremin = value;
+            }
         }
 
         public int Bloodpressuremax
         {
-            get { return bloodpressuremax; }
+            get
+            {
+                return bloodpressuremax;
+            }
 
-            set { bloodpressuremax = value; }
+            set
+            {
+                bloodpressuremax = value;
+            }
         }
 
-        public int Hearrate
+        public int Heartrate
         {
-            get { return hearrate; }
+            get
+            {
+                return heartrate;
+            }
 
-            set { hearrate = value; }
+            set
+            {
+                heartrate = value;
+            }
         }
 
         public int Oxygensaturation
         {
-            get { return oxygensaturation; }
+            get
+            {
+                return oxygensaturation;
+            }
 
-            set { oxygensaturation = value; }
+            set
+            {
+                oxygensaturation = value;
+            }
         }
 
-        public string Date1
+        public DateTime Date1
         {
-            get { return date; }
+            get
+            {
+                return date;
+            }
 
-            set { date = value; }
+            set
+            {
+                date = value;
+            }
         }
 
         public string Time1
         {
-            get { return time; }
+            get
+            {
+                return time;
+            }
 
-            set { time = value; }
+            set
+            {
+                time = value;
+            }
         }
 
         public int Fk_sns
         {
-            get { return fk_sns; }
+            get
+            {
+                return fk_sns;
+            }
 
-            set { fk_sns = value; }
+            set
+            {
+                fk_sns = value;
+            }
         }
-
     }
-
-
 }
 

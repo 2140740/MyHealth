@@ -65,17 +65,17 @@ namespace WCFMedacService
     int oxygensaturation, string date, string time, int fk_sns)
         {
             ModelMedacContainer context = new ModelMedacContainer();
-            Measurement mt = new Measurement();
+            Measurement mte = new Measurement();
 
-            mt.Bloodpressuremax = bloodpressuremax;
-            mt.Bloodpressuremin = bloodpressuremin;
-            mt.Hearrate = hearrate;
-            mt.Oxygensaturation = oxygensaturation;
-            mt.Date1 = date;
-            mt.Time1 = time;
-            mt.Fk_sns = fk_sns;
+            mte.Bloodpressuremax = bloodpressuremax;
+            mte.Bloodpressuremin = bloodpressuremin;
+            mte.HeartRate = hearrate;
+            mte.Oxygensaturation = oxygensaturation;
+            mte.Date1 = Convert.ToDateTime(date);
+            mte.Time1 = time;
+            mte.Fk_sns = fk_sns;
 
-            context.MeasurementSet.Add(mt);
+            context.MeasurementSet.Add(mte);
             context.SaveChanges();
 
         }

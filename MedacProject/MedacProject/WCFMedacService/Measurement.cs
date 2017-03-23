@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace WCFMedacService
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Measurement
     {
         public int Id { get; set; }
