@@ -30,7 +30,6 @@
           <ScalarProperty Name="OxygenSaturation" ColumnName="OxygenSaturation" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="FK_SNS" ColumnName="FK_SNS" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

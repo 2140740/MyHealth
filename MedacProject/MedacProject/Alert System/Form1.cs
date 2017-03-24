@@ -16,5 +16,12 @@ namespace Alert_System
         {
             InitializeComponent();
         }
+
+        private void registerPatient_Click(object sender, EventArgs e)
+        {
+            Register_Pacient FormRegistPacient = new Register_Pacient();
+
+            DialogResult dialogResult2 = FormRegistPacient.ShowDialog();
+        }
     }
 }

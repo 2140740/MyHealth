@@ -37,7 +37,6 @@
     <Property Name="OxygenSaturation" Type="int" Nullable="true" />
     <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Time" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FK_SNS" Type="int" Nullable="false" />
     <Property Name="Patient_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PatientMeasurement">

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/23/2017 14:55:25
+-- Date Created: 03/24/2017 08:26:01
 -- Generated from EDMX file: C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\ModelMedac.edmx
 -- --------------------------------------------------
 
@@ -17,6 +17,9 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_PatientMeasurement]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeasurementSet] DROP CONSTRAINT [FK_PatientMeasurement];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -60,7 +63,6 @@ CREATE TABLE [dbo].[MeasurementSet] (
     [OxygenSaturation] int  NULL,
     [Date] datetime  NOT NULL,
     [Time] nvarchar(max)  NOT NULL,
-    [FK_SNS] int  NOT NULL,
     [Patient_Id] int  NOT NULL
 );
 GO

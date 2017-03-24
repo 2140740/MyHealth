@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedacProject", "MedacProject\MedacProject.csproj", "{FFBF3DAE-E436-49D2-9749-C4A99339B27A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D161EE3E-197D-4C1C-8A11-F7E901487AFB} = {D161EE3E-197D-4C1C-8A11-F7E901487AFB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alert System", "Alert System\Alert System.csproj", "{A564CC04-7297-4BA0-8DC7-78CD35275B82}"
 EndProject

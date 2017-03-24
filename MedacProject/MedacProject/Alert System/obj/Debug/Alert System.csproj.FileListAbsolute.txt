@@ -6,3 +6,5 @@ C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csproj.GenerateResource.Cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.exe
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.pdb
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Form1.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Register_Pacient.resources

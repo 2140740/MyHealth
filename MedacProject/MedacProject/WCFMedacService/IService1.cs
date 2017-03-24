@@ -13,22 +13,22 @@ namespace WCFMedacService
     public interface IService1
     {
         [OperationContract]
-        Patient ValidadePatient(int id);
+        PatientDC ValidadePatient(int id);
 
         [OperationContract]
-        void RegisterPatient(string firstname, string lastname, int phone,
+        bool RegisterPatient(string firstname, string lastname, int phone,
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
             int othercontact);
 
         [OperationContract]
-        void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
-            int oxygensaturation, string date, string time, int fk_sns);
+        bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
+            int oxygensaturation, DateTime date, TimeSpan time, int fk_sns);
 
     }
 
     [DataContract]
-    public class Paciente
+    public class PatientDC
     {
         private string firstname;
         private string lastname;
@@ -149,16 +149,17 @@ namespace WCFMedacService
     }
 
     [DataContract]
-    public partial class Measurement
+    public class MeasurementDC
     {
         private int bloodpressuremin;
         private int bloodpressuremax;
         private int heartrate;
         private int oxygensaturation;
         private DateTime date;
-        private string time;
+        private TimeSpan time;
         private int fk_sns;
 
+        [DataMember]
         public int Bloodpressuremin
         {
             get
@@ -172,6 +173,7 @@ namespace WCFMedacService
             }
         }
 
+        [DataMember]
         public int Bloodpressuremax
         {
             get
@@ -185,6 +187,7 @@ namespace WCFMedacService
             }
         }
 
+        [DataMember]
         public int Heartrate
         {
             get
@@ -198,6 +201,7 @@ namespace WCFMedacService
             }
         }
 
+        [DataMember]
         public int Oxygensaturation
         {
             get
@@ -211,7 +215,8 @@ namespace WCFMedacService
             }
         }
 
-        public DateTime Date1
+        [DataMember]
+        public DateTime Date
         {
             get
             {
@@ -224,7 +229,8 @@ namespace WCFMedacService
             }
         }
 
-        public string Time1
+        [DataMember]
+        public TimeSpan Time
         {
             get
             {
@@ -237,6 +243,7 @@ namespace WCFMedacService
             }
         }
 
+        [DataMember]
         public int Fk_sns
         {
             get
