@@ -21,5 +21,15 @@ namespace Alert_System
         {
 
         }
+
+        private void savepatient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearpatient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

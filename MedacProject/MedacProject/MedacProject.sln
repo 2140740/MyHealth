@@ -9,6 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedacProject", "MedacProjec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alert System", "Alert System\Alert System.csproj", "{A564CC04-7297-4BA0-8DC7-78CD35275B82}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D161EE3E-197D-4C1C-8A11-F7E901487AFB} = {D161EE3E-197D-4C1C-8A11-F7E901487AFB}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFMedacService", "WCFMedacService\WCFMedacService.csproj", "{D161EE3E-197D-4C1C-8A11-F7E901487AFB}"
 EndProject

@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.Entity.Core.Common.CommandTrees;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -21,8 +25,9 @@ namespace WCFMedacService
 
             if (pt == null)
                 return null;
-            else { 
-               
+            else
+            {
+
                 p.Firstname = pt.FirstName;
                 p.LastName = pt.LastName;
                 p.Phone = pt.Phone;
@@ -81,18 +86,19 @@ namespace WCFMedacService
 
 
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
-    int oxygensaturation, DateTime date, TimeSpan time, int fk_sns)
+            int oxygensaturation, DateTime date, TimeSpan time, int fk_sns)
         {
             Measurement mte = new Measurement();
 
             try
             {
                 ModelMedacContainer context = new ModelMedacContainer();
-                
+
 
                 Patient p = context.PatientSet.FirstOrDefault(i => i.SNS == fk_sns);
 
-                if (p!= null) { 
+                if (p != null)
+                {
                     mte.BloodPressureMax = bloodpressuremax;
                     mte.BloodPressureMin = bloodpressuremin;
                     mte.HeartRate = hearrate;
@@ -104,7 +110,7 @@ namespace WCFMedacService
                     context.MeasurementSet.Add(mte);
                     context.SaveChanges();
 
-                   
+
                 }
 
             }
@@ -115,6 +121,84 @@ namespace WCFMedacService
             return true;
         }
 
-    }
+        //Blood Pressure MAX
+        public List<int> ViewBloodPressureMax(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
 
+            List<int> ListbloodpressureMax = new List<int>();
+
+            var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
+
+            foreach (var mte in m)
+            {
+                if (mte.BloodPressureMax != 0)
+                {
+                    ListbloodpressureMax.Add(Convert.ToInt32(mte.BloodPressureMax));
+                }
+            }
+
+            return ListbloodpressureMax;
+        }
+
+        //Blood Pressure MIN
+        public List<int> ViewBloodPressureMin(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListbloodpressureMin = new List<int>();
+
+            var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
+
+            foreach (var mte in m)
+            {
+                if (mte.BloodPressureMax != 0)
+                {
+                    ListbloodpressureMin.Add(Convert.ToInt32(mte.BloodPressureMin));
+                }
+            }
+
+            return ListbloodpressureMin;
+        }
+
+        //HEART RATE
+        public List<int> ViewHearRate(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListHeartRate = new List<int>();
+
+            var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
+
+            foreach (var mte in m)
+            {
+                if (mte.BloodPressureMax != 0)
+                {
+                    ListHeartRate.Add(Convert.ToInt32(mte.HeartRate));
+                }
+            }
+
+            return ListHeartRate;
+        }
+
+        //OXYGEN SATURATION
+        public List<int> ViewOxygenSaturation(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListOxygenSaturation = new List<int>();
+
+            var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
+
+            foreach (var mte in m)
+            {
+                if (mte.BloodPressureMax != 0)
+                {
+                    ListOxygenSaturation.Add(Convert.ToInt32(mte.OxygenSaturation));
+                }
+            }
+
+            return ListOxygenSaturation;
+        }
+    }
 }

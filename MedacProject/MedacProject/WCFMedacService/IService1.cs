@@ -25,6 +25,18 @@ namespace WCFMedacService
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
             int oxygensaturation, DateTime date, TimeSpan time, int fk_sns);
 
+        [OperationContract]
+        List<int> ViewBloodPressureMax(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMin(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewHearRate(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewOxygenSaturation(int fk_sns);
+
     }
 
     [DataContract]

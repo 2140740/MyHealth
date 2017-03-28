@@ -21,7 +21,14 @@ namespace Alert_System
         {
             Register_Pacient FormRegistPacient = new Register_Pacient();
 
-            DialogResult dialogResult2 = FormRegistPacient.ShowDialog();
+            DialogResult = FormRegistPacient.ShowDialog();
+        }
+
+        private void viewMeasurement_Click(object sender, EventArgs e)
+        {
+            View_Measurement FormViewMeasurement = new View_Measurement();
+
+            DialogResult = FormViewMeasurement.ShowDialog();
         }
     }
 }

@@ -40,8 +40,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.savepatient = new System.Windows.Forms.Button();
+            this.clearpatient = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -50,6 +50,10 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -160,72 +164,74 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Other contact:";
             // 
-            // button1
+            // savepatient
             // 
-            this.button1.Location = new System.Drawing.Point(29, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 33);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Sace Patient";
-            this.button1.UseVisualStyleBackColor = true;
+            this.savepatient.Location = new System.Drawing.Point(29, 414);
+            this.savepatient.Name = "savepatient";
+            this.savepatient.Size = new System.Drawing.Size(109, 33);
+            this.savepatient.TabIndex = 13;
+            this.savepatient.Text = "Save Patient";
+            this.savepatient.UseVisualStyleBackColor = true;
+            this.savepatient.Click += new System.EventHandler(this.savepatient_Click);
             // 
-            // button2
+            // clearpatient
             // 
-            this.button2.Location = new System.Drawing.Point(232, 414);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(109, 33);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Clear Form";
-            this.button2.UseVisualStyleBackColor = true;
+            this.clearpatient.Location = new System.Drawing.Point(232, 414);
+            this.clearpatient.Name = "clearpatient";
+            this.clearpatient.Size = new System.Drawing.Size(109, 33);
+            this.clearpatient.TabIndex = 14;
+            this.clearpatient.Text = "Clear Form";
+            this.clearpatient.UseVisualStyleBackColor = true;
+            this.clearpatient.Click += new System.EventHandler(this.clearpatient_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(107, 20);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 14;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(107, 51);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(183, 20);
-            this.textBox2.TabIndex = 15;
+            this.textBox2.TabIndex = 2;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(107, 76);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(183, 20);
-            this.textBox3.TabIndex = 16;
+            this.textBox3.TabIndex = 3;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(107, 104);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(183, 20);
-            this.textBox4.TabIndex = 17;
+            this.textBox4.TabIndex = 4;
             // 
             // textBox7
             // 
             this.textBox7.Location = new System.Drawing.Point(107, 210);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(183, 20);
-            this.textBox7.TabIndex = 20;
+            this.textBox7.TabIndex = 8;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(107, 344);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(183, 20);
-            this.textBox5.TabIndex = 21;
+            this.textBox5.TabIndex = 11;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(107, 374);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(183, 20);
-            this.textBox6.TabIndex = 22;
+            this.textBox6.TabIndex = 12;
             // 
             // textBox8
             // 
@@ -233,13 +239,50 @@
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(183, 75);
-            this.textBox8.TabIndex = 23;
+            this.textBox8.TabIndex = 10;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(107, 234);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(183, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(107, 130);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(183, 20);
+            this.maskedTextBox1.TabIndex = 5;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(107, 155);
+            this.maskedTextBox2.Mask = "000000000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(183, 20);
+            this.maskedTextBox2.TabIndex = 6;
+            // 
+            // maskedTextBox3
+            // 
+            this.maskedTextBox3.Location = new System.Drawing.Point(107, 182);
+            this.maskedTextBox3.Mask = "000000000";
+            this.maskedTextBox3.Name = "maskedTextBox3";
+            this.maskedTextBox3.Size = new System.Drawing.Size(183, 20);
+            this.maskedTextBox3.TabIndex = 7;
             // 
             // Register_Pacient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 459);
+            this.Controls.Add(this.maskedTextBox3);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -248,8 +291,8 @@
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.clearpatient);
+            this.Controls.Add(this.savepatient);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
@@ -263,6 +306,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Register_Pacient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Pacient";
             this.Load += new System.EventHandler(this.Register_Pacient_Load);
             this.ResumeLayout(false);
@@ -284,8 +328,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button savepatient;
+        private System.Windows.Forms.Button clearpatient;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -294,5 +338,9 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
     }
 }
