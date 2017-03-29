@@ -56,7 +56,7 @@ namespace Alert_System
             fk_sns = Convert.ToInt32(textBox8.Text);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void pressuregraph_Click(object sender, EventArgs e)
         {
             //BloodPressureMax
             ServiceReference1.Service1Client web = new Service1Client();
@@ -70,13 +70,12 @@ namespace Alert_System
 
             chart1.Titles.Add("Blood Pressure");
 
-            
+
 
             chart1.Series["Blood Pressure Max"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
             for (int i = 1; i <= mtmax.Length; i++)
             {
-
                 chart1.Series[1].Points.AddY(Convert.ToInt32(mtmax[i - 1]));
             }
             //BloodPressureMax
@@ -92,8 +91,49 @@ namespace Alert_System
 
             for (int i = 1; i <= mtmin.Length; i++)
             {
-
                 chart1.Series[2].Points.AddY(Convert.ToInt32(mtmin[i - 1]));
+            }
+        }
+
+        private void heartrategraph_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.Service1Client web = new Service1Client();
+
+            int[] hr = web.ViewHearRate(fk_sns);
+
+            chart1.Series.Add("Heart Rate");
+
+            chart1.Series["Heart Rate"].ChartArea = "ChartArea1";
+
+            chart1.Titles.Add("Heart Rate");
+
+
+
+            chart1.Series["Heart Rate"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+            for (int i = 1; i <= hr.Length; i++)
+            {
+                chart1.Series[1].Points.AddY(Convert.ToInt32(hr[i - 1]));
+            }
+        }
+
+        private void oxygengraph_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.Service1Client web = new Service1Client();
+
+            int[] os = web.ViewHearRate(fk_sns);
+
+            chart1.Series.Add("Oxygen Saturation");
+
+            chart1.Series["Oxygen Saturation"].ChartArea = "ChartArea1";
+
+            chart1.Titles.Add("Oxygen Saturation");
+
+            chart1.Series["Oxygen Saturation"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+            for (int i = 1; i <= os.Length; i++)
+            {
+                chart1.Series[1].Points.AddY(Convert.ToInt32(os[i - 1]));
             }
         }
     }
