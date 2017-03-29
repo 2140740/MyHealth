@@ -58,22 +58,43 @@ namespace Alert_System
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //BloodPressureMax
             ServiceReference1.Service1Client web = new Service1Client();
 
-            int[] mt = web.ViewBloodPressureMax(fk_sns);
+            int[] mtmax = web.ViewBloodPressureMax(fk_sns);
 
-            chart1.Titles.Add("Blood Pressure");
 
             chart1.Series.Add("Blood Pressure Max");
 
+            chart1.Series["Blood Pressure Max"].ChartArea = "ChartArea1";
+
+            chart1.Titles.Add("Blood Pressure");
+
+            
+
             chart1.Series["Blood Pressure Max"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
-            for (int i = 1; i <= mt.Length; i++)
+            for (int i = 1; i <= mtmax.Length; i++)
             {
-                int[] bloodpressureMax = { Convert.ToInt32(mt[i-1]) };
-                chart1.Series[1].Points.DataBindY(bloodpressureMax);
+
+                chart1.Series[1].Points.AddY(Convert.ToInt32(mtmax[i - 1]));
+            }
+            //BloodPressureMax
+
+            int[] mtmin = web.ViewBloodPressureMin(fk_sns);
+
+            chart1.Series.Add("Blood Pressure Min");
+
+            chart1.Series["Blood Pressure Max"].ChartArea = "ChartArea1";
+
+
+            chart1.Series["Blood Pressure Min"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
+            for (int i = 1; i <= mtmin.Length; i++)
+            {
+
+                chart1.Series[2].Points.AddY(Convert.ToInt32(mtmin[i - 1]));
             }
         }
-        
     }
 }

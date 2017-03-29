@@ -54,8 +54,8 @@ namespace MedacProject
                         string[] bloodpre = message.Split(delimiterChars);
                         string[] texto = bloodpre[1].Split('-');
                         textbp.Text = texto[0] + "-" + texto[1];
-                        bloodPressureMin = Convert.ToInt32(texto[0]);
-                        bloodPressureMax = Convert.ToInt32(texto[1]);
+                        bloodPressureMax = Convert.ToInt32(texto[0]);
+                        bloodPressureMin = Convert.ToInt32(texto[1]);
                         date = DateTime.Parse(bloodpre[2] + " " + bloodpre[3]);
                         time = TimeSpan.Parse(bloodpre[3]);
 
