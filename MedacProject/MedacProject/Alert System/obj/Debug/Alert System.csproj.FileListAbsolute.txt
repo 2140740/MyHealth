@@ -19,5 +19,6 @@ D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_Sys
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Register_Pacient.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.View_Measurement.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csproj.GenerateResource.Cache
-D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csprojResolveAssemblyReference.cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.FormUpdate.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.FormUpdate.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csprojResolveAssemblyReference.cache

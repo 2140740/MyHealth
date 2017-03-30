@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/30/2017 08:32:56
--- Generated from EDMX file: C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\ModelMedac.edmx
+-- Date Created: 03/30/2017 19:22:56
+-- Generated from EDMX file: D:\David_GIT\MyHealth\MedacProject\MedacProject\WCFMedacService\ModelMedac.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -47,7 +47,7 @@ CREATE TABLE [dbo].[PatientSet] (
     [CC_BI] int  NOT NULL,
     [SNS] int  NOT NULL,
     [Address] nvarchar(max)  NULL,
-    [Gender] nvarchar(max)  NOT NULL,
+    [Gender] nvarchar(1)  NOT NULL,
     [Allergies] nvarchar(max)  NULL,
     [Height] float  NULL,
     [OtherContact] nvarchar(max)  NULL

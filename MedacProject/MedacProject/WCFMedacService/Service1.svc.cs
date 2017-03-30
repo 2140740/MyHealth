@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.Entity;
 using System.Data.Entity.Core.Common.CommandTrees;
 using System.Data.Entity.Core.Metadata.Edm;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using WCFMedacService;
 
 namespace WCFMedacService
 {
@@ -27,6 +30,7 @@ namespace WCFMedacService
                 return null;
             else
             {
+                p.PatientID = pt.Id;
                 p.Firstname = pt.FirstName;
                 p.LastName = pt.LastName;
                 p.Phone = pt.Phone;
@@ -81,46 +85,32 @@ namespace WCFMedacService
             return true;
         }
 
-        public bool UpdatePatient(string firstname, string lastname, int phone,
-            string email, DateTime birthdate, int cc_bi, int sns,
-            string address, char gender, string allergies, double height,
-            int othercontact)
+        public void UpdatePatient(Patient patient)
         {
-            Patient pt = new Patient();
-
             ModelMedacContainer context = new ModelMedacContainer();
-
-            pt = context.PatientSet.FirstOrDefault(i => i.SNS == sns);
-
-            try
-            {
+            Patient pt = context.PatientSet.First(i => i.Id == patient.Id);
 
                 if (pt != null)
                 {
-                    context.PatientSet.Remove(pt);
-                    pt.FirstName = firstname;
-                    pt.LastName = lastname;
-                    pt.Phone = phone;
-                    pt.Email = email;
-                    pt.BirthDate = birthdate;
-                    pt.CC_BI = cc_bi;
-                    pt.SNS = sns;
-                    pt.Address = address;
-                    pt.Gender = gender.ToString();
-                    pt.Allergies = allergies;
-                    pt.Height = height;
-                    pt.OtherContact = othercontact.ToString();
+                    pt.Id = pt.Id;
+                    pt.FirstName = patient.FirstName;
+                    pt.LastName = patient.LastName;
+                    pt.Phone = patient.Phone;
+                    pt.Email = patient.Email;
+                    pt.BirthDate = patient.BirthDate;
+                    pt.CC_BI = patient.CC_BI;
+                    pt.SNS = patient.SNS;
+                    pt.Address = patient.Address;
+                    pt.Gender = patient.Gender;
+                    pt.Allergies = patient.Allergies;
+                    pt.Height = patient.Height;
+                    pt.OtherContact = patient.OtherContact;
 
-                    context.PatientSet.Add(pt);
                     context.SaveChanges();
                 }
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-            return true;
         }
+
+ 
 
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
             int oxygensaturation, DateTime date, TimeSpan time, int fk_sns)

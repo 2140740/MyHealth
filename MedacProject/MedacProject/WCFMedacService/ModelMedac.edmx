@@ -26,7 +26,7 @@
     <Property Name="CC_BI" Type="int" Nullable="false" />
     <Property Name="SNS" Type="int" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="1" />
     <Property Name="Allergies" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Height" Type="float" Nullable="true" />
     <Property Name="OtherContact" Type="nvarchar(max)" Nullable="true" />
@@ -81,7 +81,7 @@
           <Property Name="CC_BI" Type="Int32" Nullable="false" />
           <Property Name="SNS" Type="Int32" Nullable="false" />
           <Property Name="Address" Type="String" Nullable="true" />
-          <Property Name="Gender" Type="String" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" />
           <Property Name="Allergies" Type="String" Nullable="true" />
           <Property Name="Height" Type="Double" Nullable="true" />
           <Property Name="OtherContact" Type="String" Nullable="true" />

@@ -22,10 +22,7 @@ namespace WCFMedacService
             int othercontact);
 
         [OperationContract]
-        bool UpdatePatient(string firstname, string lastname, int phone,
-            string email, DateTime birthdate, int cc_bi, int sns,
-            string address, char gender, string allergies, double height,
-            int othercontact);
+        void UpdatePatient(Patient patient);
 
         [OperationContract]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,

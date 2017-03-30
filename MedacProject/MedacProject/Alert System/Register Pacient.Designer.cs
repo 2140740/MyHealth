@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register_Pacient));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.BoxBirthday = new System.Windows.Forms.MaskedTextBox();
             this.BoxCCbi = new System.Windows.Forms.MaskedTextBox();
             this.BoxSNS = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,18 +62,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(26, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Firstname:";
+            this.label1.Text = "*Firstname:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(26, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Lastname:";
+            this.label2.Text = "*Lastname:";
             // 
             // label3
             // 
@@ -87,36 +89,36 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(26, 79);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
+            this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Phone:";
+            this.label4.Text = "*Phone:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(26, 133);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
+            this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Birthday:";
+            this.label5.Text = "*Birthday:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(26, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 4;
-            this.label6.Text = "CC/BI:";
+            this.label6.Text = "*CC/BI:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(26, 185);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(36, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = "SNS:";
+            this.label7.Text = "*SNS:";
             // 
             // label8
             // 
@@ -132,9 +134,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(26, 237);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Gender";
+            this.label9.Text = "*Gender";
             // 
             // label10
             // 
@@ -266,11 +268,21 @@
             this.BoxSNS.Size = new System.Drawing.Size(183, 20);
             this.BoxSNS.TabIndex = 7;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(11, 437);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "(*) Required fields";
+            // 
             // Register_Pacient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 459);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.BoxSNS);
             this.Controls.Add(this.BoxCCbi);
             this.Controls.Add(this.BoxBirthday);
@@ -296,6 +308,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Register_Pacient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register Pacient";
@@ -332,5 +345,6 @@
         private System.Windows.Forms.MaskedTextBox BoxBirthday;
         private System.Windows.Forms.MaskedTextBox BoxCCbi;
         private System.Windows.Forms.MaskedTextBox BoxSNS;
+        private System.Windows.Forms.Label label13;
     }
 }

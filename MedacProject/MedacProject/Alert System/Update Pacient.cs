@@ -37,6 +37,7 @@ namespace Alert_System
             {
                 MessageBox.Show("Bem vindo Sr.(a)" + p.Firstname);
 
+                boxid.Text = Convert.ToString(p.PatientID);
                 BoxFirstName_old.Text = p.Firstname;
                 BoxLastName_old.Text = p.LastName;
                 BoxPhone_old.Text = Convert.ToString(p.Phone);
@@ -55,70 +56,56 @@ namespace Alert_System
 
         private void update_information_Click(object sender, EventArgs e)
         {
-            char gender = ' ';
-            double height = 0.0;
-            int othercontact = 0;
             try
             {
-                if (!BoxFirstName.Text.Equals("") && !BoxLastName.Text.Equals("")
-                    && !BoxPhone.Text.Equals("") && !BoxCCbi.Text.Equals("")
-                    && !BoxSNS.Text.Equals("") && !BoxGender.SelectedItem.Equals(""))
-                {
-                    if (BoxGender.SelectedItem.Equals("Male"))
-                    {
-                        gender = 'M';
-                    }
-                    else
-                    {
-                        gender = 'F';
-                    }
-                }
 
-                if (BoxEmail.Text.Equals(""))
+
+                ServiceReference1.Service1Client web = new Service1Client();
+
+                Patient p = new Patient();
+
+                p.Id = Convert.ToInt32(boxid.Text);
+                p.FirstName = BoxFirstName.Text;
+                p.LastName = BoxLastName.Text;
+                p.Phone = Convert.ToInt32(BoxPhone.Text);
+                p.Email = BoxEmail.Text;
+                p.BirthDate = Convert.ToDateTime(BoxBirthday.Text);
+                p.CC_BI = Convert.ToInt32(BoxCCbi.Text);
+                p.SNS = Convert.ToInt32(BoxSNS.Text);
+                p.Address = BoxAddress.Text;
+
+                if (BoxGender.SelectedItem.Equals("Male"))
                 {
-                    BoxEmail.Text = "";
-                }
-                if (BoxBirthday.Text.Equals(""))
-                {
-                    Convert.ToDateTime(BoxBirthday.Text = "");
-                }
-                if (BoxAddress.Text.Equals(""))
-                {
-                    BoxAddress.Text = "";
-                }
-                if (BoxAllergies.Text.Equals(""))
-                {
-                    BoxAllergies.Text = "";
-                }
-                if (BoxHeight.Text.Equals(""))
-                {
-                    height = 0.0;
+                    p.Gender = "M";
                 }
                 else
                 {
-                    height = Convert.ToDouble(BoxHeight.Text);
+                    p.Gender = "F";
+                }
+                p.Allergies = BoxAllergies.Text;
+                if (BoxHeight.Text.Equals(""))
+                {
+                    p.Height = 0.0;
+                }
+                else
+                {
+                    p.Height = Convert.ToDouble(BoxHeight.Text);
                 }
                 if (BoxOthercontact.Text.Equals(""))
                 {
-                    othercontact = 0;
+                    p.OtherContact = "";
                 }
                 else
                 {
-                    othercontact = Convert.ToInt32(BoxOthercontact.Text);
+                    p.OtherContact = BoxOthercontact.Text;
                 }
 
-                ServiceReference1.Service1Client web = new Service1Client();
-                web.UpdatePatient(BoxFirstName.Text, BoxLastName.Text,
-                    Convert.ToInt32(BoxPhone.Text), BoxEmail.Text, Convert.ToDateTime(BoxBirthday.Text),
-                    Convert.ToInt32(BoxCCbi.Text), Convert.ToInt32(BoxSNS.Text),
-                    BoxAddress.Text, gender, BoxAllergies.Text,
-                    height, othercontact);
 
-                MessageBox.Show("Paciente Inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                web.UpdatePatient(p);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Falta preencher campos obrigatórios (*)","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }
