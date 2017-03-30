@@ -14,6 +14,7 @@ namespace Alert_System
     public partial class View_Measurement : Form
     {
         int fk_sns = 0;
+        ServiceReference1.Service1Client web = new Service1Client();
 
         public View_Measurement()
         {
@@ -54,15 +55,17 @@ namespace Alert_System
         private void button1_Click(object sender, EventArgs e)
         {
             fk_sns = Convert.ToInt32(textBox8.Text);
+
+            PatientDC p = web.ValidadePatient(Convert.ToInt32(textBox8.Text));
+
+            MessageBox.Show("Bem vindo Sr.(a)" + p.Firstname);
         }
 
         private void pressuregraph_Click(object sender, EventArgs e)
         {
             //BloodPressureMax
-            ServiceReference1.Service1Client web = new Service1Client();
 
             int[] mtmax = web.ViewBloodPressureMax(fk_sns);
-
 
             chart1.Series.Add("Blood Pressure Max");
 
@@ -70,15 +73,13 @@ namespace Alert_System
 
             chart1.Titles.Add("Blood Pressure");
 
-
-
             chart1.Series["Blood Pressure Max"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
             for (int i = 1; i <= mtmax.Length; i++)
             {
                 chart1.Series[1].Points.AddY(Convert.ToInt32(mtmax[i - 1]));
             }
-            //BloodPressureMax
+            //BloodPressureMin
 
             int[] mtmin = web.ViewBloodPressureMin(fk_sns);
 
@@ -97,8 +98,7 @@ namespace Alert_System
 
         private void heartrategraph_Click(object sender, EventArgs e)
         {
-            ServiceReference1.Service1Client web = new Service1Client();
-
+            //Heart Rate
             int[] hr = web.ViewHearRate(fk_sns);
 
             chart1.Series.Add("Heart Rate");
@@ -119,8 +119,7 @@ namespace Alert_System
 
         private void oxygengraph_Click(object sender, EventArgs e)
         {
-            ServiceReference1.Service1Client web = new Service1Client();
-
+            //Oxygen Saturation
             int[] os = web.ViewHearRate(fk_sns);
 
             chart1.Series.Add("Oxygen Saturation");

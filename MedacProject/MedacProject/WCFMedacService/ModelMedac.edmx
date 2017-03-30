@@ -41,7 +41,7 @@
     <Property Name="HeartRate" Type="int" Nullable="true" />
     <Property Name="OxygenSaturation" Type="int" Nullable="true" />
     <Property Name="Date" Type="datetime" Nullable="false" />
-    <Property Name="Time" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Time" Type="time" Nullable="false" />
     <Property Name="Patient_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PatientMeasurement">
@@ -97,7 +97,7 @@
           <Property Name="HeartRate" Type="Int32" Nullable="true" />
           <Property Name="OxygenSaturation" Type="Int32" Nullable="true" />
           <Property Name="Date" Type="DateTime" Nullable="false" />
-          <Property Name="Time" Type="String" Nullable="false" />
+          <Property Name="Time" Type="Time" Nullable="false" />
           <NavigationProperty Name="Patient" Relationship="ModelMedac.PatientMeasurement" FromRole="Measurement" ToRole="Patient" />
         </EntityType>
         <Association Name="PatientMeasurement">

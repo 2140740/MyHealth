@@ -42,6 +42,31 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="UpdatePatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phone" type="xs:int" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthdate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="cc_bi" type="xs:int" />
+        <xs:element minOccurs="0" name="sns" type="xs:int" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="gender" type="q3:char" />
+        <xs:element minOccurs="0" name="allergies" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="height" type="xs:double" />
+        <xs:element minOccurs="0" name="othercontact" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePatientResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegisterMeasurement">
     <xs:complexType>
       <xs:sequence>
@@ -50,7 +75,7 @@
         <xs:element minOccurs="0" name="hearrate" type="xs:int" />
         <xs:element minOccurs="0" name="oxygensaturation" type="xs:int" />
         <xs:element minOccurs="0" name="date" type="xs:dateTime" />
-        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="time" type="q3:duration" />
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="time" type="q4:duration" />
         <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -72,7 +97,7 @@
   <xs:element name="ViewBloodPressureMaxResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewBloodPressureMaxResult" nillable="true" type="q4:ArrayOfint" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewBloodPressureMaxResult" nillable="true" type="q5:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -86,7 +111,7 @@
   <xs:element name="ViewBloodPressureMinResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewBloodPressureMinResult" nillable="true" type="q5:ArrayOfint" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewBloodPressureMinResult" nillable="true" type="q6:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -100,7 +125,7 @@
   <xs:element name="ViewHearRateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHearRateResult" nillable="true" type="q6:ArrayOfint" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHearRateResult" nillable="true" type="q7:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -114,7 +139,7 @@
   <xs:element name="ViewOxygenSaturationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationResult" nillable="true" type="q7:ArrayOfint" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationResult" nillable="true" type="q8:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

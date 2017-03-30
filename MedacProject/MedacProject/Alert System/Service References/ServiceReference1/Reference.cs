@@ -298,6 +298,12 @@ namespace Alert_System.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
         System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
+        bool UpdatePatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
+        System.Threading.Tasks.Task<bool> UpdatePatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
         
@@ -370,6 +376,14 @@ namespace Alert_System.ServiceReference1 {
         
         public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
             return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        }
+        
+        public bool UpdatePatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
+            return base.Channel.UpdatePatient(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdatePatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
+            return base.Channel.UpdatePatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
         }
         
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {

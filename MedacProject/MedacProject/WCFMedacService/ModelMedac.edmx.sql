@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/24/2017 08:26:01
+-- Date Created: 03/30/2017 08:32:56
 -- Generated from EDMX file: C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\ModelMedac.edmx
 -- --------------------------------------------------
 
@@ -62,7 +62,7 @@ CREATE TABLE [dbo].[MeasurementSet] (
     [HeartRate] int  NULL,
     [OxygenSaturation] int  NULL,
     [Date] datetime  NOT NULL,
-    [Time] nvarchar(max)  NOT NULL,
+    [Time] time  NOT NULL,
     [Patient_Id] int  NOT NULL
 );
 GO

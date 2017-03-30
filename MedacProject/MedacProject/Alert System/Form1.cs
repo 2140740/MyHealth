@@ -17,18 +17,25 @@ namespace Alert_System
             InitializeComponent();
         }
 
-        private void registerPatient_Click(object sender, EventArgs e)
+        private void viewMeasurement_Click(object sender, EventArgs e)
+        {
+            View_Measurement FormViewMeasurement = new View_Measurement();
+
+            DialogResult = FormViewMeasurement.ShowDialog();
+        }
+
+        private void registerPatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Register_Pacient FormRegistPacient = new Register_Pacient();
 
             DialogResult = FormRegistPacient.ShowDialog();
         }
 
-        private void viewMeasurement_Click(object sender, EventArgs e)
+        private void updatePatientToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View_Measurement FormViewMeasurement = new View_Measurement();
+            FormUpdate FormUpdatePacient = new FormUpdate();
 
-            DialogResult = FormViewMeasurement.ShowDialog();
+            DialogResult = FormUpdatePacient.ShowDialog();
         }
     }
 }

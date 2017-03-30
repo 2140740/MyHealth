@@ -27,7 +27,6 @@ namespace WCFMedacService
                 return null;
             else
             {
-
                 p.Firstname = pt.FirstName;
                 p.LastName = pt.LastName;
                 p.Phone = pt.Phone;
@@ -56,9 +55,7 @@ namespace WCFMedacService
 
                 if (pt != null)
                 {
-
                     ModelMedacContainer context = new ModelMedacContainer();
-
 
                     pt.FirstName = firstname;
                     pt.LastName = lastname;
@@ -84,6 +81,46 @@ namespace WCFMedacService
             return true;
         }
 
+        public bool UpdatePatient(string firstname, string lastname, int phone,
+            string email, DateTime birthdate, int cc_bi, int sns,
+            string address, char gender, string allergies, double height,
+            int othercontact)
+        {
+            Patient pt = new Patient();
+
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            pt = context.PatientSet.FirstOrDefault(i => i.SNS == sns);
+
+            try
+            {
+
+                if (pt != null)
+                {
+                    context.PatientSet.Remove(pt);
+                    pt.FirstName = firstname;
+                    pt.LastName = lastname;
+                    pt.Phone = phone;
+                    pt.Email = email;
+                    pt.BirthDate = birthdate;
+                    pt.CC_BI = cc_bi;
+                    pt.SNS = sns;
+                    pt.Address = address;
+                    pt.Gender = gender.ToString();
+                    pt.Allergies = allergies;
+                    pt.Height = height;
+                    pt.OtherContact = othercontact.ToString();
+
+                    context.PatientSet.Add(pt);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+        }
 
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
             int oxygensaturation, DateTime date, TimeSpan time, int fk_sns)
@@ -104,12 +141,11 @@ namespace WCFMedacService
                     mte.HeartRate = hearrate;
                     mte.OxygenSaturation = oxygensaturation;
                     mte.Date = Convert.ToDateTime(date);
-                    mte.Time = Convert.ToString(time);
+                    mte.Time = time;
                     mte.Patient = p;
 
                     context.MeasurementSet.Add(mte);
                     context.SaveChanges();
-
 
                 }
 
@@ -139,6 +175,7 @@ namespace WCFMedacService
             }
 
             return ListbloodpressureMax;
+
         }
 
         //Blood Pressure MIN
@@ -154,6 +191,7 @@ namespace WCFMedacService
             {
                 if (mte.BloodPressureMax != 0)
                 {
+
                     ListbloodpressureMin.Add(Convert.ToInt32(mte.BloodPressureMin));
                 }
             }

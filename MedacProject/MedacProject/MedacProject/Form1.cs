@@ -70,8 +70,8 @@ namespace MedacProject
                         string[] sp = message.Split(delimiterChars);
                         textspo.Text = sp[1];
                         oxygenSaturation = Convert.ToInt32(sp[1]);
-                        date = Convert.ToDateTime(sp[4] + sp[5] + sp[6]);
-                        time = TimeSpan.Parse(sp[6]);
+                        date = Convert.ToDateTime(sp[2]);
+                        time = TimeSpan.Parse(sp[3]);
                     }
                 }
 
