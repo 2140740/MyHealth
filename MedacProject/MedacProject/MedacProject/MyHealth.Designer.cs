@@ -52,6 +52,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.medicalId = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMedation = new System.Windows.Forms.MaskedTextBox();
+            this.medline = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -253,7 +254,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.medicalId});
+            this.medicalId,
+            this.medline});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(497, 24);
@@ -275,6 +277,13 @@
             this.textBoxMedation.Size = new System.Drawing.Size(135, 20);
             this.textBoxMedation.TabIndex = 21;
             this.textBoxMedation.TextChanged += new System.EventHandler(this.textBoxMedation_TextChanged);
+            // 
+            // medline
+            // 
+            this.medline.Name = "medline";
+            this.medline.Size = new System.Drawing.Size(62, 20);
+            this.medline.Text = "Medline";
+            this.medline.Click += new System.EventHandler(this.medline_Click);
             // 
             // MyHealth
             // 
@@ -330,6 +339,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem medicalId;
         private System.Windows.Forms.MaskedTextBox textBoxMedation;
+        private System.Windows.Forms.ToolStripMenuItem medline;
     }
 }
 

@@ -139,5 +139,11 @@ namespace MedacProject
             Properties.Settings.Default.Setting_delay = delay;
             Properties.Settings.Default.Save();
         }
+
+        private void medline_Click(object sender, EventArgs e)
+        {
+            Medline FormMedline = new Medline();
+            DialogResult = FormMedline.ShowDialog();
+        }
     }
 }

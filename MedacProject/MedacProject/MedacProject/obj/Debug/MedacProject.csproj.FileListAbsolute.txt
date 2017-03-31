@@ -9,3 +9,14 @@ C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.csproj.GenerateResource.Cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.exe
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.pdb
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\bin\Debug\MedacProject.exe.config
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.exe
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.pdb
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.csprojResolveAssemblyReference.cache
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.MedicalID.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.Medline.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.MyHealth.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.Properties.Resources.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.csproj.GenerateResource.Cache
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\bin\Debug\MedacProject.exe
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\bin\Debug\MedacProject.pdb

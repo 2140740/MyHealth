@@ -57,6 +57,12 @@
     <Compile Include="MedicalID.Designer.cs">
       <DependentUpon>MedicalID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Medline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medline.Designer.cs">
+      <DependentUpon>Medline.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyHealth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <EmbeddedResource Include="MedicalID.resx">
       <DependentUpon>MedicalID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medline.resx">
+      <DependentUpon>Medline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyHealth.resx">
       <DependentUpon>MyHealth.cs</DependentUpon>

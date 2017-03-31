@@ -6,7 +6,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Setting_url" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&amp;term=</Value>
     </Setting>
     <Setting Name="Setting_retmax" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5</Value>

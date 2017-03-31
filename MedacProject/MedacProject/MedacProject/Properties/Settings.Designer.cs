@@ -37,7 +37,7 @@ namespace MedacProject.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://wsearch.nlm.nih.gov/ws/query?db=healthTopics&term=")]
         public string Setting_url {
             get {
                 return ((string)(this["Setting_url"]));
