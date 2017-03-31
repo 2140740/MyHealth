@@ -282,6 +282,416 @@ namespace MedacProject.ServiceHealthClient {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Patient", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
+    [System.SerializableAttribute()]
+    public partial class Patient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AllergiesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime BirthDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CC_BIField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GenderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MedacProject.ServiceHealthClient.Measurement[] MeasurementField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OtherContactField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PhoneField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SNSField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Allergies {
+            get {
+                return this.AllergiesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AllergiesField, value) != true)) {
+                    this.AllergiesField = value;
+                    this.RaisePropertyChanged("Allergies");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime BirthDate {
+            get {
+                return this.BirthDateField;
+            }
+            set {
+                if ((this.BirthDateField.Equals(value) != true)) {
+                    this.BirthDateField = value;
+                    this.RaisePropertyChanged("BirthDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CC_BI {
+            get {
+                return this.CC_BIField;
+            }
+            set {
+                if ((this.CC_BIField.Equals(value) != true)) {
+                    this.CC_BIField = value;
+                    this.RaisePropertyChanged("CC_BI");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gender {
+            get {
+                return this.GenderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
+                    this.GenderField = value;
+                    this.RaisePropertyChanged("Gender");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MedacProject.ServiceHealthClient.Measurement[] Measurement {
+            get {
+                return this.MeasurementField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MeasurementField, value) != true)) {
+                    this.MeasurementField = value;
+                    this.RaisePropertyChanged("Measurement");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OtherContact {
+            get {
+                return this.OtherContactField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OtherContactField, value) != true)) {
+                    this.OtherContactField = value;
+                    this.RaisePropertyChanged("OtherContact");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Phone {
+            get {
+                return this.PhoneField;
+            }
+            set {
+                if ((this.PhoneField.Equals(value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SNS {
+            get {
+                return this.SNSField;
+            }
+            set {
+                if ((this.SNSField.Equals(value) != true)) {
+                    this.SNSField = value;
+                    this.RaisePropertyChanged("SNS");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Measurement", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
+    [System.SerializableAttribute()]
+    public partial class Measurement : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BloodPressureMaxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> BloodPressureMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> HeartRateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> OxygenSaturationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MedacProject.ServiceHealthClient.Patient PatientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.TimeSpan TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> BloodPressureMax {
+            get {
+                return this.BloodPressureMaxField;
+            }
+            set {
+                if ((this.BloodPressureMaxField.Equals(value) != true)) {
+                    this.BloodPressureMaxField = value;
+                    this.RaisePropertyChanged("BloodPressureMax");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> BloodPressureMin {
+            get {
+                return this.BloodPressureMinField;
+            }
+            set {
+                if ((this.BloodPressureMinField.Equals(value) != true)) {
+                    this.BloodPressureMinField = value;
+                    this.RaisePropertyChanged("BloodPressureMin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> HeartRate {
+            get {
+                return this.HeartRateField;
+            }
+            set {
+                if ((this.HeartRateField.Equals(value) != true)) {
+                    this.HeartRateField = value;
+                    this.RaisePropertyChanged("HeartRate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> OxygenSaturation {
+            get {
+                return this.OxygenSaturationField;
+            }
+            set {
+                if ((this.OxygenSaturationField.Equals(value) != true)) {
+                    this.OxygenSaturationField = value;
+                    this.RaisePropertyChanged("OxygenSaturation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MedacProject.ServiceHealthClient.Patient Patient {
+            get {
+                return this.PatientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientField, value) != true)) {
+                    this.PatientField = value;
+                    this.RaisePropertyChanged("Patient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.TimeSpan Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceHealthClient.IService1")]
     public interface IService1 {
@@ -298,11 +708,41 @@ namespace MedacProject.ServiceHealthClient {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
         System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
+        void UpdatePatient(MedacProject.ServiceHealthClient.Patient patient);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
+        System.Threading.Tasks.Task UpdatePatientAsync(MedacProject.ServiceHealthClient.Patient patient);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         System.Threading.Tasks.Task<bool> RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMax", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxResponse")]
+        int[] ViewBloodPressureMax(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMax", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxAsync(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMin", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinResponse")]
+        int[] ViewBloodPressureMin(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMin", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMinAsync(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
+        int[] ViewHearRate(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
+        System.Threading.Tasks.Task<int[]> ViewHearRateAsync(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
+        int[] ViewOxygenSaturation(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
+        System.Threading.Tasks.Task<int[]> ViewOxygenSaturationAsync(int fk_sns);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -348,12 +788,52 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
         }
         
+        public void UpdatePatient(MedacProject.ServiceHealthClient.Patient patient) {
+            base.Channel.UpdatePatient(patient);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePatientAsync(MedacProject.ServiceHealthClient.Patient patient) {
+            return base.Channel.UpdatePatientAsync(patient);
+        }
+        
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
             return base.Channel.RegisterMeasurement(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
         }
         
         public System.Threading.Tasks.Task<bool> RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
             return base.Channel.RegisterMeasurementAsync(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
+        }
+        
+        public int[] ViewBloodPressureMax(int fk_sns) {
+            return base.Channel.ViewBloodPressureMax(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxAsync(int fk_sns) {
+            return base.Channel.ViewBloodPressureMaxAsync(fk_sns);
+        }
+        
+        public int[] ViewBloodPressureMin(int fk_sns) {
+            return base.Channel.ViewBloodPressureMin(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMinAsync(int fk_sns) {
+            return base.Channel.ViewBloodPressureMinAsync(fk_sns);
+        }
+        
+        public int[] ViewHearRate(int fk_sns) {
+            return base.Channel.ViewHearRate(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewHearRateAsync(int fk_sns) {
+            return base.Channel.ViewHearRateAsync(fk_sns);
+        }
+        
+        public int[] ViewOxygenSaturation(int fk_sns) {
+            return base.Channel.ViewOxygenSaturation(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationAsync(int fk_sns) {
+            return base.Channel.ViewOxygenSaturationAsync(fk_sns);
         }
     }
 }

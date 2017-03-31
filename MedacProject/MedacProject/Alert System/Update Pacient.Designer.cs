@@ -56,6 +56,8 @@
             this.BoxLastName_old = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.BoxPhone = new System.Windows.Forms.MaskedTextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.update_information = new System.Windows.Forms.Button();
             this.BoxFirstName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -84,8 +86,6 @@
             this.boxvalidate = new System.Windows.Forms.MaskedTextBox();
             this.validate = new System.Windows.Forms.Button();
             this.boxid = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.BoxPhone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -389,12 +389,29 @@
             this.label11.TabIndex = 32;
             this.label11.Text = "Height:";
             // 
+            // BoxPhone
+            // 
+            this.BoxPhone.Location = new System.Drawing.Point(97, 73);
+            this.BoxPhone.Mask = "000000000";
+            this.BoxPhone.Name = "BoxPhone";
+            this.BoxPhone.Size = new System.Drawing.Size(183, 20);
+            this.BoxPhone.TabIndex = 3;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(16, 416);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(90, 13);
+            this.label28.TabIndex = 15;
+            this.label28.Text = "(*) Required fields";
+            // 
             // update_information
             // 
             this.update_information.Location = new System.Drawing.Point(279, 413);
             this.update_information.Name = "update_information";
             this.update_information.Size = new System.Drawing.Size(75, 23);
-            this.update_information.TabIndex = 3;
+            this.update_information.TabIndex = 13;
             this.update_information.Text = "Update";
             this.update_information.UseVisualStyleBackColor = true;
             this.update_information.Click += new System.EventHandler(this.update_information_Click);
@@ -404,7 +421,7 @@
             this.BoxFirstName.Location = new System.Drawing.Point(97, 22);
             this.BoxFirstName.Name = "BoxFirstName";
             this.BoxFirstName.Size = new System.Drawing.Size(183, 20);
-            this.BoxFirstName.TabIndex = 36;
+            this.BoxFirstName.TabIndex = 1;
             // 
             // label15
             // 
@@ -421,7 +438,7 @@
             this.BoxSNS.Mask = "000000000";
             this.BoxSNS.Name = "BoxSNS";
             this.BoxSNS.Size = new System.Drawing.Size(183, 20);
-            this.BoxSNS.TabIndex = 48;
+            this.BoxSNS.TabIndex = 7;
             // 
             // BoxCCbi
             // 
@@ -429,7 +446,7 @@
             this.BoxCCbi.Mask = "000000000";
             this.BoxCCbi.Name = "BoxCCbi";
             this.BoxCCbi.Size = new System.Drawing.Size(183, 20);
-            this.BoxCCbi.TabIndex = 46;
+            this.BoxCCbi.TabIndex = 6;
             // 
             // label16
             // 
@@ -446,7 +463,7 @@
             this.BoxBirthday.Mask = "00/00/0000";
             this.BoxBirthday.Name = "BoxBirthday";
             this.BoxBirthday.Size = new System.Drawing.Size(183, 20);
-            this.BoxBirthday.TabIndex = 45;
+            this.BoxBirthday.TabIndex = 5;
             this.BoxBirthday.ValidatingType = typeof(System.DateTime);
             // 
             // label17
@@ -467,7 +484,7 @@
             this.BoxGender.Location = new System.Drawing.Point(97, 231);
             this.BoxGender.Name = "BoxGender";
             this.BoxGender.Size = new System.Drawing.Size(183, 21);
-            this.BoxGender.TabIndex = 52;
+            this.BoxGender.TabIndex = 9;
             // 
             // label18
             // 
@@ -484,7 +501,7 @@
             this.BoxAllergies.Multiline = true;
             this.BoxAllergies.Name = "BoxAllergies";
             this.BoxAllergies.Size = new System.Drawing.Size(183, 75);
-            this.BoxAllergies.TabIndex = 54;
+            this.BoxAllergies.TabIndex = 10;
             // 
             // label19
             // 
@@ -500,7 +517,7 @@
             this.BoxOthercontact.Location = new System.Drawing.Point(97, 371);
             this.BoxOthercontact.Name = "BoxOthercontact";
             this.BoxOthercontact.Size = new System.Drawing.Size(183, 20);
-            this.BoxOthercontact.TabIndex = 58;
+            this.BoxOthercontact.TabIndex = 12;
             // 
             // label20
             // 
@@ -516,7 +533,7 @@
             this.BoxHeight.Location = new System.Drawing.Point(97, 341);
             this.BoxHeight.Name = "BoxHeight";
             this.BoxHeight.Size = new System.Drawing.Size(183, 20);
-            this.BoxHeight.TabIndex = 57;
+            this.BoxHeight.TabIndex = 11;
             // 
             // label21
             // 
@@ -532,7 +549,7 @@
             this.BoxAddress.Location = new System.Drawing.Point(97, 207);
             this.BoxAddress.Name = "BoxAddress";
             this.BoxAddress.Size = new System.Drawing.Size(183, 20);
-            this.BoxAddress.TabIndex = 50;
+            this.BoxAddress.TabIndex = 8;
             // 
             // label22
             // 
@@ -548,7 +565,7 @@
             this.BoxEmail.Location = new System.Drawing.Point(97, 101);
             this.BoxEmail.Name = "BoxEmail";
             this.BoxEmail.Size = new System.Drawing.Size(183, 20);
-            this.BoxEmail.TabIndex = 43;
+            this.BoxEmail.TabIndex = 4;
             // 
             // label23
             // 
@@ -573,7 +590,7 @@
             this.BoxLastName.Location = new System.Drawing.Point(97, 48);
             this.BoxLastName.Name = "BoxLastName";
             this.BoxLastName.Size = new System.Drawing.Size(183, 20);
-            this.BoxLastName.TabIndex = 39;
+            this.BoxLastName.TabIndex = 2;
             // 
             // label25
             // 
@@ -628,23 +645,6 @@
             this.boxid.TabIndex = 6;
             this.boxid.Visible = false;
             // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(16, 416);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(90, 13);
-            this.label28.TabIndex = 15;
-            this.label28.Text = "(*) Required fields";
-            // 
-            // BoxPhone
-            // 
-            this.BoxPhone.Location = new System.Drawing.Point(97, 73);
-            this.BoxPhone.Mask = "000000000";
-            this.BoxPhone.Name = "BoxPhone";
-            this.BoxPhone.Size = new System.Drawing.Size(183, 20);
-            this.BoxPhone.TabIndex = 59;
-            // 
             // FormUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,6 +657,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Pacient";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

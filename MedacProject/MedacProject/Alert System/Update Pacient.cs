@@ -58,8 +58,6 @@ namespace Alert_System
         {
             try
             {
-
-
                 ServiceReference1.Service1Client web = new Service1Client();
 
                 Patient p = new Patient();
@@ -100,8 +98,9 @@ namespace Alert_System
                     p.OtherContact = BoxOthercontact.Text;
                 }
 
-
                 web.UpdatePatient(p);
+
+                MessageBox.Show("Paciente alterado com sucesso", "Sucesso",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (Exception )
             {

@@ -38,12 +38,36 @@ namespace MedacProject.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string w {
+        public string Setting_url {
             get {
-                return ((string)(this["w"]));
+                return ((string)(this["Setting_url"]));
             }
             set {
-                this["w"] = value;
+                this["Setting_url"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int Setting_retmax {
+            get {
+                return ((int)(this["Setting_retmax"]));
+            }
+            set {
+                this["Setting_retmax"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Setting_delay {
+            get {
+                return ((int)(this["Setting_delay"]));
+            }
+            set {
+                this["Setting_delay"] = value;
             }
         }
     }

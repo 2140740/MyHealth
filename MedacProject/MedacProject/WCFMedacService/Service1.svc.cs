@@ -78,7 +78,7 @@ namespace WCFMedacService
                     context.SaveChanges();
                 }
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return false;
             }
@@ -140,7 +140,7 @@ namespace WCFMedacService
                 }
 
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
