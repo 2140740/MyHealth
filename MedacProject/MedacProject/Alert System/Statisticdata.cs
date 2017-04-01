@@ -53,40 +53,34 @@ namespace Alert_System
 
         private void btnshow_Click(object sender, EventArgs e)
         {
-            //Blood Pressure 3 days     
-            int[] mtmax = web.ViewBloodPressureMax(fk_sns);
-            int[] mtmin = web.ViewBloodPressureMin(fk_sns);
-            int[] mtmaxthreedays = web.ViewBloodPressureMaxthreedays(fk_sns, DateTime.Now);
-            int[] mtminthreedays = web.ViewBloodPressureMinthreedays(fk_sns, DateTime.Now);
-
-            if (lastthreedaysbp.Checked)
+            try
             {
-                for (int i = 1; i <= mtmax.Length; i++)
+
+
+                //Blood Pressure 3 days     
+                int[] mtmax = web.ViewBloodPressureMax(fk_sns);
+                int[] mtmin = web.ViewBloodPressureMin(fk_sns);
+                int[] mtmaxthreedays = web.ViewBloodPressureMaxthreedays(fk_sns, DateTime.Now);
+                int[] mtminthreedays = web.ViewBloodPressureMinthreedays(fk_sns, DateTime.Now);
+
+                if (lastthreedaysbp.Checked)
                 {
-                    maxbloodpre = mtmax.Max();
+                    for (int i = 1; i <= mtmaxthreedays.Length; i++)
+                    {
+                        maxbloodpre = mtmaxthreedays.Max();
+                    }
+                    for (int i = 1; i <= mtminthreedays.Length; i++)
+                    {
+                        minbloodpre = mtminthreedays.Min();
+                    }
+                    medpre = (mtmaxthreedays.Sum() + mtminthreedays.Sum())/
+                             (mtmaxthreedays.Length + mtminthreedays.Length);
                 }
-                for (int i = 1; i <= mtmin.Length; i++)
+
+                else
                 {
-                    minbloodpre = mtmin.Min();
-                }
-                }
-
-            //if (lastthreedayshr.Checked)
-            //{
-            //    int[] threedayshr = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
-
-            //    for (int i = 1; i <= threedayshr.Length; i++)
-            //    {
-            //        minhr = threedayshr.Min();
-            //        avehr = threedayshr.Sum() / threedayshr.Length;
-            //        maxhr = threedayshr.Max();
-            //    }
-            //}
-
-            else
-            {
-                //Blood Pressure
-                for (int i = 1; i <= mtmax.Length; i++)
+                    //Blood Pressure
+                    for (int i = 1; i <= mtmax.Length; i++)
                     {
                         maxbloodpre = mtmax.Max();
                     }
@@ -94,12 +88,18 @@ namespace Alert_System
                     {
                         minbloodpre = mtmin.Min();
                     }
+                    medpre = (mtmax.Sum() + mtmin.Sum())/(mtmax.Length + mtmin.Length);
                 }
 
-            boxmax.Text = maxbloodpre.ToString();
-            boxmin.Text = minbloodpre.ToString();
-            medpre = (mtmax.Sum() + mtmin.Sum()) / (mtmax.Length + mtmin.Length);
-            boxmed.Text = medpre.ToString();
+                boxmax.Text = maxbloodpre.ToString();
+                boxmin.Text = minbloodpre.ToString();
+                boxmed.Text = medpre.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Não existem valores nestes últimos três dias", "Erro", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         //Heart Rate
