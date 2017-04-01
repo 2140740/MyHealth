@@ -54,6 +54,12 @@ namespace Alert_System
                 DialogResult = FormViewMeasurement.ShowDialog();
             }
 
+            if (e.Node.Text.Equals("Statistic data"))
+            {
+                Statisticdata Formstatistics = new Statisticdata();
+                DialogResult = Formstatistics.ShowDialog();
+            }
+
         }
     }
 }

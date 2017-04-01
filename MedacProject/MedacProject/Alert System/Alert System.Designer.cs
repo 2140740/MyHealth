@@ -34,8 +34,10 @@
             treeNode1,
             treeNode2});
             System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("View Measurement");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Measurement", new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Statistic data");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Measurement", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertSytem));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registerPatient = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,11 +101,13 @@
             treeNode3.Text = "Patient";
             treeNode4.Name = "ViewMeasurement";
             treeNode4.Text = "View Measurement";
-            treeNode5.Name = "Node4";
-            treeNode5.Text = "Measurement";
+            treeNode5.Name = "Statistic data";
+            treeNode5.Text = "Statistic data";
+            treeNode6.Name = "Node4";
+            treeNode6.Text = "Measurement";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
-            treeNode5});
+            treeNode6});
             this.treeView1.Size = new System.Drawing.Size(154, 253);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);

@@ -74,6 +74,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Statisticdata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statisticdata.Designer.cs">
+      <DependentUpon>Statisticdata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update Pacient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="Register Pacient.resx">
       <DependentUpon>Register Pacient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statisticdata.resx">
+      <DependentUpon>Statisticdata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update Pacient.resx">
       <DependentUpon>Update Pacient.cs</DependentUpon>

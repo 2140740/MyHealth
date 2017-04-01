@@ -732,17 +732,41 @@ namespace Alert_System.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMin", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinResponse")]
         System.Threading.Tasks.Task<int[]> ViewBloodPressureMinAsync(int fk_sns);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxthreedaysResponse")]
+        int[] ViewBloodPressureMaxthreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxthreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxthreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinthreedaysResponse")]
+        int[] ViewBloodPressureMinthreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinthreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMinthreedaysAsync(int fk_sns, System.DateTime date);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
         int[] ViewHearRate(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
         System.Threading.Tasks.Task<int[]> ViewHearRateAsync(int fk_sns);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRatethreedays", ReplyAction="http://tempuri.org/IService1/ViewHearRatethreedaysResponse")]
+        int[] ViewHearRatethreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRatethreedays", ReplyAction="http://tempuri.org/IService1/ViewHearRatethreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewHearRatethreedaysAsync(int fk_sns, System.DateTime date);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
         int[] ViewOxygenSaturation(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
         System.Threading.Tasks.Task<int[]> ViewOxygenSaturationAsync(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse")]
+        int[] ViewOxygenSaturationthreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewOxygenSaturationthreedaysAsync(int fk_sns, System.DateTime date);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -820,6 +844,22 @@ namespace Alert_System.ServiceReference1 {
             return base.Channel.ViewBloodPressureMinAsync(fk_sns);
         }
         
+        public int[] ViewBloodPressureMaxthreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMaxthreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxthreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMaxthreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewBloodPressureMinthreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMinthreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMinthreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMinthreedaysAsync(fk_sns, date);
+        }
+        
         public int[] ViewHearRate(int fk_sns) {
             return base.Channel.ViewHearRate(fk_sns);
         }
@@ -828,12 +868,28 @@ namespace Alert_System.ServiceReference1 {
             return base.Channel.ViewHearRateAsync(fk_sns);
         }
         
+        public int[] ViewHearRatethreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewHearRatethreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewHearRatethreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewHearRatethreedaysAsync(fk_sns, date);
+        }
+        
         public int[] ViewOxygenSaturation(int fk_sns) {
             return base.Channel.ViewOxygenSaturation(fk_sns);
         }
         
         public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationAsync(int fk_sns) {
             return base.Channel.ViewOxygenSaturationAsync(fk_sns);
+        }
+        
+        public int[] ViewOxygenSaturationthreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewOxygenSaturationthreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationthreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewOxygenSaturationthreedaysAsync(fk_sns, date);
         }
     }
 }

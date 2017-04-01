@@ -44,17 +44,41 @@
   <wsdl:message name="IService1_ViewBloodPressureMin_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewBloodPressureMinResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ViewBloodPressureMaxthreedays_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewBloodPressureMaxthreedays" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewBloodPressureMaxthreedays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewBloodPressureMaxthreedaysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewBloodPressureMinthreedays_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewBloodPressureMinthreedays" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewBloodPressureMinthreedays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewBloodPressureMinthreedaysResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ViewHearRate_InputMessage">
     <wsdl:part name="parameters" element="tns:ViewHearRate" />
   </wsdl:message>
   <wsdl:message name="IService1_ViewHearRate_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewHearRateResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ViewHearRatethreedays_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewHearRatethreedays" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewHearRatethreedays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewHearRatethreedaysResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ViewOxygenSaturation_InputMessage">
     <wsdl:part name="parameters" element="tns:ViewOxygenSaturation" />
   </wsdl:message>
   <wsdl:message name="IService1_ViewOxygenSaturation_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewOxygenSaturationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewOxygenSaturationthreedays_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewOxygenSaturationthreedays" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewOxygenSaturationthreedays_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewOxygenSaturationthreedaysResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ValidadePatient">
@@ -81,13 +105,29 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewBloodPressureMin" message="tns:IService1_ViewBloodPressureMin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewBloodPressureMinResponse" message="tns:IService1_ViewBloodPressureMin_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ViewBloodPressureMaxthreedays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewBloodPressureMaxthreedays" message="tns:IService1_ViewBloodPressureMaxthreedays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewBloodPressureMaxthreedaysResponse" message="tns:IService1_ViewBloodPressureMaxthreedays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewBloodPressureMinthreedays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedays" message="tns:IService1_ViewBloodPressureMinthreedays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedaysResponse" message="tns:IService1_ViewBloodPressureMinthreedays_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ViewHearRate">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewHearRate" message="tns:IService1_ViewHearRate_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewHearRateResponse" message="tns:IService1_ViewHearRate_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ViewHearRatethreedays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewHearRatethreedays" message="tns:IService1_ViewHearRatethreedays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewHearRatethreedaysResponse" message="tns:IService1_ViewHearRatethreedays_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ViewOxygenSaturation">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturation" message="tns:IService1_ViewOxygenSaturation_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationResponse" message="tns:IService1_ViewOxygenSaturation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewOxygenSaturationthreedays">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays" message="tns:IService1_ViewOxygenSaturationthreedays_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse" message="tns:IService1_ViewOxygenSaturationthreedays_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -146,6 +186,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ViewBloodPressureMaxthreedays">
+      <soap:operation soapAction="http://tempuri.org/IService1/ViewBloodPressureMaxthreedays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewBloodPressureMinthreedays">
+      <soap:operation soapAction="http://tempuri.org/IService1/ViewBloodPressureMinthreedays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ViewHearRate">
       <soap:operation soapAction="http://tempuri.org/IService1/ViewHearRate" style="document" />
       <wsdl:input>
@@ -155,8 +213,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ViewHearRatethreedays">
+      <soap:operation soapAction="http://tempuri.org/IService1/ViewHearRatethreedays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ViewOxygenSaturation">
       <soap:operation soapAction="http://tempuri.org/IService1/ViewOxygenSaturation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewOxygenSaturationthreedays">
+      <soap:operation soapAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedays" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

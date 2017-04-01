@@ -24,41 +24,22 @@ namespace Alert_System
         private void View_Measurement_Load(object sender, EventArgs e)
         {
             
-            /*
-            ServiceReference1.Service1Client web = new Service1Client();
-
-            MeasurementDC mt = web.ViewMeasurement(fk_sns);
-
-            textBox1.Text = mt.Bloodpressuremax.ToString();
-            textBox2.Text = mt.Bloodpressuremin.ToString();
-            textBox3.Text = mt.Heartrate.ToString();
-            textBox4.Text = mt.Oxygensaturation.ToString();
-            textBox5.Text = mt.Date.ToString();
-            textBox6.Text = mt.Time.ToString();
-            textBox7.Text = mt.Fk_sns.ToString();
-
-            chart1.Titles.Add("Blood Pressure");
-            chart1.Series.Add("Blood Pressure Min");
-            chart1.Series.Add("Blood Pressure Max");
-
-            chart1.Series["Blood Pressure Min"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            chart1.Series["Blood Pressure Max"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-
-            int[] bloodpressureMax = {Convert.ToInt32(textBox1.Text), 100 , 200, 300};
-            int[] bloodpressureMin = {Convert.ToInt32(textBox2.Text), 90, 100, 150};
-
-            chart1.Series[1].Points.DataBindXY(bloodpressureMin,bloodpressureMax);
-            chart1.Series[2].Points.DataBindXY(bloodpressureMax,bloodpressureMin);
-            */
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fk_sns = Convert.ToInt32(textBox8.Text);
+            try
+            {
+                fk_sns = Convert.ToInt32(textBox8.Text);
 
-            PatientDC p = web.ValidadePatient(Convert.ToInt32(textBox8.Text));
+                PatientDC p = web.ValidadePatient(Convert.ToInt32(textBox8.Text));
 
-            MessageBox.Show("Bem vindo Sr.(a)" + p.Firstname);
+                MessageBox.Show("Paciente: " + p.Firstname);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Não foi encontrado paciente");
+            }
         }
 
         private void pressuregraph_Click(object sender, EventArgs e)
@@ -134,6 +115,12 @@ namespace Alert_System
             {
                 chart1.Series[1].Points.AddY(Convert.ToInt32(os[i - 1]));
             }
+        }
+
+        private void statisticData_Click(object sender, EventArgs e)
+        {
+            Statisticdata Formstatistics = new Statisticdata();
+            DialogResult = Formstatistics.ShowDialog();
         }
     }
 }

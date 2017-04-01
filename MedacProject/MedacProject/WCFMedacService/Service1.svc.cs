@@ -168,6 +168,35 @@ namespace WCFMedacService
 
         }
 
+        //Blood Pressure MIN 3 days
+        public List<int> ViewBloodPressureMaxthreedays(int fk_sns, DateTime date)
+        {
+            int x = -3;
+
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListbloodpressureMax = new List<int>();
+
+            DateTime dateForButton = DateTime.Now.AddDays(x);
+
+
+            do
+            {
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.BloodPressureMax != 0)
+                    {
+                        ListbloodpressureMax.Add(Convert.ToInt32(mte.BloodPressureMax));
+                    }
+                }
+                x = x + 1;
+                dateForButton = DateTime.Now.AddDays(x);
+            } while (x <= 0);
+
+            return ListbloodpressureMax;
+        }
+
         //Blood Pressure MIN
         public List<int> ViewBloodPressureMin(int fk_sns)
         {
@@ -189,6 +218,35 @@ namespace WCFMedacService
             return ListbloodpressureMin;
         }
 
+        //Blood Pressure MIN 3 days
+        public List<int> ViewBloodPressureMinthreedays(int fk_sns, DateTime date)
+        {
+            int x = -3;
+
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListbloodpressureMin = new List<int>();
+
+            DateTime dateForButton = DateTime.Now.AddDays(x);
+
+
+            do
+            {
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.BloodPressureMin != 0)
+                    {
+                        ListbloodpressureMin.Add(Convert.ToInt32(mte.BloodPressureMin));
+                    }
+                }
+                x = x + 1;
+                dateForButton = DateTime.Now.AddDays(x);
+            } while (x <= 0);
+
+            return ListbloodpressureMin;
+        }
+
         //HEART RATE
         public List<int> ViewHearRate(int fk_sns)
         {
@@ -200,11 +258,40 @@ namespace WCFMedacService
 
             foreach (var mte in m)
             {
-                if (mte.BloodPressureMax != 0)
+                if (mte.HeartRate != 0)
                 {
                     ListHeartRate.Add(Convert.ToInt32(mte.HeartRate));
                 }
             }
+
+            return ListHeartRate;
+        }
+
+        //Heart Rate 3 days
+        public List<int> ViewHearRatethreedays(int fk_sns, DateTime date)
+        {
+            int x = -3;
+
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListHeartRate = new List<int>();
+
+            DateTime dateForButton = DateTime.Now.AddDays(x);
+
+
+            do
+            {
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.HeartRate != 0)
+                    {
+                        ListHeartRate.Add(Convert.ToInt32(mte.HeartRate));
+                    }
+                }
+                x = x + 1;
+                dateForButton = DateTime.Now.AddDays(x);
+            } while (x <= 0);
 
             return ListHeartRate;
         }
@@ -220,11 +307,40 @@ namespace WCFMedacService
 
             foreach (var mte in m)
             {
-                if (mte.BloodPressureMax != 0)
+                if (mte.OxygenSaturation != 0)
                 {
                     ListOxygenSaturation.Add(Convert.ToInt32(mte.OxygenSaturation));
                 }
             }
+            return ListOxygenSaturation;
+        }
+
+
+        //OxygenSaturation 3 days
+        public List<int> ViewOxygenSaturationthreedays(int fk_sns, DateTime date)
+        {
+            int x = -3;
+
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListOxygenSaturation = new List<int>();
+
+            DateTime dateForButton = DateTime.Now.AddDays(x);
+
+            
+            do
+            {
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.OxygenSaturation != 0)
+                    {
+                        ListOxygenSaturation.Add(Convert.ToInt32(mte.OxygenSaturation));
+                    }
+                }
+                x = x + 1;
+                dateForButton = DateTime.Now.AddDays(x);
+            } while (x<=0);
 
             return ListOxygenSaturation;
         }

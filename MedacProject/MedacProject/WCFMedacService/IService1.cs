@@ -35,11 +35,22 @@ namespace WCFMedacService
         List<int> ViewBloodPressureMin(int fk_sns);
 
         [OperationContract]
+        List<int> ViewBloodPressureMaxthreedays(int fk_sns, DateTime date);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMinthreedays(int fk_sns, DateTime date);
+
+        [OperationContract]
         List<int> ViewHearRate(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewHearRatethreedays(int fk_sns, DateTime date);
 
         [OperationContract]
         List<int> ViewOxygenSaturation(int fk_sns);
 
+        [OperationContract]
+        List<int> ViewOxygenSaturationthreedays(int fk_sns, DateTime date);
     }
 
     [DataContract]

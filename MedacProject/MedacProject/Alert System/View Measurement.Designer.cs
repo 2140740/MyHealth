@@ -39,20 +39,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.heartrategraph = new System.Windows.Forms.Button();
             this.oxygengraph = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.statisticData = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(40, 12);
+            this.textBox8.Location = new System.Drawing.Point(33, 39);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(144, 20);
             this.textBox8.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(190, 9);
+            this.button1.Location = new System.Drawing.Point(183, 36);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 9;
@@ -62,7 +65,7 @@
             // 
             // pressuregraph
             // 
-            this.pressuregraph.Location = new System.Drawing.Point(40, 60);
+            this.pressuregraph.Location = new System.Drawing.Point(33, 87);
             this.pressuregraph.Name = "pressuregraph";
             this.pressuregraph.Size = new System.Drawing.Size(114, 23);
             this.pressuregraph.TabIndex = 10;
@@ -92,14 +95,14 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.chart1);
-            this.panel1.Location = new System.Drawing.Point(200, 50);
+            this.panel1.Location = new System.Drawing.Point(193, 77);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(604, 341);
             this.panel1.TabIndex = 11;
             // 
             // heartrategraph
             // 
-            this.heartrategraph.Location = new System.Drawing.Point(40, 89);
+            this.heartrategraph.Location = new System.Drawing.Point(33, 116);
             this.heartrategraph.Name = "heartrategraph";
             this.heartrategraph.Size = new System.Drawing.Size(114, 23);
             this.heartrategraph.TabIndex = 12;
@@ -109,7 +112,7 @@
             // 
             // oxygengraph
             // 
-            this.oxygengraph.Location = new System.Drawing.Point(40, 118);
+            this.oxygengraph.Location = new System.Drawing.Point(33, 145);
             this.oxygengraph.Name = "oxygengraph";
             this.oxygengraph.Size = new System.Drawing.Size(114, 23);
             this.oxygengraph.TabIndex = 13;
@@ -117,24 +120,45 @@
             this.oxygengraph.UseVisualStyleBackColor = true;
             this.oxygengraph.Click += new System.EventHandler(this.oxygengraph_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statisticData});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(819, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // statisticData
+            // 
+            this.statisticData.Name = "statisticData";
+            this.statisticData.Size = new System.Drawing.Size(87, 20);
+            this.statisticData.Text = "Statistic Data";
+            this.statisticData.Click += new System.EventHandler(this.statisticData_Click);
+            // 
             // View_Measurement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 490);
+            this.ClientSize = new System.Drawing.Size(819, 433);
             this.Controls.Add(this.oxygengraph);
             this.Controls.Add(this.heartrategraph);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.pressuregraph);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "View_Measurement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Measurement";
             this.Load += new System.EventHandler(this.View_Measurement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +172,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button heartrategraph;
         private System.Windows.Forms.Button oxygengraph;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem statisticData;
     }
 }
