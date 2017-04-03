@@ -23,3 +23,4 @@ D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert Sys
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.AlertSytem.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.AlertSytem.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Statisticdata.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Statisticdata.resources

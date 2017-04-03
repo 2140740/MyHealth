@@ -247,6 +247,18 @@ namespace WCFMedacService
             return ListbloodpressureMin;
         }
 
+        ////Blood Pressure MAX Calendar
+        //List<int> ViewBloodPressureMaxCalendar(int fk_sns, DateTime date, DateTime date2)
+        //{
+            
+        //}
+
+        ////Blood Pressure MIN Calendar
+        //List<int> ViewBloodPressureMinCalendar(int fk_sns, DateTime date, DateTime date2)
+        //{
+            
+        //}
+
         //HEART RATE
         public List<int> ViewHearRate(int fk_sns)
         {
@@ -296,6 +308,12 @@ namespace WCFMedacService
             return ListHeartRate;
         }
 
+        ////Heart Rate Calendar
+        //List<int> ViewHearRateCalendar(int fk_sns, DateTime date, DateTime date2)
+        //{
+            
+        //}
+
         //OXYGEN SATURATION
         public List<int> ViewOxygenSaturation(int fk_sns)
         {
@@ -341,6 +359,32 @@ namespace WCFMedacService
                 x = x + 1;
                 dateForButton = DateTime.Now.AddDays(x);
             } while (x<=0);
+
+            return ListOxygenSaturation;
+        }
+
+        //OxygenSaturation Calendar
+        List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2)
+        {
+            int x = 0;
+
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListOxygenSaturation = new List<int>();
+
+            do
+            {
+                
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day).Where(t => t.Date.Day == date2.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.OxygenSaturation != 0)
+                    {
+                        ListOxygenSaturation.Add(Convert.ToInt32(mte.OxygenSaturation));
+                    }
+                }
+                x = x + 1;
+            } while (x <= 0);
 
             return ListOxygenSaturation;
         }

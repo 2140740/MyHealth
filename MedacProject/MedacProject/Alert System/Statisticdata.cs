@@ -13,7 +13,6 @@ namespace Alert_System
 {
     public partial class Statisticdata : Form
     {
-
         int fk_sns = 0;
         ServiceReference1.Service1Client web = new Service1Client();
         //Blood Pressure
@@ -148,6 +147,18 @@ namespace Alert_System
                     maxos = threedaysos.Max();
                 }
             }
+
+            else if(choosedatesos.Checked)
+            {
+                int[] threedaysos = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
+
+                for (int i = 1; i <= threedaysos.Length; i++)
+                {
+                    minos = threedaysos.Min();
+                    aveos = threedaysos.Sum() / threedaysos.Length;
+                    maxos = threedaysos.Max();
+                }
+            }
             else {
                 //Oxygen Saturation
                 int[] os = web.ViewOxygenSaturation(fk_sns);
@@ -164,6 +175,17 @@ namespace Alert_System
             boxminos.Text = minos.ToString();
             boxaveos.Text = aveos.ToString();
             boxmaxos.Text = maxos.ToString();
+
+        }
+
+        private void Statisticdata_Load(object sender, EventArgs e)
+        {
+            dateTimePickerbp.MaxDate = DateTime.Today;
+            dateTimePickerbp2.MaxDate = DateTime.Today;
+            dateTimePickeros.MaxDate = DateTime.Today;
+            dateTimePickeros2.MaxDate = DateTime.Today;
+            dateTimePickerhr.MaxDate = DateTime.Today;
+            dateTimePickerhr2.MaxDate = DateTime.Today;
 
         }
     }

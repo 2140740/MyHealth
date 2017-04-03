@@ -40,7 +40,6 @@
             this.boxmax = new System.Windows.Forms.TextBox();
             this.btnshow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lastthreedaysbp = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnshowhr = new System.Windows.Forms.Button();
             this.boxminhr = new System.Windows.Forms.TextBox();
@@ -57,8 +56,18 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.boxmaxos = new System.Windows.Forms.TextBox();
-            this.lastthreedayshr = new System.Windows.Forms.CheckBox();
-            this.lastthreedaysos = new System.Windows.Forms.CheckBox();
+            this.lastthreedaysos = new System.Windows.Forms.RadioButton();
+            this.choosedatesos = new System.Windows.Forms.RadioButton();
+            this.lastthreedayshr = new System.Windows.Forms.RadioButton();
+            this.choosedateshr = new System.Windows.Forms.RadioButton();
+            this.lastthreedaysbp = new System.Windows.Forms.RadioButton();
+            this.choosedatespb = new System.Windows.Forms.RadioButton();
+            this.dateTimePickeros = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickeros2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerhr2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerhr = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerbp2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerbp = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -154,6 +163,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePickerbp2);
+            this.groupBox1.Controls.Add(this.choosedatespb);
+            this.groupBox1.Controls.Add(this.dateTimePickerbp);
             this.groupBox1.Controls.Add(this.lastthreedaysbp);
             this.groupBox1.Controls.Add(this.boxmin);
             this.groupBox1.Controls.Add(this.label2);
@@ -164,23 +176,16 @@
             this.groupBox1.Controls.Add(this.boxmed);
             this.groupBox1.Location = new System.Drawing.Point(270, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(297, 106);
+            this.groupBox1.Size = new System.Drawing.Size(347, 175);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Blood Pressure:";
             // 
-            // lastthreedaysbp
-            // 
-            this.lastthreedaysbp.AutoSize = true;
-            this.lastthreedaysbp.Location = new System.Drawing.Point(86, 79);
-            this.lastthreedaysbp.Name = "lastthreedaysbp";
-            this.lastthreedaysbp.Size = new System.Drawing.Size(80, 17);
-            this.lastthreedaysbp.TabIndex = 21;
-            this.lastthreedaysbp.Text = "Last 3 days";
-            this.lastthreedaysbp.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePickerhr2);
+            this.groupBox2.Controls.Add(this.choosedateshr);
+            this.groupBox2.Controls.Add(this.dateTimePickerhr);
             this.groupBox2.Controls.Add(this.lastthreedayshr);
             this.groupBox2.Controls.Add(this.btnshowhr);
             this.groupBox2.Controls.Add(this.boxminhr);
@@ -189,9 +194,9 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.boxmaxhr);
-            this.groupBox2.Location = new System.Drawing.Point(270, 136);
+            this.groupBox2.Location = new System.Drawing.Point(270, 193);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(297, 106);
+            this.groupBox2.Size = new System.Drawing.Size(347, 181);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Heart Rate:";
@@ -259,6 +264,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dateTimePickeros2);
+            this.groupBox3.Controls.Add(this.dateTimePickeros);
+            this.groupBox3.Controls.Add(this.choosedatesos);
             this.groupBox3.Controls.Add(this.lastthreedaysos);
             this.groupBox3.Controls.Add(this.btnshowos);
             this.groupBox3.Controls.Add(this.boxminos);
@@ -267,9 +275,9 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.boxmaxos);
-            this.groupBox3.Location = new System.Drawing.Point(270, 269);
+            this.groupBox3.Location = new System.Drawing.Point(270, 380);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(297, 106);
+            this.groupBox3.Size = new System.Drawing.Size(347, 175);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Oxygen Saturation:";
@@ -335,31 +343,119 @@
             this.boxmaxos.Size = new System.Drawing.Size(81, 20);
             this.boxmaxos.TabIndex = 26;
             // 
-            // lastthreedayshr
-            // 
-            this.lastthreedayshr.AutoSize = true;
-            this.lastthreedayshr.Location = new System.Drawing.Point(86, 89);
-            this.lastthreedayshr.Name = "lastthreedayshr";
-            this.lastthreedayshr.Size = new System.Drawing.Size(80, 17);
-            this.lastthreedayshr.TabIndex = 22;
-            this.lastthreedayshr.Text = "Last 3 days";
-            this.lastthreedayshr.UseVisualStyleBackColor = true;
-            // 
             // lastthreedaysos
             // 
             this.lastthreedaysos.AutoSize = true;
-            this.lastthreedaysos.Location = new System.Drawing.Point(86, 83);
+            this.lastthreedaysos.Location = new System.Drawing.Point(16, 106);
             this.lastthreedaysos.Name = "lastthreedaysos";
-            this.lastthreedaysos.Size = new System.Drawing.Size(80, 17);
-            this.lastthreedaysos.TabIndex = 23;
+            this.lastthreedaysos.Size = new System.Drawing.Size(79, 17);
+            this.lastthreedaysos.TabIndex = 27;
+            this.lastthreedaysos.TabStop = true;
             this.lastthreedaysos.Text = "Last 3 days";
             this.lastthreedaysos.UseVisualStyleBackColor = true;
+            // 
+            // choosedatesos
+            // 
+            this.choosedatesos.AutoSize = true;
+            this.choosedatesos.Location = new System.Drawing.Point(16, 129);
+            this.choosedatesos.Name = "choosedatesos";
+            this.choosedatesos.Size = new System.Drawing.Size(95, 17);
+            this.choosedatesos.TabIndex = 28;
+            this.choosedatesos.TabStop = true;
+            this.choosedatesos.Text = "Choose Dates:";
+            this.choosedatesos.UseVisualStyleBackColor = true;
+            // 
+            // lastthreedayshr
+            // 
+            this.lastthreedayshr.AutoSize = true;
+            this.lastthreedayshr.Location = new System.Drawing.Point(16, 112);
+            this.lastthreedayshr.Name = "lastthreedayshr";
+            this.lastthreedayshr.Size = new System.Drawing.Size(79, 17);
+            this.lastthreedayshr.TabIndex = 27;
+            this.lastthreedayshr.TabStop = true;
+            this.lastthreedayshr.Text = "Last 3 days";
+            this.lastthreedayshr.UseVisualStyleBackColor = true;
+            // 
+            // choosedateshr
+            // 
+            this.choosedateshr.AutoSize = true;
+            this.choosedateshr.Location = new System.Drawing.Point(16, 135);
+            this.choosedateshr.Name = "choosedateshr";
+            this.choosedateshr.Size = new System.Drawing.Size(95, 17);
+            this.choosedateshr.TabIndex = 28;
+            this.choosedateshr.TabStop = true;
+            this.choosedateshr.Text = "Choose Dates:";
+            this.choosedateshr.UseVisualStyleBackColor = true;
+            // 
+            // lastthreedaysbp
+            // 
+            this.lastthreedaysbp.AutoSize = true;
+            this.lastthreedaysbp.Location = new System.Drawing.Point(16, 102);
+            this.lastthreedaysbp.Name = "lastthreedaysbp";
+            this.lastthreedaysbp.Size = new System.Drawing.Size(79, 17);
+            this.lastthreedaysbp.TabIndex = 22;
+            this.lastthreedaysbp.TabStop = true;
+            this.lastthreedaysbp.Text = "Last 3 days";
+            this.lastthreedaysbp.UseVisualStyleBackColor = true;
+            // 
+            // choosedatespb
+            // 
+            this.choosedatespb.AutoSize = true;
+            this.choosedatespb.Location = new System.Drawing.Point(16, 125);
+            this.choosedatespb.Name = "choosedatespb";
+            this.choosedatespb.Size = new System.Drawing.Size(95, 17);
+            this.choosedatespb.TabIndex = 23;
+            this.choosedatespb.TabStop = true;
+            this.choosedatespb.Text = "Choose Dates:";
+            this.choosedatespb.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickeros
+            // 
+            this.dateTimePickeros.Location = new System.Drawing.Point(129, 125);
+            this.dateTimePickeros.Name = "dateTimePickeros";
+            this.dateTimePickeros.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickeros.TabIndex = 28;
+            // 
+            // dateTimePickeros2
+            // 
+            this.dateTimePickeros2.Location = new System.Drawing.Point(129, 151);
+            this.dateTimePickeros2.Name = "dateTimePickeros2";
+            this.dateTimePickeros2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickeros2.TabIndex = 30;
+            // 
+            // dateTimePickerhr2
+            // 
+            this.dateTimePickerhr2.Location = new System.Drawing.Point(129, 157);
+            this.dateTimePickerhr2.Name = "dateTimePickerhr2";
+            this.dateTimePickerhr2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerhr2.TabIndex = 32;
+            // 
+            // dateTimePickerhr
+            // 
+            this.dateTimePickerhr.Location = new System.Drawing.Point(129, 131);
+            this.dateTimePickerhr.Name = "dateTimePickerhr";
+            this.dateTimePickerhr.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerhr.TabIndex = 31;
+            // 
+            // dateTimePickerbp2
+            // 
+            this.dateTimePickerbp2.Location = new System.Drawing.Point(129, 147);
+            this.dateTimePickerbp2.Name = "dateTimePickerbp2";
+            this.dateTimePickerbp2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerbp2.TabIndex = 32;
+            // 
+            // dateTimePickerbp
+            // 
+            this.dateTimePickerbp.Location = new System.Drawing.Point(129, 121);
+            this.dateTimePickerbp.Name = "dateTimePickerbp";
+            this.dateTimePickerbp.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerbp.TabIndex = 31;
             // 
             // Statisticdata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(579, 450);
+            this.ClientSize = new System.Drawing.Size(629, 557);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -370,6 +466,7 @@
             this.Name = "Statisticdata";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Statistic Data";
+            this.Load += new System.EventHandler(this.Statisticdata_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -410,8 +507,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox boxmaxos;
-        private System.Windows.Forms.CheckBox lastthreedaysbp;
-        private System.Windows.Forms.CheckBox lastthreedayshr;
-        private System.Windows.Forms.CheckBox lastthreedaysos;
+        private System.Windows.Forms.RadioButton choosedatesos;
+        private System.Windows.Forms.RadioButton lastthreedaysos;
+        private System.Windows.Forms.RadioButton choosedatespb;
+        private System.Windows.Forms.RadioButton lastthreedaysbp;
+        private System.Windows.Forms.RadioButton choosedateshr;
+        private System.Windows.Forms.RadioButton lastthreedayshr;
+        private System.Windows.Forms.DateTimePicker dateTimePickeros;
+        private System.Windows.Forms.DateTimePicker dateTimePickerbp2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerbp;
+        private System.Windows.Forms.DateTimePicker dateTimePickerhr2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerhr;
+        private System.Windows.Forms.DateTimePicker dateTimePickeros2;
     }
 }
