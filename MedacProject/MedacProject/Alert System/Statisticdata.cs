@@ -76,7 +76,7 @@ namespace Alert_System
                              (mtmaxthreedays.Length + mtminthreedays.Length);
                 }
 
-                else
+                else if(alltimebp.Checked)
                 {
                     //Blood Pressure
                     for (int i = 1; i <= mtmax.Length; i++)
@@ -115,7 +115,7 @@ namespace Alert_System
                     maxhr = threedayshr.Max();
                 }
             }
-            else
+            else if(alltimehr.Checked)
             {      
                 int[] hr = web.ViewHearRate(fk_sns);
     
@@ -150,16 +150,16 @@ namespace Alert_System
 
             else if(choosedatesos.Checked)
             {
-                int[] threedaysos = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
+                int[] oschoosedates = web.ViewOxygenSaturationCalendar(fk_sns, dateTimePickeros.Value.Date, dateTimePickeros2.Value.Date);
 
-                for (int i = 1; i <= threedaysos.Length; i++)
+                for (int i = 1; i <= oschoosedates.Length; i++)
                 {
-                    minos = threedaysos.Min();
-                    aveos = threedaysos.Sum() / threedaysos.Length;
-                    maxos = threedaysos.Max();
+                    minos = oschoosedates.Min();
+                    aveos = oschoosedates.Sum() / oschoosedates.Length;
+                    maxos = oschoosedates.Max();
                 }
             }
-            else {
+            else if(alltimeos.Checked) {
                 //Oxygen Saturation
                 int[] os = web.ViewOxygenSaturation(fk_sns);
 

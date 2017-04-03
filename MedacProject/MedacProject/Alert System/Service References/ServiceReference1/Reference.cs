@@ -767,6 +767,12 @@ namespace Alert_System.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse")]
         System.Threading.Tasks.Task<int[]> ViewOxygenSaturationthreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse")]
+        int[] ViewOxygenSaturationCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -890,6 +896,14 @@ namespace Alert_System.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationthreedaysAsync(int fk_sns, System.DateTime date) {
             return base.Channel.ViewOxygenSaturationthreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewOxygenSaturationCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewOxygenSaturationCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewOxygenSaturationCalendarAsync(fk_sns, date, date2);
         }
     }
 }

@@ -364,7 +364,7 @@ namespace WCFMedacService
         }
 
         //OxygenSaturation Calendar
-        List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2)
+        public List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2)
         {
             int x = 0;
 
@@ -375,7 +375,7 @@ namespace WCFMedacService
             do
             {
                 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day).Where(t => t.Date.Day == date2.Day);
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
                 foreach (var mte in m)
                 {
                     if (mte.OxygenSaturation != 0)
@@ -383,8 +383,9 @@ namespace WCFMedacService
                         ListOxygenSaturation.Add(Convert.ToInt32(mte.OxygenSaturation));
                     }
                 }
-                x = x + 1;
-            } while (x <= 0);
+
+                date = date.AddDays(1);
+            } while (date.Day <= date2.Day);
 
             return ListOxygenSaturation;
         }

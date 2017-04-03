@@ -80,6 +80,12 @@
   <wsdl:message name="IService1_ViewOxygenSaturationthreedays_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewOxygenSaturationthreedaysResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ViewOxygenSaturationCalendar_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewOxygenSaturationCalendar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewOxygenSaturationCalendar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewOxygenSaturationCalendarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ValidadePatient">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ValidadePatient" message="tns:IService1_ValidadePatient_InputMessage" />
@@ -128,6 +134,10 @@
     <wsdl:operation name="ViewOxygenSaturationthreedays">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays" message="tns:IService1_ViewOxygenSaturationthreedays_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse" message="tns:IService1_ViewOxygenSaturationthreedays_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewOxygenSaturationCalendar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar" message="tns:IService1_ViewOxygenSaturationCalendar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse" message="tns:IService1_ViewOxygenSaturationCalendar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -233,6 +243,15 @@
     </wsdl:operation>
     <wsdl:operation name="ViewOxygenSaturationthreedays">
       <soap:operation soapAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedays" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewOxygenSaturationCalendar">
+      <soap:operation soapAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

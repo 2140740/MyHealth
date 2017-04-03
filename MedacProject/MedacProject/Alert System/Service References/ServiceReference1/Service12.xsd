@@ -190,4 +190,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ViewOxygenSaturationCalendar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="date2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewOxygenSaturationCalendarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationCalendarResult" nillable="true" type="q13:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

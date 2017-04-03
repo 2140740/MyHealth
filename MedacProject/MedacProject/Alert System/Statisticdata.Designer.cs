@@ -40,7 +40,15 @@
             this.boxmax = new System.Windows.Forms.TextBox();
             this.btnshow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerbp2 = new System.Windows.Forms.DateTimePicker();
+            this.choosedatespb = new System.Windows.Forms.RadioButton();
+            this.dateTimePickerbp = new System.Windows.Forms.DateTimePicker();
+            this.lastthreedaysbp = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerhr2 = new System.Windows.Forms.DateTimePicker();
+            this.choosedateshr = new System.Windows.Forms.RadioButton();
+            this.dateTimePickerhr = new System.Windows.Forms.DateTimePicker();
+            this.lastthreedayshr = new System.Windows.Forms.RadioButton();
             this.btnshowhr = new System.Windows.Forms.Button();
             this.boxminhr = new System.Windows.Forms.TextBox();
             this.boxavehr = new System.Windows.Forms.TextBox();
@@ -49,6 +57,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.boxmaxhr = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dateTimePickeros2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickeros = new System.Windows.Forms.DateTimePicker();
+            this.choosedatesos = new System.Windows.Forms.RadioButton();
+            this.lastthreedaysos = new System.Windows.Forms.RadioButton();
             this.btnshowos = new System.Windows.Forms.Button();
             this.boxminos = new System.Windows.Forms.TextBox();
             this.boxaveos = new System.Windows.Forms.TextBox();
@@ -56,18 +68,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.boxmaxos = new System.Windows.Forms.TextBox();
-            this.lastthreedaysos = new System.Windows.Forms.RadioButton();
-            this.choosedatesos = new System.Windows.Forms.RadioButton();
-            this.lastthreedayshr = new System.Windows.Forms.RadioButton();
-            this.choosedateshr = new System.Windows.Forms.RadioButton();
-            this.lastthreedaysbp = new System.Windows.Forms.RadioButton();
-            this.choosedatespb = new System.Windows.Forms.RadioButton();
-            this.dateTimePickeros = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickeros2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerhr2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerhr = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerbp2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerbp = new System.Windows.Forms.DateTimePicker();
+            this.alltimeos = new System.Windows.Forms.RadioButton();
+            this.alltimehr = new System.Windows.Forms.RadioButton();
+            this.alltimebp = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -163,6 +166,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.alltimebp);
             this.groupBox1.Controls.Add(this.dateTimePickerbp2);
             this.groupBox1.Controls.Add(this.choosedatespb);
             this.groupBox1.Controls.Add(this.dateTimePickerbp);
@@ -181,8 +185,45 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Blood Pressure:";
             // 
+            // dateTimePickerbp2
+            // 
+            this.dateTimePickerbp2.Location = new System.Drawing.Point(129, 147);
+            this.dateTimePickerbp2.Name = "dateTimePickerbp2";
+            this.dateTimePickerbp2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerbp2.TabIndex = 32;
+            // 
+            // choosedatespb
+            // 
+            this.choosedatespb.AutoSize = true;
+            this.choosedatespb.Location = new System.Drawing.Point(16, 125);
+            this.choosedatespb.Name = "choosedatespb";
+            this.choosedatespb.Size = new System.Drawing.Size(95, 17);
+            this.choosedatespb.TabIndex = 23;
+            this.choosedatespb.TabStop = true;
+            this.choosedatespb.Text = "Choose Dates:";
+            this.choosedatespb.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerbp
+            // 
+            this.dateTimePickerbp.Location = new System.Drawing.Point(129, 121);
+            this.dateTimePickerbp.Name = "dateTimePickerbp";
+            this.dateTimePickerbp.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerbp.TabIndex = 31;
+            // 
+            // lastthreedaysbp
+            // 
+            this.lastthreedaysbp.AutoSize = true;
+            this.lastthreedaysbp.Location = new System.Drawing.Point(16, 102);
+            this.lastthreedaysbp.Name = "lastthreedaysbp";
+            this.lastthreedaysbp.Size = new System.Drawing.Size(79, 17);
+            this.lastthreedaysbp.TabIndex = 22;
+            this.lastthreedaysbp.TabStop = true;
+            this.lastthreedaysbp.Text = "Last 3 days";
+            this.lastthreedaysbp.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.alltimehr);
             this.groupBox2.Controls.Add(this.dateTimePickerhr2);
             this.groupBox2.Controls.Add(this.choosedateshr);
             this.groupBox2.Controls.Add(this.dateTimePickerhr);
@@ -200,6 +241,42 @@
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Heart Rate:";
+            // 
+            // dateTimePickerhr2
+            // 
+            this.dateTimePickerhr2.Location = new System.Drawing.Point(129, 157);
+            this.dateTimePickerhr2.Name = "dateTimePickerhr2";
+            this.dateTimePickerhr2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerhr2.TabIndex = 32;
+            // 
+            // choosedateshr
+            // 
+            this.choosedateshr.AutoSize = true;
+            this.choosedateshr.Location = new System.Drawing.Point(16, 135);
+            this.choosedateshr.Name = "choosedateshr";
+            this.choosedateshr.Size = new System.Drawing.Size(95, 17);
+            this.choosedateshr.TabIndex = 28;
+            this.choosedateshr.TabStop = true;
+            this.choosedateshr.Text = "Choose Dates:";
+            this.choosedateshr.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerhr
+            // 
+            this.dateTimePickerhr.Location = new System.Drawing.Point(129, 131);
+            this.dateTimePickerhr.Name = "dateTimePickerhr";
+            this.dateTimePickerhr.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerhr.TabIndex = 31;
+            // 
+            // lastthreedayshr
+            // 
+            this.lastthreedayshr.AutoSize = true;
+            this.lastthreedayshr.Location = new System.Drawing.Point(16, 112);
+            this.lastthreedayshr.Name = "lastthreedayshr";
+            this.lastthreedayshr.Size = new System.Drawing.Size(79, 17);
+            this.lastthreedayshr.TabIndex = 27;
+            this.lastthreedayshr.TabStop = true;
+            this.lastthreedayshr.Text = "Last 3 days";
+            this.lastthreedayshr.UseVisualStyleBackColor = true;
             // 
             // btnshowhr
             // 
@@ -264,6 +341,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.alltimeos);
             this.groupBox3.Controls.Add(this.dateTimePickeros2);
             this.groupBox3.Controls.Add(this.dateTimePickeros);
             this.groupBox3.Controls.Add(this.choosedatesos);
@@ -281,6 +359,42 @@
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Oxygen Saturation:";
+            // 
+            // dateTimePickeros2
+            // 
+            this.dateTimePickeros2.Location = new System.Drawing.Point(129, 151);
+            this.dateTimePickeros2.Name = "dateTimePickeros2";
+            this.dateTimePickeros2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickeros2.TabIndex = 30;
+            // 
+            // dateTimePickeros
+            // 
+            this.dateTimePickeros.Location = new System.Drawing.Point(129, 125);
+            this.dateTimePickeros.Name = "dateTimePickeros";
+            this.dateTimePickeros.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickeros.TabIndex = 28;
+            // 
+            // choosedatesos
+            // 
+            this.choosedatesos.AutoSize = true;
+            this.choosedatesos.Location = new System.Drawing.Point(16, 129);
+            this.choosedatesos.Name = "choosedatesos";
+            this.choosedatesos.Size = new System.Drawing.Size(95, 17);
+            this.choosedatesos.TabIndex = 28;
+            this.choosedatesos.TabStop = true;
+            this.choosedatesos.Text = "Choose Dates:";
+            this.choosedatesos.UseVisualStyleBackColor = true;
+            // 
+            // lastthreedaysos
+            // 
+            this.lastthreedaysos.AutoSize = true;
+            this.lastthreedaysos.Location = new System.Drawing.Point(16, 106);
+            this.lastthreedaysos.Name = "lastthreedaysos";
+            this.lastthreedaysos.Size = new System.Drawing.Size(79, 17);
+            this.lastthreedaysos.TabIndex = 27;
+            this.lastthreedaysos.TabStop = true;
+            this.lastthreedaysos.Text = "Last 3 days";
+            this.lastthreedaysos.UseVisualStyleBackColor = true;
             // 
             // btnshowos
             // 
@@ -343,113 +457,38 @@
             this.boxmaxos.Size = new System.Drawing.Size(81, 20);
             this.boxmaxos.TabIndex = 26;
             // 
-            // lastthreedaysos
+            // alltimeos
             // 
-            this.lastthreedaysos.AutoSize = true;
-            this.lastthreedaysos.Location = new System.Drawing.Point(16, 106);
-            this.lastthreedaysos.Name = "lastthreedaysos";
-            this.lastthreedaysos.Size = new System.Drawing.Size(79, 17);
-            this.lastthreedaysos.TabIndex = 27;
-            this.lastthreedaysos.TabStop = true;
-            this.lastthreedaysos.Text = "Last 3 days";
-            this.lastthreedaysos.UseVisualStyleBackColor = true;
+            this.alltimeos.AutoSize = true;
+            this.alltimeos.Location = new System.Drawing.Point(111, 82);
+            this.alltimeos.Name = "alltimeos";
+            this.alltimeos.Size = new System.Drawing.Size(65, 17);
+            this.alltimeos.TabIndex = 31;
+            this.alltimeos.TabStop = true;
+            this.alltimeos.Text = "All Time:";
+            this.alltimeos.UseVisualStyleBackColor = true;
             // 
-            // choosedatesos
+            // alltimehr
             // 
-            this.choosedatesos.AutoSize = true;
-            this.choosedatesos.Location = new System.Drawing.Point(16, 129);
-            this.choosedatesos.Name = "choosedatesos";
-            this.choosedatesos.Size = new System.Drawing.Size(95, 17);
-            this.choosedatesos.TabIndex = 28;
-            this.choosedatesos.TabStop = true;
-            this.choosedatesos.Text = "Choose Dates:";
-            this.choosedatesos.UseVisualStyleBackColor = true;
+            this.alltimehr.AutoSize = true;
+            this.alltimehr.Location = new System.Drawing.Point(111, 82);
+            this.alltimehr.Name = "alltimehr";
+            this.alltimehr.Size = new System.Drawing.Size(65, 17);
+            this.alltimehr.TabIndex = 32;
+            this.alltimehr.TabStop = true;
+            this.alltimehr.Text = "All Time:";
+            this.alltimehr.UseVisualStyleBackColor = true;
             // 
-            // lastthreedayshr
+            // alltimebp
             // 
-            this.lastthreedayshr.AutoSize = true;
-            this.lastthreedayshr.Location = new System.Drawing.Point(16, 112);
-            this.lastthreedayshr.Name = "lastthreedayshr";
-            this.lastthreedayshr.Size = new System.Drawing.Size(79, 17);
-            this.lastthreedayshr.TabIndex = 27;
-            this.lastthreedayshr.TabStop = true;
-            this.lastthreedayshr.Text = "Last 3 days";
-            this.lastthreedayshr.UseVisualStyleBackColor = true;
-            // 
-            // choosedateshr
-            // 
-            this.choosedateshr.AutoSize = true;
-            this.choosedateshr.Location = new System.Drawing.Point(16, 135);
-            this.choosedateshr.Name = "choosedateshr";
-            this.choosedateshr.Size = new System.Drawing.Size(95, 17);
-            this.choosedateshr.TabIndex = 28;
-            this.choosedateshr.TabStop = true;
-            this.choosedateshr.Text = "Choose Dates:";
-            this.choosedateshr.UseVisualStyleBackColor = true;
-            // 
-            // lastthreedaysbp
-            // 
-            this.lastthreedaysbp.AutoSize = true;
-            this.lastthreedaysbp.Location = new System.Drawing.Point(16, 102);
-            this.lastthreedaysbp.Name = "lastthreedaysbp";
-            this.lastthreedaysbp.Size = new System.Drawing.Size(79, 17);
-            this.lastthreedaysbp.TabIndex = 22;
-            this.lastthreedaysbp.TabStop = true;
-            this.lastthreedaysbp.Text = "Last 3 days";
-            this.lastthreedaysbp.UseVisualStyleBackColor = true;
-            // 
-            // choosedatespb
-            // 
-            this.choosedatespb.AutoSize = true;
-            this.choosedatespb.Location = new System.Drawing.Point(16, 125);
-            this.choosedatespb.Name = "choosedatespb";
-            this.choosedatespb.Size = new System.Drawing.Size(95, 17);
-            this.choosedatespb.TabIndex = 23;
-            this.choosedatespb.TabStop = true;
-            this.choosedatespb.Text = "Choose Dates:";
-            this.choosedatespb.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickeros
-            // 
-            this.dateTimePickeros.Location = new System.Drawing.Point(129, 125);
-            this.dateTimePickeros.Name = "dateTimePickeros";
-            this.dateTimePickeros.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickeros.TabIndex = 28;
-            // 
-            // dateTimePickeros2
-            // 
-            this.dateTimePickeros2.Location = new System.Drawing.Point(129, 151);
-            this.dateTimePickeros2.Name = "dateTimePickeros2";
-            this.dateTimePickeros2.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickeros2.TabIndex = 30;
-            // 
-            // dateTimePickerhr2
-            // 
-            this.dateTimePickerhr2.Location = new System.Drawing.Point(129, 157);
-            this.dateTimePickerhr2.Name = "dateTimePickerhr2";
-            this.dateTimePickerhr2.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickerhr2.TabIndex = 32;
-            // 
-            // dateTimePickerhr
-            // 
-            this.dateTimePickerhr.Location = new System.Drawing.Point(129, 131);
-            this.dateTimePickerhr.Name = "dateTimePickerhr";
-            this.dateTimePickerhr.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickerhr.TabIndex = 31;
-            // 
-            // dateTimePickerbp2
-            // 
-            this.dateTimePickerbp2.Location = new System.Drawing.Point(129, 147);
-            this.dateTimePickerbp2.Name = "dateTimePickerbp2";
-            this.dateTimePickerbp2.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickerbp2.TabIndex = 32;
-            // 
-            // dateTimePickerbp
-            // 
-            this.dateTimePickerbp.Location = new System.Drawing.Point(129, 121);
-            this.dateTimePickerbp.Name = "dateTimePickerbp";
-            this.dateTimePickerbp.Size = new System.Drawing.Size(212, 20);
-            this.dateTimePickerbp.TabIndex = 31;
+            this.alltimebp.AutoSize = true;
+            this.alltimebp.Location = new System.Drawing.Point(111, 78);
+            this.alltimebp.Name = "alltimebp";
+            this.alltimebp.Size = new System.Drawing.Size(65, 17);
+            this.alltimebp.TabIndex = 33;
+            this.alltimebp.TabStop = true;
+            this.alltimebp.Text = "All Time:";
+            this.alltimebp.UseVisualStyleBackColor = true;
             // 
             // Statisticdata
             // 
@@ -519,5 +558,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerhr2;
         private System.Windows.Forms.DateTimePicker dateTimePickerhr;
         private System.Windows.Forms.DateTimePicker dateTimePickeros2;
+        private System.Windows.Forms.RadioButton alltimeos;
+        private System.Windows.Forms.RadioButton alltimehr;
+        private System.Windows.Forms.RadioButton alltimebp;
     }
 }
