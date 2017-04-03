@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Register Patient");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Update Patient");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Patient", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("View Measurement");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Statistic data");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Measurement", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statisticdata));
             this.validatestatic = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,11 +50,17 @@
             this.boxmax = new System.Windows.Forms.TextBox();
             this.btnshow = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.alltimebp = new System.Windows.Forms.RadioButton();
             this.dateTimePickerbp2 = new System.Windows.Forms.DateTimePicker();
             this.choosedatespb = new System.Windows.Forms.RadioButton();
             this.dateTimePickerbp = new System.Windows.Forms.DateTimePicker();
             this.lastthreedaysbp = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.alltimehr = new System.Windows.Forms.RadioButton();
             this.dateTimePickerhr2 = new System.Windows.Forms.DateTimePicker();
             this.choosedateshr = new System.Windows.Forms.RadioButton();
             this.dateTimePickerhr = new System.Windows.Forms.DateTimePicker();
@@ -57,6 +73,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.boxmaxhr = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.alltimeos = new System.Windows.Forms.RadioButton();
             this.dateTimePickeros2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickeros = new System.Windows.Forms.DateTimePicker();
             this.choosedatesos = new System.Windows.Forms.RadioButton();
@@ -68,9 +87,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.boxmaxos = new System.Windows.Forms.TextBox();
-            this.alltimeos = new System.Windows.Forms.RadioButton();
-            this.alltimehr = new System.Windows.Forms.RadioButton();
-            this.alltimebp = new System.Windows.Forms.RadioButton();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,7 +95,7 @@
             // 
             // validatestatic
             // 
-            this.validatestatic.Location = new System.Drawing.Point(70, 51);
+            this.validatestatic.Location = new System.Drawing.Point(70, 54);
             this.validatestatic.Name = "validatestatic";
             this.validatestatic.Size = new System.Drawing.Size(89, 23);
             this.validatestatic.TabIndex = 11;
@@ -89,7 +106,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 12;
@@ -97,7 +114,7 @@
             // 
             // pacientid
             // 
-            this.pacientid.Location = new System.Drawing.Point(12, 25);
+            this.pacientid.Location = new System.Drawing.Point(12, 28);
             this.pacientid.Mask = "000000000";
             this.pacientid.Name = "pacientid";
             this.pacientid.Size = new System.Drawing.Size(147, 20);
@@ -166,6 +183,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.alltimebp);
             this.groupBox1.Controls.Add(this.dateTimePickerbp2);
             this.groupBox1.Controls.Add(this.choosedatespb);
@@ -178,16 +197,46 @@
             this.groupBox1.Controls.Add(this.boxmax);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.boxmed);
+            this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(270, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 175);
+            this.groupBox1.Size = new System.Drawing.Size(392, 175);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Blood Pressure:";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(133, 155);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 13);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "End:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(133, 129);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Start:";
+            // 
+            // alltimebp
+            // 
+            this.alltimebp.AutoSize = true;
+            this.alltimebp.Location = new System.Drawing.Point(111, 78);
+            this.alltimebp.Name = "alltimebp";
+            this.alltimebp.Size = new System.Drawing.Size(65, 17);
+            this.alltimebp.TabIndex = 33;
+            this.alltimebp.TabStop = true;
+            this.alltimebp.Text = "All Time:";
+            this.alltimebp.UseVisualStyleBackColor = true;
+            // 
             // dateTimePickerbp2
             // 
-            this.dateTimePickerbp2.Location = new System.Drawing.Point(129, 147);
+            this.dateTimePickerbp2.Location = new System.Drawing.Point(171, 149);
             this.dateTimePickerbp2.Name = "dateTimePickerbp2";
             this.dateTimePickerbp2.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerbp2.TabIndex = 32;
@@ -205,7 +254,7 @@
             // 
             // dateTimePickerbp
             // 
-            this.dateTimePickerbp.Location = new System.Drawing.Point(129, 121);
+            this.dateTimePickerbp.Location = new System.Drawing.Point(171, 123);
             this.dateTimePickerbp.Name = "dateTimePickerbp";
             this.dateTimePickerbp.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerbp.TabIndex = 31;
@@ -223,6 +272,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.alltimehr);
             this.groupBox2.Controls.Add(this.dateTimePickerhr2);
             this.groupBox2.Controls.Add(this.choosedateshr);
@@ -235,16 +286,46 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.boxmaxhr);
+            this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(270, 193);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(347, 181);
+            this.groupBox2.Size = new System.Drawing.Size(392, 181);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Heart Rate:";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(133, 161);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(29, 13);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "End:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(133, 135);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(32, 13);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Start:";
+            // 
+            // alltimehr
+            // 
+            this.alltimehr.AutoSize = true;
+            this.alltimehr.Location = new System.Drawing.Point(111, 82);
+            this.alltimehr.Name = "alltimehr";
+            this.alltimehr.Size = new System.Drawing.Size(65, 17);
+            this.alltimehr.TabIndex = 32;
+            this.alltimehr.TabStop = true;
+            this.alltimehr.Text = "All Time:";
+            this.alltimehr.UseVisualStyleBackColor = true;
+            // 
             // dateTimePickerhr2
             // 
-            this.dateTimePickerhr2.Location = new System.Drawing.Point(129, 157);
+            this.dateTimePickerhr2.Location = new System.Drawing.Point(171, 155);
             this.dateTimePickerhr2.Name = "dateTimePickerhr2";
             this.dateTimePickerhr2.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerhr2.TabIndex = 32;
@@ -262,7 +343,7 @@
             // 
             // dateTimePickerhr
             // 
-            this.dateTimePickerhr.Location = new System.Drawing.Point(129, 131);
+            this.dateTimePickerhr.Location = new System.Drawing.Point(171, 129);
             this.dateTimePickerhr.Name = "dateTimePickerhr";
             this.dateTimePickerhr.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickerhr.TabIndex = 31;
@@ -341,6 +422,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.alltimeos);
             this.groupBox3.Controls.Add(this.dateTimePickeros2);
             this.groupBox3.Controls.Add(this.dateTimePickeros);
@@ -353,23 +436,53 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.boxmaxos);
+            this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(270, 380);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(347, 175);
+            this.groupBox3.Size = new System.Drawing.Size(392, 175);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Oxygen Saturation:";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(133, 157);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 37;
+            this.label16.Text = "End:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(133, 131);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Start:";
+            // 
+            // alltimeos
+            // 
+            this.alltimeos.AutoSize = true;
+            this.alltimeos.Location = new System.Drawing.Point(111, 82);
+            this.alltimeos.Name = "alltimeos";
+            this.alltimeos.Size = new System.Drawing.Size(65, 17);
+            this.alltimeos.TabIndex = 31;
+            this.alltimeos.TabStop = true;
+            this.alltimeos.Text = "All Time:";
+            this.alltimeos.UseVisualStyleBackColor = true;
+            // 
             // dateTimePickeros2
             // 
-            this.dateTimePickeros2.Location = new System.Drawing.Point(129, 151);
+            this.dateTimePickeros2.Location = new System.Drawing.Point(171, 151);
             this.dateTimePickeros2.Name = "dateTimePickeros2";
             this.dateTimePickeros2.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickeros2.TabIndex = 30;
             // 
             // dateTimePickeros
             // 
-            this.dateTimePickeros.Location = new System.Drawing.Point(129, 125);
+            this.dateTimePickeros.Location = new System.Drawing.Point(171, 125);
             this.dateTimePickeros.Name = "dateTimePickeros";
             this.dateTimePickeros.Size = new System.Drawing.Size(212, 20);
             this.dateTimePickeros.TabIndex = 28;
@@ -457,44 +570,34 @@
             this.boxmaxos.Size = new System.Drawing.Size(81, 20);
             this.boxmaxos.TabIndex = 26;
             // 
-            // alltimeos
+            // treeView1
             // 
-            this.alltimeos.AutoSize = true;
-            this.alltimeos.Location = new System.Drawing.Point(111, 82);
-            this.alltimeos.Name = "alltimeos";
-            this.alltimeos.Size = new System.Drawing.Size(65, 17);
-            this.alltimeos.TabIndex = 31;
-            this.alltimeos.TabStop = true;
-            this.alltimeos.Text = "All Time:";
-            this.alltimeos.UseVisualStyleBackColor = true;
-            // 
-            // alltimehr
-            // 
-            this.alltimehr.AutoSize = true;
-            this.alltimehr.Location = new System.Drawing.Point(111, 82);
-            this.alltimehr.Name = "alltimehr";
-            this.alltimehr.Size = new System.Drawing.Size(65, 17);
-            this.alltimehr.TabIndex = 32;
-            this.alltimehr.TabStop = true;
-            this.alltimehr.Text = "All Time:";
-            this.alltimehr.UseVisualStyleBackColor = true;
-            // 
-            // alltimebp
-            // 
-            this.alltimebp.AutoSize = true;
-            this.alltimebp.Location = new System.Drawing.Point(111, 78);
-            this.alltimebp.Name = "alltimebp";
-            this.alltimebp.Size = new System.Drawing.Size(65, 17);
-            this.alltimebp.TabIndex = 33;
-            this.alltimebp.TabStop = true;
-            this.alltimebp.Text = "All Time:";
-            this.alltimebp.UseVisualStyleBackColor = true;
+            this.treeView1.Location = new System.Drawing.Point(15, 296);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "RegisterPatient";
+            treeNode1.Text = "Register Patient";
+            treeNode2.Name = "UpdatePatient";
+            treeNode2.Text = "Update Patient";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Patient";
+            treeNode4.Name = "ViewMeasurement";
+            treeNode4.Text = "View Measurement";
+            treeNode5.Name = "Statistic data";
+            treeNode5.Text = "Statistic data";
+            treeNode6.Name = "Node4";
+            treeNode6.Text = "Measurement";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode6});
+            this.treeView1.Size = new System.Drawing.Size(154, 253);
+            this.treeView1.TabIndex = 28;
             // 
             // Statisticdata
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 557);
+            this.ClientSize = new System.Drawing.Size(674, 561);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -561,5 +664,12 @@
         private System.Windows.Forms.RadioButton alltimeos;
         private System.Windows.Forms.RadioButton alltimehr;
         private System.Windows.Forms.RadioButton alltimebp;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

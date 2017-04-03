@@ -43,6 +43,13 @@ namespace Alert_System
                 PatientDC p = web.ValidadePatient(Convert.ToInt32(pacientid.Text));
 
                 MessageBox.Show("Paciente: " + p.Firstname);
+
+                if (p != null)
+                {
+                    groupBox1.Enabled = true;
+                    groupBox2.Enabled = true;
+                    groupBox3.Enabled = true;
+                }
             }
             catch (Exception)
             {
@@ -76,6 +83,33 @@ namespace Alert_System
                              (mtmaxthreedays.Length + mtminthreedays.Length);
                 }
 
+                else if (choosedatespb.Checked)
+                {
+                    if (dateTimePickerbp2.Value.Date > dateTimePickerbp.Value.Date)
+                    {
+                        int[] bpchoosedatesmax = web.ViewBloodPressureMaxCalendar(fk_sns, dateTimePickerbp.Value.Date,
+                            dateTimePickerbp2.Value.Date);
+                        int[] bpchoosedatesmin = web.ViewBloodPressureMinCalendar(fk_sns, dateTimePickerbp.Value.Date,
+                            dateTimePickerbp2.Value.Date);
+
+                        for (int i = 1; i <= bpchoosedatesmax.Length; i++)
+                        {
+                            maxbloodpre = bpchoosedatesmax.Max();
+                        }
+                        for (int i = 1; i <= bpchoosedatesmin.Length; i++)
+                        {
+                            minbloodpre = bpchoosedatesmin.Min();
+                        }
+                        medpre = (bpchoosedatesmax.Sum() + bpchoosedatesmin.Sum()) /
+                                 (bpchoosedatesmax.Length + bpchoosedatesmin.Length);
+                    }
+                    else
+                    {
+                        MessageBox.Show("A segunda data tem de ser superior à primeira", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
                 else if(alltimebp.Checked)
                 {
                     //Blood Pressure
@@ -101,80 +135,133 @@ namespace Alert_System
             }
         }
 
-        //Heart Rate
+        //Heart Rate 3 days
         private void btnshowhr_Click(object sender, EventArgs e)
         {
-            if(lastthreedayshr.Checked)
+            try
             {
-                int[] threedayshr = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
-
-                for (int i = 1; i <= threedayshr.Length; i++)
+                if (lastthreedayshr.Checked)
                 {
-                    minhr = threedayshr.Min();
-                    avehr = threedayshr.Sum() / threedayshr.Length;
-                    maxhr = threedayshr.Max();
-                }
-            }
-            else if(alltimehr.Checked)
-            {      
-                int[] hr = web.ViewHearRate(fk_sns);
-    
-                for (int i = 1; i <= hr.Length; i++)
-                {
-                    maxhr = hr.Max();
-                    minhr = hr.Min();
-                    avehr = hr.Sum()/hr.Length;
-                }
-            }
+                    int[] threedayshr = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
 
-            boxminhr.Text = minhr.ToString();
-            boxavehr.Text = avehr.ToString();
-            boxmaxhr.Text = maxhr.ToString();
+                    for (int i = 1; i <= threedayshr.Length; i++)
+                    {
+                        minhr = threedayshr.Min();
+                        avehr = threedayshr.Sum()/threedayshr.Length;
+                        maxhr = threedayshr.Max();
+                    }
+                }
+                //Heart Rate Calendar
+                else if (choosedateshr.Checked)
+                {
+                    if (dateTimePickerhr2.Value.Date > dateTimePickerhr.Value.Date)
+                    {
+                        int[] hrchoosedates = web.ViewHeartRateCalendar(fk_sns, dateTimePickerhr.Value.Date,
+                            dateTimePickerhr2.Value.Date);
+
+                        for (int i = 1; i <= hrchoosedates.Length; i++)
+                        {
+                            minhr = hrchoosedates.Min();
+                            avehr = hrchoosedates.Sum()/hrchoosedates.Length;
+                            maxhr = hrchoosedates.Max();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("A segunda data tem de ser superior à primeira", "Erro", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+
+                }
+                //All Heart Rate
+                else if (alltimehr.Checked)
+                {
+                    int[] hr = web.ViewHearRate(fk_sns);
+
+                    for (int i = 1; i <= hr.Length; i++)
+                    {
+                        maxhr = hr.Max();
+                        minhr = hr.Min();
+                        avehr = hr.Sum()/hr.Length;
+                    }
+                }
+
+                boxminhr.Text = minhr.ToString();
+                boxavehr.Text = avehr.ToString();
+                boxmaxhr.Text = maxhr.ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Não existem valores nestes últimos três dias", "Erro", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         //Oxygen Saturation 3 days
         private void btnshowos_Click(object sender, EventArgs e)
         {
-
-            if (lastthreedaysos.Checked)
+            try
             {
-                int[] threedaysos = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
 
-                for (int i = 1; i <= threedaysos.Length; i++)
+                if (lastthreedaysos.Checked)
                 {
-                    minos = threedaysos.Min();
-                    aveos = threedaysos.Sum() / threedaysos.Length;
-                    maxos = threedaysos.Max();
-                }
-            }
+                    int[] threedaysos = web.ViewOxygenSaturationthreedays(fk_sns, DateTime.Now);
 
-            else if(choosedatesos.Checked)
+                    for (int i = 1; i <= threedaysos.Length; i++)
+                    {
+                        minos = threedaysos.Min();
+                        aveos = threedaysos.Sum()/threedaysos.Length;
+                        maxos = threedaysos.Max();
+                    }
+                }
+
+                //Oxygen Saturation Calendar
+                else if (choosedatesos.Checked)
+                {
+                    if (dateTimePickeros2.Value.Date > dateTimePickeros.Value.Date)
+                    {
+                        int[] oschoosedates = web.ViewOxygenSaturationCalendar(fk_sns, dateTimePickeros.Value.Date,
+                            dateTimePickeros2.Value.Date);
+
+                        for (int i = 1; i <= oschoosedates.Length; i++)
+                        {
+                            minos = oschoosedates.Min();
+                            aveos = oschoosedates.Sum()/oschoosedates.Length;
+                            maxos = oschoosedates.Max();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("A segunda data tem de ser superior à primeira", "Erro", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+
+                }
+                else if (alltimeos.Checked)
+                {
+                    //Oxygen Saturation
+                    int[] os = web.ViewOxygenSaturation(fk_sns);
+
+                    for (int i = 1; i <= os.Length; i++)
+                    {
+                        minos = os.Min();
+                        aveos = os.Sum()/os.Length;
+                        maxos = os.Max();
+                    }
+
+                }
+
+                boxminos.Text = minos.ToString();
+                boxaveos.Text = aveos.ToString();
+                boxmaxos.Text = maxos.ToString();
+
+            }
+            catch (Exception)
             {
-                int[] oschoosedates = web.ViewOxygenSaturationCalendar(fk_sns, dateTimePickeros.Value.Date, dateTimePickeros2.Value.Date);
-
-                for (int i = 1; i <= oschoosedates.Length; i++)
-                {
-                    minos = oschoosedates.Min();
-                    aveos = oschoosedates.Sum() / oschoosedates.Length;
-                    maxos = oschoosedates.Max();
-                }
+                MessageBox.Show("Não existem valores nestes últimos três dias", "Erro", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            else if(alltimeos.Checked) {
-                //Oxygen Saturation
-                int[] os = web.ViewOxygenSaturation(fk_sns);
-
-                for (int i = 1; i <= os.Length; i++)
-                {
-                    minos = os.Min();
-                    aveos = os.Sum()/os.Length;
-                    maxos = os.Max();
-                }
-
-            }
-
-            boxminos.Text = minos.ToString();
-            boxaveos.Text = aveos.ToString();
-            boxmaxos.Text = maxos.ToString();
 
         }
 

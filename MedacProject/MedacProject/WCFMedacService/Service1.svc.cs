@@ -247,17 +247,53 @@ namespace WCFMedacService
             return ListbloodpressureMin;
         }
 
-        ////Blood Pressure MAX Calendar
-        //List<int> ViewBloodPressureMaxCalendar(int fk_sns, DateTime date, DateTime date2)
-        //{
-            
-        //}
+        //Blood Pressure MAX Calendar
+        public List<int> ViewBloodPressureMaxCalendar(int fk_sns, DateTime date, DateTime date2)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
 
-        ////Blood Pressure MIN Calendar
-        //List<int> ViewBloodPressureMinCalendar(int fk_sns, DateTime date, DateTime date2)
-        //{
-            
-        //}
+            List<int> ListBloodPressureMax = new List<int>();
+            do
+            {
+
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.BloodPressureMax != 0)
+                    {
+                        ListBloodPressureMax.Add(Convert.ToInt32(mte.BloodPressureMax));
+                    }
+                }
+
+                date = date.AddDays(1);
+            } while (date.Day <= date2.Day);
+
+            return ListBloodPressureMax;
+        }
+
+        //Blood Pressure MIN Calendar
+        public List<int> ViewBloodPressureMinCalendar(int fk_sns, DateTime date, DateTime date2)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListBloodPressureMin = new List<int>();
+            do
+            {
+
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.BloodPressureMin != 0)
+                    {
+                        ListBloodPressureMin.Add(Convert.ToInt32(mte.BloodPressureMin));
+                    }
+                }
+
+                date = date.AddDays(1);
+            } while (date.Day <= date2.Day);
+
+            return ListBloodPressureMin;
+        }
 
         //HEART RATE
         public List<int> ViewHearRate(int fk_sns)
@@ -308,11 +344,30 @@ namespace WCFMedacService
             return ListHeartRate;
         }
 
-        ////Heart Rate Calendar
-        //List<int> ViewHearRateCalendar(int fk_sns, DateTime date, DateTime date2)
-        //{
-            
-        //}
+        //Heart Rate Calendar
+        public List<int> ViewHeartRateCalendar(int fk_sns, DateTime date, DateTime date2)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<int> ListHeartRate = new List<int>();
+
+            do
+            {
+
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                foreach (var mte in m)
+                {
+                    if (mte.HeartRate != 0)
+                    {
+                        ListHeartRate.Add(Convert.ToInt32(mte.HeartRate));
+                    }
+                }
+
+                date = date.AddDays(1);
+            } while (date.Day <= date2.Day);
+
+            return ListHeartRate;
+        }
 
         //OXYGEN SATURATION
         public List<int> ViewOxygenSaturation(int fk_sns)
@@ -366,8 +421,6 @@ namespace WCFMedacService
         //OxygenSaturation Calendar
         public List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2)
         {
-            int x = 0;
-
             ModelMedacContainer context = new ModelMedacContainer();
 
             List<int> ListOxygenSaturation = new List<int>();

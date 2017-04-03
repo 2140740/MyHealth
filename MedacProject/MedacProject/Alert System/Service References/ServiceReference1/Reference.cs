@@ -744,6 +744,18 @@ namespace Alert_System.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinthreedaysResponse")]
         System.Threading.Tasks.Task<int[]> ViewBloodPressureMinthreedaysAsync(int fk_sns, System.DateTime date);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxCalendarResponse")]
+        int[] ViewBloodPressureMaxCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinCalendarResponse")]
+        int[] ViewBloodPressureMinCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMinCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
         int[] ViewHearRate(int fk_sns);
         
@@ -755,6 +767,12 @@ namespace Alert_System.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRatethreedays", ReplyAction="http://tempuri.org/IService1/ViewHearRatethreedaysResponse")]
         System.Threading.Tasks.Task<int[]> ViewHearRatethreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHeartRateCalendar", ReplyAction="http://tempuri.org/IService1/ViewHeartRateCalendarResponse")]
+        int[] ViewHeartRateCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHeartRateCalendar", ReplyAction="http://tempuri.org/IService1/ViewHeartRateCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewHeartRateCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
         int[] ViewOxygenSaturation(int fk_sns);
@@ -866,6 +884,22 @@ namespace Alert_System.ServiceReference1 {
             return base.Channel.ViewBloodPressureMinthreedaysAsync(fk_sns, date);
         }
         
+        public int[] ViewBloodPressureMaxCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMaxCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMaxCalendarAsync(fk_sns, date, date2);
+        }
+        
+        public int[] ViewBloodPressureMinCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMinCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMinCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMinCalendarAsync(fk_sns, date, date2);
+        }
+        
         public int[] ViewHearRate(int fk_sns) {
             return base.Channel.ViewHearRate(fk_sns);
         }
@@ -880,6 +914,14 @@ namespace Alert_System.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int[]> ViewHearRatethreedaysAsync(int fk_sns, System.DateTime date) {
             return base.Channel.ViewHearRatethreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewHeartRateCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewHeartRateCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewHeartRateCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewHeartRateCalendarAsync(fk_sns, date, date2);
         }
         
         public int[] ViewOxygenSaturation(int fk_sns) {

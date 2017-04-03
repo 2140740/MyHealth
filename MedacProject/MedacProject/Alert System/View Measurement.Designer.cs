@@ -31,6 +31,16 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Register Patient");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Update Patient");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Patient", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("View Measurement");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Statistic data");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Measurement", new System.Windows.Forms.TreeNode[] {
+            treeNode4,
+            treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Measurement));
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -41,6 +51,8 @@
             this.oxygengraph = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.statisticData = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -48,14 +60,14 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(33, 39);
+            this.textBox8.Location = new System.Drawing.Point(12, 50);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(144, 20);
             this.textBox8.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(183, 36);
+            this.button1.Location = new System.Drawing.Point(67, 76);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 9;
@@ -65,7 +77,7 @@
             // 
             // pressuregraph
             // 
-            this.pressuregraph.Location = new System.Drawing.Point(33, 87);
+            this.pressuregraph.Location = new System.Drawing.Point(193, 34);
             this.pressuregraph.Name = "pressuregraph";
             this.pressuregraph.Size = new System.Drawing.Size(114, 23);
             this.pressuregraph.TabIndex = 10;
@@ -102,7 +114,7 @@
             // 
             // heartrategraph
             // 
-            this.heartrategraph.Location = new System.Drawing.Point(33, 116);
+            this.heartrategraph.Location = new System.Drawing.Point(313, 34);
             this.heartrategraph.Name = "heartrategraph";
             this.heartrategraph.Size = new System.Drawing.Size(114, 23);
             this.heartrategraph.TabIndex = 12;
@@ -112,7 +124,7 @@
             // 
             // oxygengraph
             // 
-            this.oxygengraph.Location = new System.Drawing.Point(33, 145);
+            this.oxygengraph.Location = new System.Drawing.Point(433, 34);
             this.oxygengraph.Name = "oxygengraph";
             this.oxygengraph.Size = new System.Drawing.Size(114, 23);
             this.oxygengraph.TabIndex = 13;
@@ -137,11 +149,44 @@
             this.statisticData.Text = "Statistic Data";
             this.statisticData.Click += new System.EventHandler(this.statisticData_Click);
             // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(12, 174);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "RegisterPatient";
+            treeNode1.Text = "Register Patient";
+            treeNode2.Name = "UpdatePatient";
+            treeNode2.Text = "Update Patient";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Patient";
+            treeNode4.Name = "ViewMeasurement";
+            treeNode4.Text = "View Measurement";
+            treeNode5.Name = "Statistic data";
+            treeNode5.Text = "Statistic data";
+            treeNode6.Name = "Node4";
+            treeNode6.Text = "Measurement";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode6});
+            this.treeView1.Size = new System.Drawing.Size(154, 253);
+            this.treeView1.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Patient SNS:";
+            // 
             // View_Measurement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 433);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.oxygengraph);
             this.Controls.Add(this.heartrategraph);
             this.Controls.Add(this.panel1);
@@ -174,5 +219,7 @@
         private System.Windows.Forms.Button oxygengraph;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem statisticData;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Label label1;
     }
 }

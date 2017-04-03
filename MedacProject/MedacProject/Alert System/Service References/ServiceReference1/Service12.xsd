@@ -132,6 +132,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ViewBloodPressureMaxCalendar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="date2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewBloodPressureMaxCalendarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewBloodPressureMaxCalendarResult" nillable="true" type="q9:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewBloodPressureMinCalendar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="date2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewBloodPressureMinCalendarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewBloodPressureMinCalendarResult" nillable="true" type="q10:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ViewHearRate">
     <xs:complexType>
       <xs:sequence>
@@ -142,7 +174,7 @@
   <xs:element name="ViewHearRateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHearRateResult" nillable="true" type="q9:ArrayOfint" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHearRateResult" nillable="true" type="q11:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +189,23 @@
   <xs:element name="ViewHearRatethreedaysResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHearRatethreedaysResult" nillable="true" type="q10:ArrayOfint" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHearRatethreedaysResult" nillable="true" type="q12:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewHeartRateCalendar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="date2" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewHeartRateCalendarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewHeartRateCalendarResult" nillable="true" type="q13:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -171,7 +219,7 @@
   <xs:element name="ViewOxygenSaturationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationResult" nillable="true" type="q11:ArrayOfint" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationResult" nillable="true" type="q14:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -186,7 +234,7 @@
   <xs:element name="ViewOxygenSaturationthreedaysResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationthreedaysResult" nillable="true" type="q12:ArrayOfint" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationthreedaysResult" nillable="true" type="q15:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -202,7 +250,7 @@
   <xs:element name="ViewOxygenSaturationCalendarResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationCalendarResult" nillable="true" type="q13:ArrayOfint" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewOxygenSaturationCalendarResult" nillable="true" type="q16:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

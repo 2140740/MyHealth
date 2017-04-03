@@ -43,4 +43,3 @@ C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\bin\Mi
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.dll
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.pdb
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.csprojResolveAssemblyReference.cache
-D:\David_GIT\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.csprojResolveAssemblyReference.cache

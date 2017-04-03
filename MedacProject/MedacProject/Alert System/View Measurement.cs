@@ -54,6 +54,8 @@ namespace Alert_System
 
             chart1.Titles.Add("Blood Pressure");
 
+            chart1.Series["Blood Pressure Max"].Color = Color.Red;
+
             chart1.Series["Blood Pressure Max"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
             for (int i = 1; i <= mtmax.Length; i++)
@@ -66,8 +68,9 @@ namespace Alert_System
 
             chart1.Series.Add("Blood Pressure Min");
 
-            chart1.Series["Blood Pressure Max"].ChartArea = "ChartArea1";
+            chart1.Series["Blood Pressure Min"].ChartArea = "ChartArea1";
 
+            chart1.Series["Blood Pressure Min"].Color = Color.Blue;
 
             chart1.Series["Blood Pressure Min"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
@@ -88,20 +91,20 @@ namespace Alert_System
 
             chart1.Titles.Add("Heart Rate");
 
-
+            chart1.Series["Heart Rate"].Color = Color.Green;
 
             chart1.Series["Heart Rate"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
             for (int i = 1; i <= hr.Length; i++)
             {
-                chart1.Series[1].Points.AddY(Convert.ToInt32(hr[i - 1]));
+                chart1.Series[3].Points.AddY(Convert.ToInt32(hr[i - 1]));
             }
         }
 
         private void oxygengraph_Click(object sender, EventArgs e)
         {
             //Oxygen Saturation
-            int[] os = web.ViewHearRate(fk_sns);
+            int[] os = web.ViewOxygenSaturation(fk_sns);
 
             chart1.Series.Add("Oxygen Saturation");
 
@@ -109,11 +112,13 @@ namespace Alert_System
 
             chart1.Titles.Add("Oxygen Saturation");
 
+            chart1.Series["Oxygen Saturation"].Color = Color.DeepPink;
+
             chart1.Series["Oxygen Saturation"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
 
             for (int i = 1; i <= os.Length; i++)
             {
-                chart1.Series[1].Points.AddY(Convert.ToInt32(os[i - 1]));
+                chart1.Series[4].Points.AddY(Convert.ToInt32(os[i - 1]));
             }
         }
 
