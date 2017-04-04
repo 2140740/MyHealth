@@ -56,6 +56,12 @@ namespace MedacProject.ServiceHealthClient {
         private string Lastname1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LoggedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NumberDoctorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int OthercontactField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -221,6 +227,32 @@ namespace MedacProject.ServiceHealthClient {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Logged {
+            get {
+                return this.LoggedField;
+            }
+            set {
+                if ((this.LoggedField.Equals(value) != true)) {
+                    this.LoggedField = value;
+                    this.RaisePropertyChanged("Logged");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NumberDoctor {
+            get {
+                return this.NumberDoctorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NumberDoctorField, value) != true)) {
+                    this.NumberDoctorField = value;
+                    this.RaisePropertyChanged("NumberDoctor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Othercontact {
             get {
                 return this.OthercontactField;
@@ -304,6 +336,9 @@ namespace MedacProject.ServiceHealthClient {
         private int CC_BIField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MedacProject.ServiceHealthClient.Doctor DoctorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -320,6 +355,9 @@ namespace MedacProject.ServiceHealthClient {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool LoggedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private MedacProject.ServiceHealthClient.Measurement[] MeasurementField;
@@ -391,6 +429,19 @@ namespace MedacProject.ServiceHealthClient {
                 if ((this.CC_BIField.Equals(value) != true)) {
                     this.CC_BIField = value;
                     this.RaisePropertyChanged("CC_BI");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MedacProject.ServiceHealthClient.Doctor Doctor {
+            get {
+                return this.DoctorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DoctorField, value) != true)) {
+                    this.DoctorField = value;
+                    this.RaisePropertyChanged("Doctor");
                 }
             }
         }
@@ -474,6 +525,19 @@ namespace MedacProject.ServiceHealthClient {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Logged {
+            get {
+                return this.LoggedField;
+            }
+            set {
+                if ((this.LoggedField.Equals(value) != true)) {
+                    this.LoggedField = value;
+                    this.RaisePropertyChanged("Logged");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public MedacProject.ServiceHealthClient.Measurement[] Measurement {
             get {
                 return this.MeasurementField;
@@ -521,6 +585,99 @@ namespace MedacProject.ServiceHealthClient {
                 if ((this.SNSField.Equals(value) != true)) {
                     this.SNSField = value;
                     this.RaisePropertyChanged("SNS");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Doctor", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
+    [System.SerializableAttribute()]
+    public partial class Doctor : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MedacProject.ServiceHealthClient.Patient[] PatientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProfessionalNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MedacProject.ServiceHealthClient.Patient[] Patient {
+            get {
+                return this.PatientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientField, value) != true)) {
+                    this.PatientField = value;
+                    this.RaisePropertyChanged("Patient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProfessionalNumber {
+            get {
+                return this.ProfessionalNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProfessionalNumberField, value) != true)) {
+                    this.ProfessionalNumberField = value;
+                    this.RaisePropertyChanged("ProfessionalNumber");
                 }
             }
         }
@@ -692,6 +849,67 @@ namespace MedacProject.ServiceHealthClient {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DoctorDC", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
+    [System.SerializableAttribute()]
+    public partial class DoctorDC : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MedicalidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Medicalid {
+            get {
+                return this.MedicalidField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MedicalidField, value) != true)) {
+                    this.MedicalidField = value;
+                    this.RaisePropertyChanged("Medicalid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceHealthClient.IService1")]
     public interface IService1 {
@@ -703,10 +921,10 @@ namespace MedacProject.ServiceHealthClient {
         System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.PatientDC> ValidadePatientAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
-        bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
-        System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact);
+        System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
         void UpdatePatient(MedacProject.ServiceHealthClient.Patient patient);
@@ -714,11 +932,35 @@ namespace MedacProject.ServiceHealthClient {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
         System.Threading.Tasks.Task UpdatePatientAsync(MedacProject.ServiceHealthClient.Patient patient);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged", ReplyAction="http://tempuri.org/IService1/UpdateLoggedResponse")]
+        void UpdateLogged(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged", ReplyAction="http://tempuri.org/IService1/UpdateLoggedResponse")]
+        System.Threading.Tasks.Task UpdateLoggedAsync(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged2", ReplyAction="http://tempuri.org/IService1/UpdateLogged2Response")]
+        void UpdateLogged2(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged2", ReplyAction="http://tempuri.org/IService1/UpdateLogged2Response")]
+        System.Threading.Tasks.Task UpdateLogged2Async(int fk_sns);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         System.Threading.Tasks.Task<bool> RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterDoctor", ReplyAction="http://tempuri.org/IService1/RegisterDoctorResponse")]
+        bool RegisterDoctor(string firstname, string medicalid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterDoctor", ReplyAction="http://tempuri.org/IService1/RegisterDoctorResponse")]
+        System.Threading.Tasks.Task<bool> RegisterDoctorAsync(string firstname, string medicalid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ValidadeDoctor", ReplyAction="http://tempuri.org/IService1/ValidadeDoctorResponse")]
+        MedacProject.ServiceHealthClient.DoctorDC ValidadeDoctor(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ValidadeDoctor", ReplyAction="http://tempuri.org/IService1/ValidadeDoctorResponse")]
+        System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.DoctorDC> ValidadeDoctorAsync(string id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMax", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxResponse")]
         int[] ViewBloodPressureMax(int fk_sns);
@@ -732,17 +974,71 @@ namespace MedacProject.ServiceHealthClient {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMin", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinResponse")]
         System.Threading.Tasks.Task<int[]> ViewBloodPressureMinAsync(int fk_sns);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxthreedaysResponse")]
+        int[] ViewBloodPressureMaxthreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxthreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxthreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinthreedaysResponse")]
+        int[] ViewBloodPressureMinthreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinthreedays", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinthreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMinthreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxCalendarResponse")]
+        int[] ViewBloodPressureMaxCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMaxCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMaxCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinCalendarResponse")]
+        int[] ViewBloodPressureMinCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewBloodPressureMinCalendar", ReplyAction="http://tempuri.org/IService1/ViewBloodPressureMinCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewBloodPressureMinCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
         int[] ViewHearRate(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRate", ReplyAction="http://tempuri.org/IService1/ViewHearRateResponse")]
         System.Threading.Tasks.Task<int[]> ViewHearRateAsync(int fk_sns);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRatethreedays", ReplyAction="http://tempuri.org/IService1/ViewHearRatethreedaysResponse")]
+        int[] ViewHearRatethreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHearRatethreedays", ReplyAction="http://tempuri.org/IService1/ViewHearRatethreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewHearRatethreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHeartRateCalendar", ReplyAction="http://tempuri.org/IService1/ViewHeartRateCalendarResponse")]
+        int[] ViewHeartRateCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewHeartRateCalendar", ReplyAction="http://tempuri.org/IService1/ViewHeartRateCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewHeartRateCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
         int[] ViewOxygenSaturation(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturation", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationResponse")]
         System.Threading.Tasks.Task<int[]> ViewOxygenSaturationAsync(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse")]
+        int[] ViewOxygenSaturationthreedays(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationthreedays", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationthreedaysResponse")]
+        System.Threading.Tasks.Task<int[]> ViewOxygenSaturationthreedaysAsync(int fk_sns, System.DateTime date);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse")]
+        int[] ViewOxygenSaturationCalendar(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse")]
+        System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
+        MedacProject.ServiceHealthClient.Patient[] ViewActivePatients();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
+        System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.Patient[]> ViewActivePatientsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -780,12 +1076,12 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.ValidadePatientAsync(id);
         }
         
-        public bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
-            return base.Channel.RegisterPatient(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        public bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor) {
+            return base.Channel.RegisterPatient(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact, logged, numberDoctor);
         }
         
-        public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact) {
-            return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact);
+        public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor) {
+            return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact, logged, numberDoctor);
         }
         
         public void UpdatePatient(MedacProject.ServiceHealthClient.Patient patient) {
@@ -796,12 +1092,44 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.UpdatePatientAsync(patient);
         }
         
+        public void UpdateLogged(int fk_sns) {
+            base.Channel.UpdateLogged(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task UpdateLoggedAsync(int fk_sns) {
+            return base.Channel.UpdateLoggedAsync(fk_sns);
+        }
+        
+        public void UpdateLogged2(int fk_sns) {
+            base.Channel.UpdateLogged2(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task UpdateLogged2Async(int fk_sns) {
+            return base.Channel.UpdateLogged2Async(fk_sns);
+        }
+        
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
             return base.Channel.RegisterMeasurement(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
         }
         
         public System.Threading.Tasks.Task<bool> RegisterMeasurementAsync(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
             return base.Channel.RegisterMeasurementAsync(bloodpressuremin, bloodpressuremax, hearrate, oxygensaturation, date, time, fk_sns);
+        }
+        
+        public bool RegisterDoctor(string firstname, string medicalid) {
+            return base.Channel.RegisterDoctor(firstname, medicalid);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterDoctorAsync(string firstname, string medicalid) {
+            return base.Channel.RegisterDoctorAsync(firstname, medicalid);
+        }
+        
+        public MedacProject.ServiceHealthClient.DoctorDC ValidadeDoctor(string id) {
+            return base.Channel.ValidadeDoctor(id);
+        }
+        
+        public System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.DoctorDC> ValidadeDoctorAsync(string id) {
+            return base.Channel.ValidadeDoctorAsync(id);
         }
         
         public int[] ViewBloodPressureMax(int fk_sns) {
@@ -820,6 +1148,38 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.ViewBloodPressureMinAsync(fk_sns);
         }
         
+        public int[] ViewBloodPressureMaxthreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMaxthreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxthreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMaxthreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewBloodPressureMinthreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMinthreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMinthreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewBloodPressureMinthreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewBloodPressureMaxCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMaxCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMaxCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMaxCalendarAsync(fk_sns, date, date2);
+        }
+        
+        public int[] ViewBloodPressureMinCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMinCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewBloodPressureMinCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewBloodPressureMinCalendarAsync(fk_sns, date, date2);
+        }
+        
         public int[] ViewHearRate(int fk_sns) {
             return base.Channel.ViewHearRate(fk_sns);
         }
@@ -828,12 +1188,52 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.ViewHearRateAsync(fk_sns);
         }
         
+        public int[] ViewHearRatethreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewHearRatethreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewHearRatethreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewHearRatethreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewHeartRateCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewHeartRateCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewHeartRateCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewHeartRateCalendarAsync(fk_sns, date, date2);
+        }
+        
         public int[] ViewOxygenSaturation(int fk_sns) {
             return base.Channel.ViewOxygenSaturation(fk_sns);
         }
         
         public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationAsync(int fk_sns) {
             return base.Channel.ViewOxygenSaturationAsync(fk_sns);
+        }
+        
+        public int[] ViewOxygenSaturationthreedays(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewOxygenSaturationthreedays(fk_sns, date);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationthreedaysAsync(int fk_sns, System.DateTime date) {
+            return base.Channel.ViewOxygenSaturationthreedaysAsync(fk_sns, date);
+        }
+        
+        public int[] ViewOxygenSaturationCalendar(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewOxygenSaturationCalendar(fk_sns, date, date2);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
+            return base.Channel.ViewOxygenSaturationCalendarAsync(fk_sns, date, date2);
+        }
+        
+        public MedacProject.ServiceHealthClient.Patient[] ViewActivePatients() {
+            return base.Channel.ViewActivePatients();
+        }
+        
+        public System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.Patient[]> ViewActivePatientsAsync() {
+            return base.Channel.ViewActivePatientsAsync();
         }
     }
 }

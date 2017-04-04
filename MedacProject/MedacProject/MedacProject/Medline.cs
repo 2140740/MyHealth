@@ -106,7 +106,6 @@ namespace MedacProject
             {
                 titulo += item.SubItems[1].Text;
                 rank = item.SubItems[0].Text;
-
             }
 
             browsertitle.DocumentText = titulo;

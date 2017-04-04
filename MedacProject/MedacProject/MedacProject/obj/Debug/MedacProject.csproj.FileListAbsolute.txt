@@ -12,7 +12,6 @@ C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\bin\Debug\MedacProject.exe.config
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.exe
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.pdb
-D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.csprojResolveAssemblyReference.cache
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.MedicalID.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.Medline.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.MyHealth.resources
@@ -21,3 +20,4 @@ D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProj
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\bin\Debug\MedacProject.exe
 D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\bin\Debug\MedacProject.pdb
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.Medline.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\MedacProject\obj\Debug\MedacProject.csprojResolveAssemblyReference.cache

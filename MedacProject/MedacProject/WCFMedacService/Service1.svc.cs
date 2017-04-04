@@ -43,6 +43,8 @@ namespace WCFMedacService
                 p.Allergies = pt.Allergies;
                 p.Height = Convert.ToDouble(pt.Height);
                 p.Othercontact = Convert.ToInt32(pt.OtherContact);
+                p.Logged = Convert.ToBoolean(pt.Logged);
+                p.NumberDoctor = pt.Doctor.ProfessionalNumber;
 
                 return p;
             }
@@ -51,7 +53,7 @@ namespace WCFMedacService
         public bool RegisterPatient(string firstname, string lastname, int phone,
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
-            int othercontact)
+            int othercontact,bool logged, string numberDoctor)
         {
             Patient pt = new Patient();
             try
@@ -60,6 +62,8 @@ namespace WCFMedacService
                 if (pt != null)
                 {
                     ModelMedacContainer context = new ModelMedacContainer();
+
+                    Doctor d = context.DoctorSet.FirstOrDefault(i => i.ProfessionalNumber.Equals(numberDoctor));
 
                     pt.FirstName = firstname;
                     pt.LastName = lastname;
@@ -73,16 +77,48 @@ namespace WCFMedacService
                     pt.Allergies = allergies;
                     pt.Height = height;
                     pt.OtherContact = othercontact.ToString();
+                    pt.Logged = logged;
+                    pt.Doctor = d;
 
                     context.PatientSet.Add(pt);
                     context.SaveChanges();
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 return false;
             }
             return true;
+        }
+
+        public void UpdateLogged(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+            Patient pt = context.PatientSet.First(i => i.SNS == fk_sns);
+
+            if (pt != null)
+            {
+                if (pt.Logged == false)
+                {
+                    pt.Logged = true;
+                }
+                context.SaveChanges();
+            }
+        }
+
+        public void UpdateLogged2(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+            Patient pt = context.PatientSet.First(i => i.SNS == fk_sns);
+
+            if (pt != null)
+            {
+                if (pt.Logged == true)
+                {
+                    pt.Logged = false;
+                }
+                context.SaveChanges();
+            }
         }
 
         public void UpdatePatient(Patient patient)
@@ -105,12 +141,32 @@ namespace WCFMedacService
                     pt.Allergies = patient.Allergies;
                     pt.Height = patient.Height;
                     pt.OtherContact = patient.OtherContact;
+                    pt.Logged = patient.Logged;
+                    pt.Doctor = patient.Doctor;
 
                     context.SaveChanges();
                 }
         }
 
- 
+        public List<String> ViewActivePatients()
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<String> ListPatients = new List<String>();
+
+            var m = context.PatientSet.Where(i => i.Logged == true);
+
+            foreach (var mte in m)
+            {
+                if (mte.Logged == true)
+                {
+                    ListPatients.Add(mte.FirstName + mte.LastName);
+                }
+            }
+
+            return ListPatients;
+        }
+
 
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
             int oxygensaturation, DateTime date, TimeSpan time, int fk_sns)
@@ -165,7 +221,6 @@ namespace WCFMedacService
             }
 
             return ListbloodpressureMax;
-
         }
 
         //Blood Pressure MIN 3 days
@@ -441,6 +496,65 @@ namespace WCFMedacService
             } while (date.Day <= date2.Day);
 
             return ListOxygenSaturation;
+        }
+
+        ////Timer
+        //public List<DateTime> ViewTime(int fk_sns)
+        //{
+        //    ModelMedacContainer context = new ModelMedacContainer();
+
+        //    List<DateTime> ListofTime = new List<DateTime>();
+
+        //    var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
+
+        //    foreach (var mte in m)
+        //    {
+        //        ListofTime.Add(Convert.ToDateTime(mte.Time));
+
+        //    }
+        //    return ListofTime;
+        //}
+
+        public bool RegisterDoctor(string name, string medicalid)
+        {
+            Doctor d = new Doctor();
+            try
+            {
+
+                if (d != null)
+                {
+                    ModelMedacContainer context = new ModelMedacContainer();
+
+                    d.Name = name;
+                    d.ProfessionalNumber = medicalid;
+
+                    context.DoctorSet.Add(d);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public DoctorDC ValidadeDoctor(string id)
+        {
+            DoctorDC d = new DoctorDC();
+
+            ModelMedacContainer context = new ModelMedacContainer();
+            Doctor dc = context.DoctorSet.FirstOrDefault(i => i.ProfessionalNumber.Equals(id));
+
+            if (dc == null)
+                return null;
+            else
+            {
+                d.Name = dc.Name;
+                d.Medicalid = dc.ProfessionalNumber;
+
+                return d;
+            }
         }
     }
 }

@@ -120,6 +120,9 @@ namespace MedacProject
 
                 Properties.Settings.Default.Patient = patientid;
                 Properties.Settings.Default.Save();
+
+                web.UpdateLogged(patientid);
+
             }
             catch (Exception)
             {
@@ -144,6 +147,13 @@ namespace MedacProject
         {
             Medline FormMedline = new Medline();
             DialogResult = FormMedline.ShowDialog();
+        }
+
+        private void MyHealth_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            int patientid = int.Parse(textPacientId.Text);
+            ServiceHealthClient.Service1Client web = new Service1Client();
+            web.UpdateLogged2(patientid);
         }
     }
 }

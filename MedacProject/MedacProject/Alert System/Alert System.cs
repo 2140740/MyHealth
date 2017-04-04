@@ -59,7 +59,28 @@ namespace Alert_System
                 Statisticdata Formstatistics = new Statisticdata();
                 DialogResult = Formstatistics.ShowDialog();
             }
+            if (e.Node.Text.Equals("Register Doctor") || e.Node.Text.Equals("Login Doctor"))
+            {
+                Doctor FormDoctor = new Doctor();
+                DialogResult = FormDoctor.ShowDialog();
+            }
+            if (e.Node.Text.Equals("Active Patients"))
+            {
+                ActivePatients FormActivePatients = new ActivePatients();
+                DialogResult = FormActivePatients.ShowDialog();
+            }
+        }
 
+        private void registerMedicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                Doctor FormDoctor = new Doctor();
+                DialogResult = FormDoctor.ShowDialog();
+        }
+
+        private void activePatientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActivePatients FormActivePatients = new ActivePatients();
+            DialogResult = FormActivePatients.ShowDialog();
         }
     }
 }

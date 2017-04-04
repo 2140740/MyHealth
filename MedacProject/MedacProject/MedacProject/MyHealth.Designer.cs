@@ -51,8 +51,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.medicalId = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxMedation = new System.Windows.Forms.MaskedTextBox();
             this.medline = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxMedation = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -269,6 +269,13 @@
             this.medicalId.Text = "MedicalID";
             this.medicalId.Click += new System.EventHandler(this.medicalId_Click);
             // 
+            // medline
+            // 
+            this.medline.Name = "medline";
+            this.medline.Size = new System.Drawing.Size(62, 20);
+            this.medline.Text = "Medline";
+            this.medline.Click += new System.EventHandler(this.medline_Click);
+            // 
             // textBoxMedation
             // 
             this.textBoxMedation.Location = new System.Drawing.Point(286, 124);
@@ -277,13 +284,6 @@
             this.textBoxMedation.Size = new System.Drawing.Size(135, 20);
             this.textBoxMedation.TabIndex = 21;
             this.textBoxMedation.TextChanged += new System.EventHandler(this.textBoxMedation_TextChanged);
-            // 
-            // medline
-            // 
-            this.medline.Name = "medline";
-            this.medline.Size = new System.Drawing.Size(62, 20);
-            this.medline.Text = "Medline";
-            this.medline.Click += new System.EventHandler(this.medline_Click);
             // 
             // MyHealth
             // 
@@ -304,6 +304,7 @@
             this.Name = "MyHealth";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MyHealth_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

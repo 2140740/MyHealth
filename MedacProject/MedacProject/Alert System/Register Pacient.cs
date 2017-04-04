@@ -76,13 +76,15 @@ namespace Alert_System
                 {
                     othercontact = Convert.ToInt32(BoxOtherContact.Text);
                 }
+                bool logged = false;
+                string medicalid = Properties.Settings.Default.MedicalID;
 
                 ServiceReference1.Service1Client web = new Service1Client();
                 web.RegisterPatient(BoxFirstName.Text, BoxLastName.Text,
                     Convert.ToInt32(BoxPhone.Text), BoxEmail.Text, Convert.ToDateTime(BoxBirthday.Text),
                     Convert.ToInt32(BoxCCbi.Text), Convert.ToInt32(BoxSNS.Text),
                     BoxAddress.Text, gender, BoxAllergies.Text,
-                    height, othercontact);
+                    height, othercontact,logged,medicalid);
 
                 MessageBox.Show("Paciente Inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

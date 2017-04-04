@@ -7,6 +7,11 @@
       <End Role="Patient" EntitySet="PatientSet" />
       <End Role="Measurement" EntitySet="MeasurementSet" />
     </AssociationSet>
+    <EntitySet Name="DoctorSet" EntityType="ModelMedac.Doctor" />
+    <AssociationSet Name="DoctorPatient" Association="ModelMedac.DoctorPatient">
+      <End Role="Doctor" EntitySet="DoctorSet" />
+      <End Role="Patient" EntitySet="PatientSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Patient">
     <Key>
@@ -26,6 +31,8 @@
     <Property Name="Height" Type="Double" Nullable="true" />
     <Property Name="OtherContact" Type="String" Nullable="true" />
     <NavigationProperty Name="Measurement" Relationship="ModelMedac.PatientMeasurement" FromRole="Patient" ToRole="Measurement" />
+    <NavigationProperty Name="Doctor" Relationship="ModelMedac.DoctorPatient" FromRole="Patient" ToRole="Doctor" />
+    <Property Name="Logged" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Measurement">
     <Key>
@@ -43,5 +50,18 @@
   <Association Name="PatientMeasurement">
     <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />
     <End Type="ModelMedac.Measurement" Role="Measurement" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="ProfessionalNumber" Type="String" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="ModelMedac.DoctorPatient" FromRole="Doctor" ToRole="Patient" />
+  </EntityType>
+  <Association Name="DoctorPatient">
+    <End Type="ModelMedac.Doctor" Role="Doctor" Multiplicity="1" />
+    <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="*" />
   </Association>
 </Schema>

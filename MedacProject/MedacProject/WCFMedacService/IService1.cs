@@ -19,14 +19,25 @@ namespace WCFMedacService
         bool RegisterPatient(string firstname, string lastname, int phone,
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
-            int othercontact);
+            int othercontact,bool logged, string numberDoctor);
 
         [OperationContract]
         void UpdatePatient(Patient patient);
 
         [OperationContract]
+        void UpdateLogged(int fk_sns);
+
+        [OperationContract]
+        void UpdateLogged2(int fk_sns);
+
+        [OperationContract]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
             int oxygensaturation, DateTime date, TimeSpan time, int fk_sns);
+        [OperationContract]
+        bool RegisterDoctor(string firstname, string medicalid);
+
+        [OperationContract]
+        DoctorDC ValidadeDoctor(string id);
 
         [OperationContract]
         List<int> ViewBloodPressureMax(int fk_sns);
@@ -63,6 +74,15 @@ namespace WCFMedacService
 
         [OperationContract]
         List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2);
+
+        //[OperationContract]
+        //List<DateTime> ViewTime(int fk_sns);
+
+        [OperationContract]
+        List<String> ViewActivePatients();
+
+        [OperationContract]
+        List<Measurement> ViewMeasurements(int fk_sns);
     }
 
     [DataContract]
@@ -80,6 +100,8 @@ namespace WCFMedacService
         private string allergies;
         private double height;
         private int othercontact;
+        private bool logged;
+        private string numberDoctor;
 
         [DataMember]
         public string Firstname
@@ -183,6 +205,17 @@ namespace WCFMedacService
             get { return othercontact; }
 
             set { othercontact = value; }
+        }
+
+        [DataMember]
+        public bool Logged { get; set; }
+
+
+        [DataMember]
+        public string NumberDoctor
+        {
+            get { return numberDoctor; }
+            set { numberDoctor = value; }
         }
     }
 
@@ -294,6 +327,28 @@ namespace WCFMedacService
                 fk_sns = value;
             }
         }
+    }
+
+    [DataContract]
+    public class DoctorDC
+    {
+        private string name;
+        private string medicalid;
+
+        [DataMember]
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        [DataMember]
+        public string Medicalid
+        {
+            get { return medicalid; }
+            set { medicalid = value; }
+        }
+
     }
 }
 

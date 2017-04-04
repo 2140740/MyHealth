@@ -14,6 +14,8 @@
       <xs:element minOccurs="0" name="Height" type="xs:double" />
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Logged" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumberDoctor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Othercontact" type="xs:int" />
       <xs:element minOccurs="0" name="PatientID" type="xs:int" />
       <xs:element minOccurs="0" name="Phone" type="xs:int" />
@@ -27,12 +29,14 @@
       <xs:element minOccurs="0" name="Allergies" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="CC_BI" type="xs:int" />
+      <xs:element minOccurs="0" name="Doctor" nillable="true" type="tns:Doctor" />
       <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Gender" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Height" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Logged" type="xs:boolean" />
       <xs:element minOccurs="0" name="Measurement" nillable="true" type="tns:ArrayOfMeasurement" />
       <xs:element minOccurs="0" name="OtherContact" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Phone" type="xs:int" />
@@ -40,6 +44,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Patient" nillable="true" type="tns:Patient" />
+  <xs:complexType name="Doctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:ArrayOfPatient" />
+      <xs:element minOccurs="0" name="ProfessionalNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Doctor" nillable="true" type="tns:Doctor" />
+  <xs:complexType name="ArrayOfPatient">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patient" nillable="true" type="tns:Patient" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatient" nillable="true" type="tns:ArrayOfPatient" />
   <xs:complexType name="ArrayOfMeasurement">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Measurement" nillable="true" type="tns:Measurement" />
@@ -59,4 +78,11 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Measurement" nillable="true" type="tns:Measurement" />
+  <xs:complexType name="DoctorDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Medicalid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DoctorDC" nillable="true" type="tns:DoctorDC" />
 </xs:schema>

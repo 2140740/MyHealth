@@ -55,11 +55,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActivePatients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActivePatients.Designer.cs">
+      <DependentUpon>ActivePatients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Alert System.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Alert System.Designer.cs">
       <DependentUpon>Alert System.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,8 +104,14 @@
     <Compile Include="View Measurement.Designer.cs">
       <DependentUpon>View Measurement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActivePatients.resx">
+      <DependentUpon>ActivePatients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Alert System.resx">
       <DependentUpon>Alert System.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,6 +143,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ServiceReference1\Alert_System.ServiceReference1.DoctorDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\Alert_System.ServiceReference1.PatientDC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -17,6 +17,7 @@
           <ScalarProperty Name="Allergies" ColumnName="Allergies" />
           <ScalarProperty Name="Height" ColumnName="Height" />
           <ScalarProperty Name="OtherContact" ColumnName="OtherContact" />
+          <ScalarProperty Name="Logged" ColumnName="Logged" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -33,11 +34,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DoctorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Doctor)">
+        <MappingFragment StoreEntitySet="DoctorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProfessionalNumber" ColumnName="ProfessionalNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PatientMeasurement" TypeName="ModelMedac.PatientMeasurement" StoreEntitySet="MeasurementSet">
       <EndProperty Name="Patient">
         <ScalarProperty Name="Id" ColumnName="Patient_Id" />
       </EndProperty>
       <EndProperty Name="Measurement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorPatient" TypeName="ModelMedac.DoctorPatient" StoreEntitySet="PatientSet">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="Id" ColumnName="Doctor_Id" />
+      </EndProperty>
+      <EndProperty Name="Patient">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

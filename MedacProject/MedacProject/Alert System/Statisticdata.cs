@@ -61,8 +61,6 @@ namespace Alert_System
         {
             try
             {
-
-
                 //Blood Pressure 3 days     
                 int[] mtmax = web.ViewBloodPressureMax(fk_sns);
                 int[] mtmin = web.ViewBloodPressureMin(fk_sns);
@@ -274,6 +272,14 @@ namespace Alert_System
             dateTimePickerhr.MaxDate = DateTime.Today;
             dateTimePickerhr2.MaxDate = DateTime.Today;
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int[] mtmax = web.ViewBloodPressureMax(fk_sns);
+            int[] mtmin = web.ViewBloodPressureMin(fk_sns);
+            int[] hr = web.ViewHearRate(fk_sns);
+            int[] os = web.ViewOxygenSaturation(fk_sns);
         }
     }
 }

@@ -8,9 +8,14 @@
   <EntityContainer Name="ModelMedacStoreContainer">
     <EntitySet Name="PatientSet" EntityType="ModelMedac.Store.PatientSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MeasurementSet" EntityType="ModelMedac.Store.MeasurementSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoctorSet" EntityType="ModelMedac.Store.DoctorSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="PatientMeasurement" Association="ModelMedac.Store.PatientMeasurement">
       <End Role="Patient" EntitySet="PatientSet" />
       <End Role="Measurement" EntitySet="MeasurementSet" />
+    </AssociationSet>
+    <AssociationSet Name="DoctorPatient" Association="ModelMedac.Store.DoctorPatient">
+      <End Role="Doctor" EntitySet="DoctorSet" />
+      <End Role="Patient" EntitySet="PatientSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="PatientSet">
@@ -30,6 +35,8 @@
     <Property Name="Allergies" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Height" Type="float" Nullable="true" />
     <Property Name="OtherContact" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Logged" Type="bit" Nullable="false" />
+    <Property Name="Doctor_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="MeasurementSet">
     <Key>
@@ -44,6 +51,14 @@
     <Property Name="Time" Type="time" Nullable="false" />
     <Property Name="Patient_Id" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="DoctorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProfessionalNumber" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <Association Name="PatientMeasurement">
     <End Role="Patient" Type="ModelMedac.Store.PatientSet" Multiplicity="1" />
     <End Role="Measurement" Type="ModelMedac.Store.MeasurementSet" Multiplicity="*" />
@@ -53,6 +68,18 @@
       </Principal>
       <Dependent Role="Measurement">
         <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DoctorPatient">
+    <End Role="Doctor" Type="ModelMedac.Store.DoctorSet" Multiplicity="1" />
+    <End Role="Patient" Type="ModelMedac.Store.PatientSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Doctor_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -66,6 +93,11 @@
           <AssociationSet Name="PatientMeasurement" Association="ModelMedac.PatientMeasurement">
             <End Role="Patient" EntitySet="PatientSet" />
             <End Role="Measurement" EntitySet="MeasurementSet" />
+          </AssociationSet>
+          <EntitySet Name="DoctorSet" EntityType="ModelMedac.Doctor" />
+          <AssociationSet Name="DoctorPatient" Association="ModelMedac.DoctorPatient">
+            <End Role="Doctor" EntitySet="DoctorSet" />
+            <End Role="Patient" EntitySet="PatientSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Patient">
@@ -86,6 +118,8 @@
           <Property Name="Height" Type="Double" Nullable="true" />
           <Property Name="OtherContact" Type="String" Nullable="true" />
           <NavigationProperty Name="Measurement" Relationship="ModelMedac.PatientMeasurement" FromRole="Patient" ToRole="Measurement" />
+          <NavigationProperty Name="Doctor" Relationship="ModelMedac.DoctorPatient" FromRole="Patient" ToRole="Doctor" />
+          <Property Name="Logged" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Measurement">
           <Key>
@@ -103,6 +137,19 @@
         <Association Name="PatientMeasurement">
           <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />
           <End Type="ModelMedac.Measurement" Role="Measurement" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Doctor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="ProfessionalNumber" Type="String" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="ModelMedac.DoctorPatient" FromRole="Doctor" ToRole="Patient" />
+        </EntityType>
+        <Association Name="DoctorPatient">
+          <End Type="ModelMedac.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -126,6 +173,7 @@
           <ScalarProperty Name="Allergies" ColumnName="Allergies" />
           <ScalarProperty Name="Height" ColumnName="Height" />
           <ScalarProperty Name="OtherContact" ColumnName="OtherContact" />
+          <ScalarProperty Name="Logged" ColumnName="Logged" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -142,11 +190,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DoctorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Doctor)">
+        <MappingFragment StoreEntitySet="DoctorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProfessionalNumber" ColumnName="ProfessionalNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PatientMeasurement" TypeName="ModelMedac.PatientMeasurement" StoreEntitySet="MeasurementSet">
       <EndProperty Name="Patient">
         <ScalarProperty Name="Id" ColumnName="Patient_Id" />
       </EndProperty>
       <EndProperty Name="Measurement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorPatient" TypeName="ModelMedac.DoctorPatient" StoreEntitySet="PatientSet">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="Id" ColumnName="Doctor_Id" />
+      </EndProperty>
+      <EndProperty Name="Patient">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
