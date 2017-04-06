@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Configuration;
+using System.Speech.Recognition;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -145,6 +146,40 @@ namespace MedacProject
                 summarybrowser.DocumentText = fullSummary;
             }
 
+        }
+        private void Medline_Load(object sender, EventArgs e)
+        {
+            SpeechRecognizer recognizer = new SpeechRecognizer();
+
+            Choices colors = new Choices();
+
+            colors.Add(new string[] { "Go", "Clear" });
+
+            GrammarBuilder gb = new GrammarBuilder();
+
+            gb.Append(colors);
+
+            Grammar g = new Grammar(gb);
+
+            recognizer.LoadGrammar(g);
+
+            recognizer.SpeechRecognized += Recognizer_SpeechRecognized;
+
+        }
+
+        private void Recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            sr_SpeechRecognizer(sender, e);
+        }
+
+        void sr_SpeechRecognizer(object sender, SpeechRecognizedEventArgs e)
+        {
+
+            if (e.Result.Text.Equals("Go"))
+                buttonGO_Click(sender, e);
+
+            if (e.Result.Text.Equals("Clear"))
+                btnClear_Click(sender, e);
         }
     }
 }
