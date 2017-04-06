@@ -6,3 +6,26 @@ C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csproj.GenerateResource.Cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.exe
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.pdb
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Register_Pacient.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.View_Measurement.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\bin\Debug\Alert System.exe.config
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.exe
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.pdb
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\bin\Debug\Alert System.exe
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\bin\Debug\Alert System.pdb
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Properties.Resources.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Register_Pacient.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.View_Measurement.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csproj.GenerateResource.Cache
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.FormUpdate.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.FormUpdate.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.AlertSytem.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.AlertSytem.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Statisticdata.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Statisticdata.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Doctor.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.ActivePatients.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.ActivePatients.resources
+C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Doctor.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csprojResolveAssemblyReference.cache
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Alerts.resources

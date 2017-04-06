@@ -7,6 +7,16 @@
       <End Role="Patient" EntitySet="PatientSet" />
       <End Role="Measurement" EntitySet="MeasurementSet" />
     </AssociationSet>
+    <EntitySet Name="DoctorSet" EntityType="ModelMedac.Doctor" />
+    <AssociationSet Name="DoctorPatient" Association="ModelMedac.DoctorPatient">
+      <End Role="Doctor" EntitySet="DoctorSet" />
+      <End Role="Patient" EntitySet="PatientSet" />
+    </AssociationSet>
+    <EntitySet Name="AlertSet" EntityType="ModelMedac.Alert" />
+    <AssociationSet Name="PatientAlert" Association="ModelMedac.PatientAlert">
+      <End Role="Patient" EntitySet="PatientSet" />
+      <End Role="Alert" EntitySet="AlertSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Patient">
     <Key>
@@ -21,11 +31,14 @@
     <Property Name="CC_BI" Type="Int32" Nullable="false" />
     <Property Name="SNS" Type="Int32" Nullable="false" />
     <Property Name="Address" Type="String" Nullable="true" />
-    <Property Name="Gender" Type="String" Nullable="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="1" />
     <Property Name="Allergies" Type="String" Nullable="true" />
     <Property Name="Height" Type="Double" Nullable="true" />
     <Property Name="OtherContact" Type="String" Nullable="true" />
     <NavigationProperty Name="Measurement" Relationship="ModelMedac.PatientMeasurement" FromRole="Patient" ToRole="Measurement" />
+    <NavigationProperty Name="Doctor" Relationship="ModelMedac.DoctorPatient" FromRole="Patient" ToRole="Doctor" />
+    <Property Name="Logged" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Alert" Relationship="ModelMedac.PatientAlert" FromRole="Patient" ToRole="Alert" />
   </EntityType>
   <EntityType Name="Measurement">
     <Key>
@@ -37,12 +50,39 @@
     <Property Name="HeartRate" Type="Int32" Nullable="true" />
     <Property Name="OxygenSaturation" Type="Int32" Nullable="true" />
     <Property Name="Date" Type="DateTime" Nullable="false" />
-    <Property Name="Time" Type="String" Nullable="false" />
-    <Property Name="FK_SNS" Type="Int32" Nullable="false" />
+    <Property Name="Time" Type="Time" Nullable="false" />
     <NavigationProperty Name="Patient" Relationship="ModelMedac.PatientMeasurement" FromRole="Measurement" ToRole="Patient" />
   </EntityType>
   <Association Name="PatientMeasurement">
     <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />
     <End Type="ModelMedac.Measurement" Role="Measurement" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="ProfessionalNumber" Type="String" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="ModelMedac.DoctorPatient" FromRole="Doctor" ToRole="Patient" />
+  </EntityType>
+  <Association Name="DoctorPatient">
+    <End Type="ModelMedac.Doctor" Role="Doctor" Multiplicity="1" />
+    <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Alert">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Patient" Relationship="ModelMedac.PatientAlert" FromRole="Alert" ToRole="Patient" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Read" Type="Boolean" Nullable="false" />
+    <Property Name="Parameter" Type="String" Nullable="false" />
+  </EntityType>
+  <Association Name="PatientAlert">
+    <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="ModelMedac.Alert" Role="Alert" Multiplicity="*" />
   </Association>
 </Schema>

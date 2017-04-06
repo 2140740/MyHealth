@@ -18,6 +18,7 @@ namespace WCFMedacService
         public Patient()
         {
             this.Measurement = new HashSet<Measurement>();
+            this.Alert = new HashSet<Alert>();
         }
     
         public int Id { get; set; }
@@ -33,8 +34,12 @@ namespace WCFMedacService
         public string Allergies { get; set; }
         public Nullable<double> Height { get; set; }
         public string OtherContact { get; set; }
+        public bool Logged { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Measurement> Measurement { get; set; }
+        public virtual Doctor Doctor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Alert> Alert { get; set; }
     }
 }

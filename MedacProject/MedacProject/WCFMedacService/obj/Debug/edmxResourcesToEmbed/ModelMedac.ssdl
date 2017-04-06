@@ -3,9 +3,19 @@
   <EntityContainer Name="ModelMedacStoreContainer">
     <EntitySet Name="PatientSet" EntityType="ModelMedac.Store.PatientSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MeasurementSet" EntityType="ModelMedac.Store.MeasurementSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoctorSet" EntityType="ModelMedac.Store.DoctorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlertSet" EntityType="ModelMedac.Store.AlertSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="PatientMeasurement" Association="ModelMedac.Store.PatientMeasurement">
       <End Role="Patient" EntitySet="PatientSet" />
       <End Role="Measurement" EntitySet="MeasurementSet" />
+    </AssociationSet>
+    <AssociationSet Name="DoctorPatient" Association="ModelMedac.Store.DoctorPatient">
+      <End Role="Doctor" EntitySet="DoctorSet" />
+      <End Role="Patient" EntitySet="PatientSet" />
+    </AssociationSet>
+    <AssociationSet Name="PatientAlert" Association="ModelMedac.Store.PatientAlert">
+      <End Role="Patient" EntitySet="PatientSet" />
+      <End Role="Alert" EntitySet="AlertSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="PatientSet">
@@ -21,10 +31,12 @@
     <Property Name="CC_BI" Type="int" Nullable="false" />
     <Property Name="SNS" Type="int" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="1" />
     <Property Name="Allergies" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Height" Type="float" Nullable="true" />
     <Property Name="OtherContact" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Logged" Type="bit" Nullable="false" />
+    <Property Name="Doctor_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="MeasurementSet">
     <Key>
@@ -36,8 +48,26 @@
     <Property Name="HeartRate" Type="int" Nullable="true" />
     <Property Name="OxygenSaturation" Type="int" Nullable="true" />
     <Property Name="Date" Type="datetime" Nullable="false" />
-    <Property Name="Time" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FK_SNS" Type="int" Nullable="false" />
+    <Property Name="Time" Type="time" Nullable="false" />
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DoctorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProfessionalNumber" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlertSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Read" Type="bit" Nullable="false" />
+    <Property Name="Parameter" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Patient_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PatientMeasurement">
@@ -48,6 +78,30 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Measurement">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DoctorPatient">
+    <End Role="Doctor" Type="ModelMedac.Store.DoctorSet" Multiplicity="1" />
+    <End Role="Patient" Type="ModelMedac.Store.PatientSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Doctor_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PatientAlert">
+    <End Role="Patient" Type="ModelMedac.Store.PatientSet" Multiplicity="1" />
+    <End Role="Alert" Type="ModelMedac.Store.AlertSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Alert">
         <PropertyRef Name="Patient_Id" />
       </Dependent>
     </ReferentialConstraint>

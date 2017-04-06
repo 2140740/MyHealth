@@ -17,6 +17,7 @@
           <ScalarProperty Name="Allergies" ColumnName="Allergies" />
           <ScalarProperty Name="Height" ColumnName="Height" />
           <ScalarProperty Name="OtherContact" ColumnName="OtherContact" />
+          <ScalarProperty Name="Logged" ColumnName="Logged" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -30,7 +31,26 @@
           <ScalarProperty Name="OxygenSaturation" ColumnName="OxygenSaturation" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Time" ColumnName="Time" />
-          <ScalarProperty Name="FK_SNS" ColumnName="FK_SNS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DoctorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Doctor)">
+        <MappingFragment StoreEntitySet="DoctorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProfessionalNumber" ColumnName="ProfessionalNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlertSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Alert)">
+        <MappingFragment StoreEntitySet="AlertSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Read" ColumnName="Read" />
+          <ScalarProperty Name="Parameter" ColumnName="Parameter" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -39,6 +59,22 @@
         <ScalarProperty Name="Id" ColumnName="Patient_Id" />
       </EndProperty>
       <EndProperty Name="Measurement">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorPatient" TypeName="ModelMedac.DoctorPatient" StoreEntitySet="PatientSet">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="Id" ColumnName="Doctor_Id" />
+      </EndProperty>
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PatientAlert" TypeName="ModelMedac.PatientAlert" StoreEntitySet="AlertSet">
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="Id" ColumnName="Patient_Id" />
+      </EndProperty>
+      <EndProperty Name="Alert">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

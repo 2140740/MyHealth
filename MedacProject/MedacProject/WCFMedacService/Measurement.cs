@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Runtime.Serialization;
-
 namespace WCFMedacService
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Measurement
     {
         public int Id { get; set; }
@@ -22,8 +20,7 @@ namespace WCFMedacService
         public Nullable<int> HeartRate { get; set; }
         public Nullable<int> OxygenSaturation { get; set; }
         public System.DateTime Date { get; set; }
-        public string Time { get; set; }
-        public int FK_SNS { get; set; }
+        public System.TimeSpan Time { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

@@ -13,22 +13,82 @@ namespace WCFMedacService
     public interface IService1
     {
         [OperationContract]
-        Patient ValidadePatient(int id);
+        PatientDC ValidadePatient(int id);
 
         [OperationContract]
-        void RegisterPatient(string firstname, string lastname, int phone,
+        bool RegisterPatient(string firstname, string lastname, int phone,
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
-            int othercontact);
+            string othercontact, bool logged, string numberDoctor);
 
         [OperationContract]
-        void RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
-            int oxygensaturation, string date, string time, int fk_sns);
+        void UpdatePatient(Patient patient);
+
+        [OperationContract]
+        void UpdateLogged(int fk_sns);
+
+        [OperationContract]
+        bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
+            int oxygensaturation, DateTime date, TimeSpan time, int fk_sns);
+
+        [OperationContract]
+        bool RegisterDoctor(string firstname, string medicalid);
+
+        [OperationContract]
+        DoctorDC ValidadeDoctor(string id);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMax(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMin(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMaxthreedays(int fk_sns, DateTime date);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMinthreedays(int fk_sns, DateTime date);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMaxCalendar(int fk_sns, DateTime date, DateTime date2);
+
+        [OperationContract]
+        List<int> ViewBloodPressureMinCalendar(int fk_sns, DateTime date, DateTime date2);
+
+        [OperationContract]
+        List<int> ViewHearRate(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewHearRatethreedays(int fk_sns, DateTime date);
+
+        [OperationContract]
+        List<int> ViewHeartRateCalendar(int fk_sns, DateTime date, DateTime date2);
+
+        [OperationContract]
+        List<int> ViewOxygenSaturation(int fk_sns);
+
+        [OperationContract]
+        List<int> ViewOxygenSaturationthreedays(int fk_sns, DateTime date);
+
+        [OperationContract]
+        List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2);
+
+        [OperationContract]
+        List<string> ViewTime(int fk_sns);
+
+        [OperationContract]
+        List<string> ViewActivePatients();
+
+        [OperationContract]
+        bool RegisterWarnings(int fk_sns, string type, DateTime date, bool read, string parameter);
+
+        [OperationContract]
+        List<string> ViewWarnings(int fk_sns);
 
     }
 
     [DataContract]
-    public class Paciente
+    public class PatientDC
     {
         private string firstname;
         private string lastname;
@@ -41,7 +101,9 @@ namespace WCFMedacService
         private char gender;
         private string allergies;
         private double height;
-        private int othercontact;
+        private string othercontact;
+        private bool logged;
+        private string numberDoctor;
 
         [DataMember]
         public string Firstname
@@ -140,115 +202,154 @@ namespace WCFMedacService
         }
 
         [DataMember]
-        public int Othercontact
+        public string Othercontact
         {
             get { return othercontact; }
 
             set { othercontact = value; }
         }
+
+        [DataMember]
+        public bool Logged { get; set; }
+
+
+        [DataMember]
+        public string NumberDoctor
+        {
+            get { return numberDoctor; }
+            set { numberDoctor = value; }
+        }
     }
 
     [DataContract]
-    public partial class Measurement
+    public class MeasurementDC
     {
         private int bloodpressuremin;
         private int bloodpressuremax;
         private int heartrate;
         private int oxygensaturation;
         private DateTime date;
-        private string time;
+        private TimeSpan time;
         private int fk_sns;
 
+        [DataMember]
         public int Bloodpressuremin
         {
-            get
-            {
-                return bloodpressuremin;
-            }
+            get { return bloodpressuremin; }
 
-            set
-            {
-                bloodpressuremin = value;
-            }
+            set { bloodpressuremin = value; }
         }
 
+        [DataMember]
         public int Bloodpressuremax
         {
-            get
-            {
-                return bloodpressuremax;
-            }
+            get { return bloodpressuremax; }
 
-            set
-            {
-                bloodpressuremax = value;
-            }
+            set { bloodpressuremax = value; }
         }
 
+        [DataMember]
         public int Heartrate
         {
-            get
-            {
-                return heartrate;
-            }
+            get { return heartrate; }
 
-            set
-            {
-                heartrate = value;
-            }
+            set { heartrate = value; }
         }
 
+        [DataMember]
         public int Oxygensaturation
         {
-            get
-            {
-                return oxygensaturation;
-            }
+            get { return oxygensaturation; }
 
-            set
-            {
-                oxygensaturation = value;
-            }
+            set { oxygensaturation = value; }
         }
 
-        public DateTime Date1
+        [DataMember]
+        public DateTime Date
         {
-            get
-            {
-                return date;
-            }
+            get { return date; }
 
-            set
-            {
-                date = value;
-            }
+            set { date = value; }
         }
 
-        public string Time1
+        [DataMember]
+        public TimeSpan Time
         {
-            get
-            {
-                return time;
-            }
+            get { return time; }
 
-            set
-            {
-                time = value;
-            }
+            set { time = value; }
         }
+
+        [DataMember]
+        public int Fk_sns
+        {
+            get { return fk_sns; }
+
+            set { fk_sns = value; }
+        }
+    }
+
+    [DataContract]
+    public class DoctorDC
+    {
+        private string name;
+        private string medicalid;
+
+        [DataMember]
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        [DataMember]
+        public string Medicalid
+        {
+            get { return medicalid; }
+            set { medicalid = value; }
+        }
+
+    }
+
+    [DataContract]
+    public class AlertDC
+    {
+        private int fk_sns;
+        private string type;
+        private DateTime date;
+        private bool read;
+        private string parameter;
 
         public int Fk_sns
         {
-            get
-            {
-                return fk_sns;
-            }
+            get { return fk_sns; }
 
-            set
-            {
-                fk_sns = value;
-            }
+            set { fk_sns = value; }
+        }
+
+        [DataMember]
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        [DataMember]
+        public DateTime Date
+        {
+            get { return date; }
+
+            set { date = value; }
+        }
+
+        [DataMember]
+        public bool Read { get; set; }
+
+        [DataMember]
+        public string Parameter
+        {
+            get { return parameter; }
+            set { parameter = value; }
         }
     }
 }
-

@@ -27,5 +27,7 @@ namespace WCFMedacService
     
         public virtual DbSet<Patient> PatientSet { get; set; }
         public virtual DbSet<Measurement> MeasurementSet { get; set; }
+        public virtual DbSet<Doctor> DoctorSet { get; set; }
+        public virtual DbSet<Alert> AlertSet { get; set; }
     }
 }
