@@ -9,15 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MedacProject.ServiceHealthClient;
 using PhysiologicParametersDll;
+using System.Timers;
+
 
 namespace MedacProject
 {
     public partial class MyHealth : Form
     {
+
         public MyHealth()
         {
             InitializeComponent();
         }
+
+        bool flag = false;
+        ServiceHealthClient.Service1Client web = new Service1Client();
+        int second = 1;
+        int conta = 0;
+        int valor;
+        int limit = 600000;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -28,10 +38,14 @@ namespace MedacProject
 
         private void monitoring_Click(object sender, EventArgs e)
         {
-            PhysiologicParametersDll.PhysiologicParametersDll dll = new PhysiologicParametersDll.PhysiologicParametersDll();
+            PhysiologicParametersDll.PhysiologicParametersDll dll =
+                new PhysiologicParametersDll.PhysiologicParametersDll();
             //utilizar o valor dos XXXX por exemplo para XXXX, deve ser utilizado nas settings
             //a definir pelo paciente
-            dll.Initialize(MyProcessMetod, Convert.ToInt32(Convert.ToInt32(textBoxMedation.Text.ToString()) * 1000), true, true, true);
+
+            dll.InitializeWithAlerts(MyProcessMetod, Convert.ToInt32(Convert.ToInt32(textBoxMedation.Text.ToString()) * 1000), true,
+                true, true);
+            flag = false;
         }
 
         private void MyProcessMetod(string message)
@@ -43,13 +57,16 @@ namespace MedacProject
             int fk_sns = Convert.ToInt32(textPacientId.Text);
             DateTime date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
             TimeSpan time = DateTime.Now.TimeOfDay;
+            timer1.Interval = 1000;
+            timer1.Start();
 
-            char[] delimiterChars = { ' ', ';' };
 
+            char[] delimiterChars = {' ', ';'};
+
+            if(flag == false) { 
             this.BeginInvoke(new MethodInvoker(delegate
             {
-
-                if (checkBoxBP.Checked)
+                    if (checkBoxBP.Checked)
                 {
                     if (message.Contains("BP"))
                     {
@@ -60,7 +77,29 @@ namespace MedacProject
                         bloodPressureMin = Convert.ToInt32(texto[1]);
                         date = DateTime.Parse(bloodpre[2] + " " + bloodpre[3]);
                         time = TimeSpan.Parse(bloodpre[3]);
+                        //---------------------------------------------------------------------------
+                        if (bloodPressureMax > 180 || bloodPressureMin < 80)
+                        {
+                            if (timer1.Interval < 1800000)
+                            {
+                                valor = 30000/(Convert.ToInt32(textBoxMedation.Text)*1000);
+                                if (timer1.Interval < limit)
+                                {
+                                    conta = conta + 1;
+                                    if (conta == valor)
+                                    {
+                                        web.RegisterWarnings(fk_sns, "Warning", DateTime.Now.Date + DateTime.Now.TimeOfDay, false, "Blood Pressure");
+                                    }
 
+                                }
+                            }
+                            
+                        }
+                        else
+                        {
+                            limit = 600000;
+                        }
+                        //------------------------------------------------------------------------------
                     }
                 }
 
@@ -74,6 +113,29 @@ namespace MedacProject
                         oxygenSaturation = Convert.ToInt32(sp[1]);
                         date = Convert.ToDateTime(sp[2]);
                         time = TimeSpan.Parse(sp[3]);
+                        //---------------------------------------------------------------------------
+                        if (oxygenSaturation < 90)
+                        {
+                            if (timer1.Interval < 1800000)
+                            {
+                                valor = 30000 / (Convert.ToInt32(textBoxMedation.Text) * 1000);
+                                if (timer1.Interval < limit)
+                                {
+                                    conta = conta + 1;
+                                    if (conta == valor)
+                                    {
+                                        web.RegisterWarnings(fk_sns, "Warning", DateTime.Now.Date + DateTime.Now.TimeOfDay, false, "Oxygen Saturation");
+                                    }
+
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            limit = 600000;
+                        }
+                        //------------------------------------------------------------------------------
                     }
                 }
 
@@ -88,13 +150,35 @@ namespace MedacProject
                         heartRate = Convert.ToInt32(hr[1]);
                         date = Convert.ToDateTime(hr[2]);
                         time = TimeSpan.Parse(hr[3]);
+                        //---------------------------------------------------------------------------
+                        if (heartRate < 60 || heartRate > 120)
+                        {
+                            if (timer1.Interval < 1800000)
+                            {
+                                valor = 30000 / (Convert.ToInt32(textBoxMedation.Text) * 1000);
+                                if (timer1.Interval < limit)
+                                {
+                                    conta = conta + 1;
+                                    if (conta == valor)
+                                    {
+                                        web.RegisterWarnings(fk_sns, "Warning", DateTime.Now.Date + DateTime.Now.TimeOfDay, false, "Heart");
+                                    }
+
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            limit = 600000;
+                        }
+                        //------------------------------------------------------------------------------
                     }
                 }
 
                 //tudo o que tiver entre as chavetas
                 try
                 {
-                    ServiceHealthClient.Service1Client web = new Service1Client();
                     web.RegisterMeasurement(bloodPressureMin, bloodPressureMax, heartRate,
                         oxygenSaturation, Convert.ToDateTime(date), time, fk_sns);
                 }
@@ -104,6 +188,8 @@ namespace MedacProject
                 }
             }));
 
+            }
+
         }
 
         private void validate_Click(object sender, EventArgs e)
@@ -111,8 +197,6 @@ namespace MedacProject
             try
             {
                 int patientid = int.Parse(textPacientId.Text);
-
-                ServiceHealthClient.Service1Client web = new Service1Client();
 
                 PatientDC p = web.ValidadePatient(patientid);
 
@@ -152,8 +236,12 @@ namespace MedacProject
         private void MyHealth_FormClosing(object sender, FormClosingEventArgs e)
         {
             int patientid = int.Parse(textPacientId.Text);
-            ServiceHealthClient.Service1Client web = new Service1Client();
-            web.UpdateLogged2(patientid);
+            web.UpdateLogged(patientid);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label7.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

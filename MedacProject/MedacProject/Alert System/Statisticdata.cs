@@ -80,10 +80,11 @@ namespace Alert_System
                     medpre = (mtmaxthreedays.Sum() + mtminthreedays.Sum())/
                              (mtmaxthreedays.Length + mtminthreedays.Length);
                 }
-
+                //Blood Pressuser Calendar
                 else if (choosedatespb.Checked)
                 {
-                    if (dateTimePickerbp2.Value.Date > dateTimePickerbp.Value.Date)
+                    if (dateTimePickerbp2.Value.Hour > dateTimePickerbp.Value.Hour || dateTimePickerbp2.Value.Minute > dateTimePickerbp.Value.Minute
+                        || dateTimePickerbp2.Value.Date > dateTimePickerbp.Value.Date || dateTimePickerbp2.Value.Second > dateTimePickerbp.Value.Second)
                     {
                         int[] bpchoosedatesmax = web.ViewBloodPressureMaxCalendar(fk_sns, dateTimePickerbp.Value.Date,
                             dateTimePickerbp2.Value.Date);
@@ -152,7 +153,8 @@ namespace Alert_System
                 //Heart Rate Calendar
                 else if (choosedateshr.Checked)
                 {
-                    if (dateTimePickerhr2.Value.Date > dateTimePickerhr.Value.Date)
+                    if (dateTimePickerhr2.Value.Hour > dateTimePickerhr.Value.Hour || dateTimePickerhr2.Value.Minute > dateTimePickerhr.Value.Minute 
+                        || dateTimePickerhr2.Value.Date > dateTimePickerhr.Value.Date || dateTimePickerhr2.Value.Second > dateTimePickerhr.Value.Second)
                     {
                         int[] hrchoosedates = web.ViewHeartRateCalendar(fk_sns, dateTimePickerhr.Value.Date,
                             dateTimePickerhr2.Value.Date);
@@ -217,8 +219,9 @@ namespace Alert_System
                 //Oxygen Saturation Calendar
                 else if (choosedatesos.Checked)
                 {
-                    if (dateTimePickeros2.Value.Date > dateTimePickeros.Value.Date)
-                    {
+                    if (dateTimePickeros2.Value.Hour > dateTimePickeros.Value.Hour || dateTimePickeros2.Value.Minute > dateTimePickeros.Value.Minute
+                         || dateTimePickeros2.Value.Date > dateTimePickeros.Value.Date || dateTimePickeros2.Value.Second > dateTimePickeros.Value.Second)
+                        {
                         int[] oschoosedates = web.ViewOxygenSaturationCalendar(fk_sns, dateTimePickeros.Value.Date,
                             dateTimePickeros2.Value.Date);
 
@@ -271,23 +274,23 @@ namespace Alert_System
             dateTimePickerbp.MaxDate = DateTime.Today;
             //-----------------------------------------------------------BP2
             dateTimePickerbp2.Format = DateTimePickerFormat.Custom;
-            dateTimePickerbp2.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
+            dateTimePickerbp2.CustomFormat = "dddd, dd/MMMM/yyyy HH:mm:ss";
             dateTimePickerbp2.MaxDate = DateTime.Today;
             //-----------------------------------------------------------OS
             dateTimePickeros.Format = DateTimePickerFormat.Custom;
-            dateTimePickeros.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
+            dateTimePickeros.CustomFormat = "dddd, dd/MMMM/yyyy HH:mm:ss";
             dateTimePickeros.MaxDate = DateTime.Today;
             //-----------------------------------------------------------OS2
             dateTimePickeros2.Format = DateTimePickerFormat.Custom;
-            dateTimePickeros2.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
+            dateTimePickeros2.CustomFormat = "dddd, dd/MMMM/yyyy HH:mm:ss";
             dateTimePickeros2.MaxDate = DateTime.Today;
             //-----------------------------------------------------------HR
             dateTimePickerhr.Format = DateTimePickerFormat.Custom;
-            dateTimePickerhr.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
+            dateTimePickerhr.CustomFormat = "dddd, dd/MMMM/yyyy HH:mm:ss";
             dateTimePickerhr.MaxDate = DateTime.Today;
             //-----------------------------------------------------------HR2
             dateTimePickerhr2.Format = DateTimePickerFormat.Custom;
-            dateTimePickerhr2.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
+            dateTimePickerhr2.CustomFormat = "dddd, dd/MMMM/yyyy HH:mm:ss";
             dateTimePickerhr2.MaxDate = DateTime.Today;
 
         }
@@ -298,6 +301,54 @@ namespace Alert_System
             int[] mtmin = web.ViewBloodPressureMin(fk_sns);
             int[] hr = web.ViewHearRate(fk_sns);
             int[] os = web.ViewOxygenSaturation(fk_sns);
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Text.Equals("Register Patient"))
+            {
+                Register_Pacient FormRegistPacient = new Register_Pacient();
+                DialogResult = FormRegistPacient.ShowDialog();
+            }
+            if (e.Node.Text.Equals("Update Patient"))
+            {
+                FormUpdate FormUpdatePacient = new FormUpdate();
+                DialogResult = FormUpdatePacient.ShowDialog();
+            }
+
+            if (e.Node.Text.Equals("View Measurement"))
+            {
+                View_Measurement FormViewMeasurement = new View_Measurement();
+                DialogResult = FormViewMeasurement.ShowDialog();
+            }
+
+            if (e.Node.Text.Equals("Statistic data"))
+            {
+                Statisticdata Formstatistics = new Statisticdata();
+                DialogResult = Formstatistics.ShowDialog();
+            }
+            if (e.Node.Text.Equals("Register Doctor") || e.Node.Text.Equals("Login Doctor"))
+            {
+                Doctor FormDoctor = new Doctor();
+                DialogResult = FormDoctor.ShowDialog();
+            }
+            if (e.Node.Text.Equals("Active Patients"))
+            {
+                ActivePatients FormActivePatients = new ActivePatients();
+                DialogResult = FormActivePatients.ShowDialog();
+            }
+        }
+
+        private void registerMedicToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Doctor FormDoctor = new Doctor();
+            DialogResult = FormDoctor.ShowDialog();
+        }
+
+        private void activePatientsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActivePatients FormActivePatients = new ActivePatients();
+            DialogResult = FormActivePatients.ShowDialog();
         }
     }
 }

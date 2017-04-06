@@ -44,6 +44,7 @@
             treeNode7,
             treeNode8});
             System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Active Patients");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Alerts");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlertSytem));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registerPatient = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +54,7 @@
             this.registerMedicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activePatientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.alertsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,10 +64,11 @@
             this.registerPatient,
             this.viewMeasurement,
             this.registerMedicToolStripMenuItem,
-            this.activePatientsToolStripMenuItem});
+            this.activePatientsToolStripMenuItem,
+            this.alertsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(349, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(498, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -137,20 +140,30 @@
             treeNode9.Text = "Doctor";
             treeNode10.Name = "Active Patients";
             treeNode10.Text = "Active Patients";
+            treeNode11.Name = "Alerts";
+            treeNode11.Text = "Alerts";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
             treeNode6,
             treeNode9,
-            treeNode10});
+            treeNode10,
+            treeNode11});
             this.treeView1.Size = new System.Drawing.Size(154, 253);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            // 
+            // alertsToolStripMenuItem
+            // 
+            this.alertsToolStripMenuItem.Name = "alertsToolStripMenuItem";
+            this.alertsToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.alertsToolStripMenuItem.Text = "Alerts";
+            this.alertsToolStripMenuItem.Click += new System.EventHandler(this.alertsToolStripMenuItem_Click);
             // 
             // AlertSytem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 292);
+            this.ClientSize = new System.Drawing.Size(498, 292);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,6 +188,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ToolStripMenuItem registerMedicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activePatientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alertsToolStripMenuItem;
     }
 }
 

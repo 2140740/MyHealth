@@ -31,7 +31,7 @@
         <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="gender" type="q2:char" />
         <xs:element minOccurs="0" name="allergies" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="height" type="xs:double" />
-        <xs:element minOccurs="0" name="othercontact" type="xs:int" />
+        <xs:element minOccurs="0" name="othercontact" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="logged" type="xs:boolean" />
         <xs:element minOccurs="0" name="numberDoctor" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -64,18 +64,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateLoggedResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateLogged2">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="UpdateLogged2Response">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -319,7 +307,7 @@
   <xs:element name="ViewTimeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewTimeResult" nillable="true" type="q18:ArrayOfdateTime" />
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewTimeResult" nillable="true" type="q18:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -332,6 +320,38 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewActivePatientsResult" nillable="true" type="q19:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterWarnings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="read" type="xs:boolean" />
+        <xs:element minOccurs="0" name="parameter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterWarningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterWarningsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewWarnings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fk_sns" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ViewWarningsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViewWarningsResult" nillable="true" type="q20:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

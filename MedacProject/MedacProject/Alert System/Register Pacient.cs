@@ -27,7 +27,8 @@ namespace Alert_System
         {
             char gender = ' ';
             double height = 0.0;
-            int othercontact = 0;
+            string othercontact;
+            string medicalid = Properties.Settings.Default.MedicalID;
             try
             {
                 if (!BoxFirstName.Text.Equals("") && !BoxLastName.Text.Equals("")
@@ -70,23 +71,35 @@ namespace Alert_System
                 }
                 if (BoxOtherContact.Text.Equals(""))
                 {
-                    othercontact = 0;
+                    othercontact = "";
                 }
                 else
                 {
-                    othercontact = Convert.ToInt32(BoxOtherContact.Text);
+                    othercontact = BoxOtherContact.Text;
                 }
                 bool logged = false;
-                string medicalid = Properties.Settings.Default.MedicalID;
+                
+
 
                 ServiceReference1.Service1Client web = new Service1Client();
-                web.RegisterPatient(BoxFirstName.Text, BoxLastName.Text,
-                    Convert.ToInt32(BoxPhone.Text), BoxEmail.Text, Convert.ToDateTime(BoxBirthday.Text),
-                    Convert.ToInt32(BoxCCbi.Text), Convert.ToInt32(BoxSNS.Text),
-                    BoxAddress.Text, gender, BoxAllergies.Text,
-                    height, othercontact,logged,medicalid);
 
-                MessageBox.Show("Paciente Inserido com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DoctorDC doctor = web.ValidadeDoctor(medicalid);
+                if (doctor != null)
+                {
+                    web.RegisterPatient(BoxFirstName.Text, BoxLastName.Text,
+                        Convert.ToInt32(BoxPhone.Text), BoxEmail.Text, Convert.ToDateTime(BoxBirthday.Text),
+                        Convert.ToInt32(BoxCCbi.Text), Convert.ToInt32(BoxSNS.Text),
+                        BoxAddress.Text, gender, BoxAllergies.Text,
+                        height, othercontact, logged, medicalid);
+
+                    MessageBox.Show("Paciente Inserido com sucesso!", "Sucesso", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Falta o médico fazer login", "Erro", MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

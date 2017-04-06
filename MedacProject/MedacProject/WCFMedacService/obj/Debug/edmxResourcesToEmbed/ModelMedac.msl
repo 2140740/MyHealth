@@ -47,8 +47,10 @@
       <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Alert)">
         <MappingFragment StoreEntitySet="AlertSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Warning" ColumnName="Warning" />
-          <ScalarProperty Name="Critical" ColumnName="Critical" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Read" ColumnName="Read" />
+          <ScalarProperty Name="Parameter" ColumnName="Parameter" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

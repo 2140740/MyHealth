@@ -19,7 +19,6 @@ D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_Sys
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csproj.GenerateResource.Cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.FormUpdate.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.FormUpdate.resources
-D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csprojResolveAssemblyReference.cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.AlertSytem.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.AlertSytem.resources
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Statisticdata.resources
@@ -28,3 +27,5 @@ D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_Sys
 D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.ActivePatients.resources
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.ActivePatients.resources
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Doctor.resources
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert System.csprojResolveAssemblyReference.cache
+D:\David_GIT\MyHealth\MedacProject\MedacProject\Alert System\obj\Debug\Alert_System.Alerts.resources

@@ -41,6 +41,12 @@
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Measurement", new System.Windows.Forms.TreeNode[] {
             treeNode4,
             treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Register Doctor");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Login Doctor");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Doctor", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Active Patients");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Measurement));
             this.button1 = new System.Windows.Forms.Button();
             this.pressuregraph = new System.Windows.Forms.Button();
@@ -50,9 +56,16 @@
             this.oxygengraph = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.statisticData = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.MaskedTextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkshowvaluebp = new System.Windows.Forms.CheckBox();
+            this.savegraph = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.checkshowvaluehr = new System.Windows.Forms.CheckBox();
+            this.checkshowvaluesos = new System.Windows.Forms.CheckBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -70,7 +83,8 @@
             // 
             // pressuregraph
             // 
-            this.pressuregraph.Location = new System.Drawing.Point(193, 34);
+            this.pressuregraph.Enabled = false;
+            this.pressuregraph.Location = new System.Drawing.Point(683, 102);
             this.pressuregraph.Name = "pressuregraph";
             this.pressuregraph.Size = new System.Drawing.Size(114, 23);
             this.pressuregraph.TabIndex = 10;
@@ -100,14 +114,15 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.chart1);
-            this.panel1.Location = new System.Drawing.Point(193, 77);
+            this.panel1.Location = new System.Drawing.Point(193, 211);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(604, 341);
             this.panel1.TabIndex = 11;
             // 
             // heartrategraph
             // 
-            this.heartrategraph.Location = new System.Drawing.Point(313, 34);
+            this.heartrategraph.Enabled = false;
+            this.heartrategraph.Location = new System.Drawing.Point(683, 131);
             this.heartrategraph.Name = "heartrategraph";
             this.heartrategraph.Size = new System.Drawing.Size(114, 23);
             this.heartrategraph.TabIndex = 12;
@@ -117,7 +132,8 @@
             // 
             // oxygengraph
             // 
-            this.oxygengraph.Location = new System.Drawing.Point(433, 34);
+            this.oxygengraph.Enabled = false;
+            this.oxygengraph.Location = new System.Drawing.Point(683, 160);
             this.oxygengraph.Name = "oxygengraph";
             this.oxygengraph.Size = new System.Drawing.Size(114, 23);
             this.oxygengraph.TabIndex = 13;
@@ -142,28 +158,6 @@
             this.statisticData.Text = "Statistic Data";
             this.statisticData.Click += new System.EventHandler(this.statisticData_Click);
             // 
-            // treeView1
-            // 
-            this.treeView1.Location = new System.Drawing.Point(12, 174);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "RegisterPatient";
-            treeNode1.Text = "Register Patient";
-            treeNode2.Name = "UpdatePatient";
-            treeNode2.Text = "Update Patient";
-            treeNode3.Name = "Node0";
-            treeNode3.Text = "Patient";
-            treeNode4.Name = "ViewMeasurement";
-            treeNode4.Text = "View Measurement";
-            treeNode5.Name = "Statistic data";
-            treeNode5.Text = "Statistic data";
-            treeNode6.Name = "Node4";
-            treeNode6.Text = "Measurement";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(154, 253);
-            this.treeView1.TabIndex = 29;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -181,14 +175,125 @@
             this.textBox8.Size = new System.Drawing.Size(144, 20);
             this.textBox8.TabIndex = 31;
             // 
+            // listBox1
+            // 
+            this.listBox1.Enabled = false;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Line",
+            "Point",
+            "FastPoint",
+            "Bubble",
+            "Spline",
+            "Column"});
+            this.listBox1.Location = new System.Drawing.Point(193, 69);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 56);
+            this.listBox1.TabIndex = 32;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(190, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Chart type:";
+            // 
+            // checkshowvaluebp
+            // 
+            this.checkshowvaluebp.AutoSize = true;
+            this.checkshowvaluebp.Enabled = false;
+            this.checkshowvaluebp.Location = new System.Drawing.Point(193, 137);
+            this.checkshowvaluebp.Name = "checkshowvaluebp";
+            this.checkshowvaluebp.Size = new System.Drawing.Size(162, 17);
+            this.checkshowvaluebp.TabIndex = 34;
+            this.checkshowvaluebp.Text = "Show Values Blood Pressure";
+            this.checkshowvaluebp.UseVisualStyleBackColor = true;
+            this.checkshowvaluebp.CheckedChanged += new System.EventHandler(this.checkshowvaluebp_CheckedChanged);
+            // 
+            // savegraph
+            // 
+            this.savegraph.Location = new System.Drawing.Point(459, 172);
+            this.savegraph.Name = "savegraph";
+            this.savegraph.Size = new System.Drawing.Size(81, 33);
+            this.savegraph.TabIndex = 36;
+            this.savegraph.Text = "Save Graph";
+            this.savegraph.UseVisualStyleBackColor = true;
+            this.savegraph.Click += new System.EventHandler(this.savegraph_Click);
+            // 
+            // checkshowvaluehr
+            // 
+            this.checkshowvaluehr.AutoSize = true;
+            this.checkshowvaluehr.Enabled = false;
+            this.checkshowvaluehr.Location = new System.Drawing.Point(193, 160);
+            this.checkshowvaluehr.Name = "checkshowvaluehr";
+            this.checkshowvaluehr.Size = new System.Drawing.Size(143, 17);
+            this.checkshowvaluehr.TabIndex = 37;
+            this.checkshowvaluehr.Text = "Show Values Heart Rate";
+            this.checkshowvaluehr.UseVisualStyleBackColor = true;
+            this.checkshowvaluehr.CheckedChanged += new System.EventHandler(this.checkshowvaluehr_CheckedChanged);
+            // 
+            // checkshowvaluesos
+            // 
+            this.checkshowvaluesos.AutoSize = true;
+            this.checkshowvaluesos.Enabled = false;
+            this.checkshowvaluesos.Location = new System.Drawing.Point(193, 183);
+            this.checkshowvaluesos.Name = "checkshowvaluesos";
+            this.checkshowvaluesos.Size = new System.Drawing.Size(178, 17);
+            this.checkshowvaluesos.TabIndex = 38;
+            this.checkshowvaluesos.Text = "Show Values Oxygen Saturation";
+            this.checkshowvaluesos.UseVisualStyleBackColor = true;
+            this.checkshowvaluesos.CheckedChanged += new System.EventHandler(this.checkshowvaluesos_CheckedChanged);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(12, 299);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "RegisterPatient";
+            treeNode1.Text = "Register Patient";
+            treeNode2.Name = "UpdatePatient";
+            treeNode2.Text = "Update Patient";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Patient";
+            treeNode4.Name = "ViewMeasurement";
+            treeNode4.Text = "View Measurement";
+            treeNode5.Name = "Statistic data";
+            treeNode5.Text = "Statistic data";
+            treeNode6.Name = "Node4";
+            treeNode6.Text = "Measurement";
+            treeNode7.Name = "Register Doctor";
+            treeNode7.Text = "Register Doctor";
+            treeNode8.Name = "Login Doctor";
+            treeNode8.Text = "Login Doctor";
+            treeNode9.Name = "Doctor";
+            treeNode9.Text = "Doctor";
+            treeNode10.Name = "Active Patients";
+            treeNode10.Text = "Active Patients";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode3,
+            treeNode6,
+            treeNode9,
+            treeNode10});
+            this.treeView1.Size = new System.Drawing.Size(154, 253);
+            this.treeView1.TabIndex = 39;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
+            // 
             // View_Measurement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 433);
+            this.ClientSize = new System.Drawing.Size(819, 564);
+            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.checkshowvaluesos);
+            this.Controls.Add(this.checkshowvaluehr);
+            this.Controls.Add(this.savegraph);
+            this.Controls.Add(this.checkshowvaluebp);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.oxygengraph);
             this.Controls.Add(this.heartrategraph);
             this.Controls.Add(this.panel1);
@@ -219,8 +324,15 @@
         private System.Windows.Forms.Button oxygengraph;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem statisticData;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox textBox8;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkshowvaluebp;
+        private System.Windows.Forms.Button savegraph;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox checkshowvaluehr;
+        private System.Windows.Forms.CheckBox checkshowvaluesos;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

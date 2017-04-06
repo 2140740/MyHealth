@@ -32,12 +32,6 @@
   <wsdl:message name="IService1_UpdateLogged_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateLoggedResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_UpdateLogged2_InputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateLogged2" />
-  </wsdl:message>
-  <wsdl:message name="IService1_UpdateLogged2_OutputMessage">
-    <wsdl:part name="parameters" element="tns:UpdateLogged2Response" />
-  </wsdl:message>
   <wsdl:message name="IService1_RegisterMeasurement_InputMessage">
     <wsdl:part name="parameters" element="tns:RegisterMeasurement" />
   </wsdl:message>
@@ -128,11 +122,23 @@
   <wsdl:message name="IService1_ViewOxygenSaturationCalendar_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewOxygenSaturationCalendarResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ViewTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:ViewTime" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ViewTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ViewTimeResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ViewActivePatients_InputMessage">
     <wsdl:part name="parameters" element="tns:ViewActivePatients" />
   </wsdl:message>
   <wsdl:message name="IService1_ViewActivePatients_OutputMessage">
     <wsdl:part name="parameters" element="tns:ViewActivePatientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegisterWarnings_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterWarnings" />
+  </wsdl:message>
+  <wsdl:message name="IService1_RegisterWarnings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterWarningsResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ValidadePatient">
@@ -150,10 +156,6 @@
     <wsdl:operation name="UpdateLogged">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateLogged" message="tns:IService1_UpdateLogged_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateLoggedResponse" message="tns:IService1_UpdateLogged_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="UpdateLogged2">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateLogged2" message="tns:IService1_UpdateLogged2_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateLogged2Response" message="tns:IService1_UpdateLogged2_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="RegisterMeasurement">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterMeasurement" message="tns:IService1_RegisterMeasurement_InputMessage" />
@@ -215,9 +217,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar" message="tns:IService1_ViewOxygenSaturationCalendar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse" message="tns:IService1_ViewOxygenSaturationCalendar_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ViewTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewTime" message="tns:IService1_ViewTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewTimeResponse" message="tns:IService1_ViewTime_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ViewActivePatients">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ViewActivePatients" message="tns:IService1_ViewActivePatients_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ViewActivePatientsResponse" message="tns:IService1_ViewActivePatients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterWarnings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/RegisterWarnings" message="tns:IService1_RegisterWarnings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/RegisterWarningsResponse" message="tns:IService1_RegisterWarnings_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -251,15 +261,6 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateLogged">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateLogged" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="UpdateLogged2">
-      <soap:operation soapAction="http://tempuri.org/IService1/UpdateLogged2" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -402,8 +403,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ViewTime">
+      <soap:operation soapAction="http://tempuri.org/IService1/ViewTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ViewActivePatients">
       <soap:operation soapAction="http://tempuri.org/IService1/ViewActivePatients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterWarnings">
+      <soap:operation soapAction="http://tempuri.org/IService1/RegisterWarnings" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

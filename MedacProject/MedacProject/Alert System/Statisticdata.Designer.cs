@@ -38,6 +38,12 @@
             System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Measurement", new System.Windows.Forms.TreeNode[] {
             treeNode4,
             treeNode5});
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Register Doctor");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Login Doctor");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Doctor", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Active Patients");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statisticdata));
             this.validatestatic = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -587,11 +593,22 @@
             treeNode5.Text = "Statistic data";
             treeNode6.Name = "Node4";
             treeNode6.Text = "Measurement";
+            treeNode7.Name = "Register Doctor";
+            treeNode7.Text = "Register Doctor";
+            treeNode8.Name = "Login Doctor";
+            treeNode8.Text = "Login Doctor";
+            treeNode9.Name = "Doctor";
+            treeNode9.Text = "Doctor";
+            treeNode10.Name = "Active Patients";
+            treeNode10.Text = "Active Patients";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode3,
-            treeNode6});
+            treeNode6,
+            treeNode9,
+            treeNode10});
             this.treeView1.Size = new System.Drawing.Size(154, 253);
             this.treeView1.TabIndex = 28;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // button1
             // 

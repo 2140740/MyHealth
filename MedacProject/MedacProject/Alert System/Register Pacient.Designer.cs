@@ -44,7 +44,6 @@
             this.savepatient = new System.Windows.Forms.Button();
             this.BoxFirstName = new System.Windows.Forms.TextBox();
             this.BoxLastName = new System.Windows.Forms.TextBox();
-            this.BoxPhone = new System.Windows.Forms.TextBox();
             this.BoxEmail = new System.Windows.Forms.TextBox();
             this.BoxAddress = new System.Windows.Forms.TextBox();
             this.BoxHeight = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.BoxCCbi = new System.Windows.Forms.MaskedTextBox();
             this.BoxSNS = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.BoxPhone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -189,13 +189,6 @@
             this.BoxLastName.Size = new System.Drawing.Size(183, 20);
             this.BoxLastName.TabIndex = 2;
             // 
-            // BoxPhone
-            // 
-            this.BoxPhone.Location = new System.Drawing.Point(107, 76);
-            this.BoxPhone.Name = "BoxPhone";
-            this.BoxPhone.Size = new System.Drawing.Size(183, 20);
-            this.BoxPhone.TabIndex = 3;
-            // 
             // BoxEmail
             // 
             this.BoxEmail.Location = new System.Drawing.Point(107, 104);
@@ -277,11 +270,20 @@
             this.label13.TabIndex = 14;
             this.label13.Text = "(*) Required fields";
             // 
+            // BoxPhone
+            // 
+            this.BoxPhone.Location = new System.Drawing.Point(107, 76);
+            this.BoxPhone.Mask = "000000000";
+            this.BoxPhone.Name = "BoxPhone";
+            this.BoxPhone.Size = new System.Drawing.Size(183, 20);
+            this.BoxPhone.TabIndex = 15;
+            // 
             // Register_Pacient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(373, 459);
+            this.Controls.Add(this.BoxPhone);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.BoxSNS);
             this.Controls.Add(this.BoxCCbi);
@@ -292,7 +294,6 @@
             this.Controls.Add(this.BoxHeight);
             this.Controls.Add(this.BoxAddress);
             this.Controls.Add(this.BoxEmail);
-            this.Controls.Add(this.BoxPhone);
             this.Controls.Add(this.BoxLastName);
             this.Controls.Add(this.BoxFirstName);
             this.Controls.Add(this.savepatient);
@@ -335,7 +336,6 @@
         private System.Windows.Forms.Button savepatient;
         private System.Windows.Forms.TextBox BoxFirstName;
         private System.Windows.Forms.TextBox BoxLastName;
-        private System.Windows.Forms.TextBox BoxPhone;
         private System.Windows.Forms.TextBox BoxEmail;
         private System.Windows.Forms.TextBox BoxAddress;
         private System.Windows.Forms.TextBox BoxHeight;
@@ -346,5 +346,6 @@
         private System.Windows.Forms.MaskedTextBox BoxCCbi;
         private System.Windows.Forms.MaskedTextBox BoxSNS;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.MaskedTextBox BoxPhone;
     }
 }

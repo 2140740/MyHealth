@@ -19,7 +19,7 @@ namespace WCFMedacService
         bool RegisterPatient(string firstname, string lastname, int phone,
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
-            int othercontact,bool logged, string numberDoctor);
+            string othercontact, bool logged, string numberDoctor);
 
         [OperationContract]
         void UpdatePatient(Patient patient);
@@ -28,11 +28,9 @@ namespace WCFMedacService
         void UpdateLogged(int fk_sns);
 
         [OperationContract]
-        void UpdateLogged2(int fk_sns);
-
-        [OperationContract]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate,
             int oxygensaturation, DateTime date, TimeSpan time, int fk_sns);
+
         [OperationContract]
         bool RegisterDoctor(string firstname, string medicalid);
 
@@ -76,13 +74,17 @@ namespace WCFMedacService
         List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2);
 
         [OperationContract]
-        List<DateTime> ViewTime(int fk_sns);
+        List<string> ViewTime(int fk_sns);
 
         [OperationContract]
         List<string> ViewActivePatients();
 
-        //[OperationContract]
-        //List<Measurement> ViewMeasurements(int fk_sns);
+        [OperationContract]
+        bool RegisterWarnings(int fk_sns, string type, DateTime date, bool read, string parameter);
+
+        [OperationContract]
+        List<string> ViewWarnings(int fk_sns);
+
     }
 
     [DataContract]
@@ -99,7 +101,7 @@ namespace WCFMedacService
         private char gender;
         private string allergies;
         private double height;
-        private int othercontact;
+        private string othercontact;
         private bool logged;
         private string numberDoctor;
 
@@ -200,7 +202,7 @@ namespace WCFMedacService
         }
 
         [DataMember]
-        public int Othercontact
+        public string Othercontact
         {
             get { return othercontact; }
 
@@ -233,99 +235,57 @@ namespace WCFMedacService
         [DataMember]
         public int Bloodpressuremin
         {
-            get
-            {
-                return bloodpressuremin;
-            }
+            get { return bloodpressuremin; }
 
-            set
-            {
-                bloodpressuremin = value;
-            }
+            set { bloodpressuremin = value; }
         }
 
         [DataMember]
         public int Bloodpressuremax
         {
-            get
-            {
-                return bloodpressuremax;
-            }
+            get { return bloodpressuremax; }
 
-            set
-            {
-                bloodpressuremax = value;
-            }
+            set { bloodpressuremax = value; }
         }
 
         [DataMember]
         public int Heartrate
         {
-            get
-            {
-                return heartrate;
-            }
+            get { return heartrate; }
 
-            set
-            {
-                heartrate = value;
-            }
+            set { heartrate = value; }
         }
 
         [DataMember]
         public int Oxygensaturation
         {
-            get
-            {
-                return oxygensaturation;
-            }
+            get { return oxygensaturation; }
 
-            set
-            {
-                oxygensaturation = value;
-            }
+            set { oxygensaturation = value; }
         }
 
         [DataMember]
         public DateTime Date
         {
-            get
-            {
-                return date;
-            }
+            get { return date; }
 
-            set
-            {
-                date = value;
-            }
+            set { date = value; }
         }
 
         [DataMember]
         public TimeSpan Time
         {
-            get
-            {
-                return time;
-            }
+            get { return time; }
 
-            set
-            {
-                time = value;
-            }
+            set { time = value; }
         }
 
         [DataMember]
         public int Fk_sns
         {
-            get
-            {
-                return fk_sns;
-            }
+            get { return fk_sns; }
 
-            set
-            {
-                fk_sns = value;
-            }
+            set { fk_sns = value; }
         }
     }
 
@@ -350,5 +310,46 @@ namespace WCFMedacService
         }
 
     }
-}
 
+    [DataContract]
+    public class AlertDC
+    {
+        private int fk_sns;
+        private string type;
+        private DateTime date;
+        private bool read;
+        private string parameter;
+
+        public int Fk_sns
+        {
+            get { return fk_sns; }
+
+            set { fk_sns = value; }
+        }
+
+        [DataMember]
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        [DataMember]
+        public DateTime Date
+        {
+            get { return date; }
+
+            set { date = value; }
+        }
+
+        [DataMember]
+        public bool Read { get; set; }
+
+        [DataMember]
+        public string Parameter
+        {
+            get { return parameter; }
+            set { parameter = value; }
+        }
+    }
+}

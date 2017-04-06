@@ -62,7 +62,7 @@ namespace MedacProject.ServiceHealthClient {
         private string NumberDoctorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OthercontactField;
+        private string OthercontactField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PatientIDField;
@@ -253,12 +253,12 @@ namespace MedacProject.ServiceHealthClient {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Othercontact {
+        public string Othercontact {
             get {
                 return this.OthercontactField;
             }
             set {
-                if ((this.OthercontactField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.OthercontactField, value) != true)) {
                     this.OthercontactField = value;
                     this.RaisePropertyChanged("Othercontact");
                 }
@@ -327,6 +327,9 @@ namespace MedacProject.ServiceHealthClient {
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MedacProject.ServiceHealthClient.Alert[] AlertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AllergiesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -390,6 +393,19 @@ namespace MedacProject.ServiceHealthClient {
                 if ((object.ReferenceEquals(this.AddressField, value) != true)) {
                     this.AddressField = value;
                     this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MedacProject.ServiceHealthClient.Alert[] Alert {
+            get {
+                return this.AlertField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlertField, value) != true)) {
+                    this.AlertField = value;
+                    this.RaisePropertyChanged("Alert");
                 }
             }
         }
@@ -694,6 +710,131 @@ namespace MedacProject.ServiceHealthClient {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Alert", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
+    [System.SerializableAttribute()]
+    public partial class Alert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ParameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MedacProject.ServiceHealthClient.Patient PatientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ReadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter {
+            get {
+                return this.ParameterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParameterField, value) != true)) {
+                    this.ParameterField = value;
+                    this.RaisePropertyChanged("Parameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MedacProject.ServiceHealthClient.Patient Patient {
+            get {
+                return this.PatientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientField, value) != true)) {
+                    this.PatientField = value;
+                    this.RaisePropertyChanged("Patient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Read {
+            get {
+                return this.ReadField;
+            }
+            set {
+                if ((this.ReadField.Equals(value) != true)) {
+                    this.ReadField = value;
+                    this.RaisePropertyChanged("Read");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Measurement", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
     [System.SerializableAttribute()]
     public partial class Measurement : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -921,10 +1062,10 @@ namespace MedacProject.ServiceHealthClient {
         System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.PatientDC> ValidadePatientAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
-        bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor);
+        bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
-        System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor);
+        System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
         void UpdatePatient(MedacProject.ServiceHealthClient.Patient patient);
@@ -937,12 +1078,6 @@ namespace MedacProject.ServiceHealthClient {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged", ReplyAction="http://tempuri.org/IService1/UpdateLoggedResponse")]
         System.Threading.Tasks.Task UpdateLoggedAsync(int fk_sns);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged2", ReplyAction="http://tempuri.org/IService1/UpdateLogged2Response")]
-        void UpdateLogged2(int fk_sns);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged2", ReplyAction="http://tempuri.org/IService1/UpdateLogged2Response")]
-        System.Threading.Tasks.Task UpdateLogged2Async(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
@@ -1034,11 +1169,23 @@ namespace MedacProject.ServiceHealthClient {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse")]
         System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
-        MedacProject.ServiceHealthClient.Patient[] ViewActivePatients();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewTime", ReplyAction="http://tempuri.org/IService1/ViewTimeResponse")]
+        string[] ViewTime(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewTime", ReplyAction="http://tempuri.org/IService1/ViewTimeResponse")]
+        System.Threading.Tasks.Task<string[]> ViewTimeAsync(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
-        System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.Patient[]> ViewActivePatientsAsync();
+        string[] ViewActivePatients();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
+        System.Threading.Tasks.Task<string[]> ViewActivePatientsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterWarnings", ReplyAction="http://tempuri.org/IService1/RegisterWarningsResponse")]
+        bool RegisterWarnings(int fk_sns, string type, System.DateTime date, bool read, string parameter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterWarnings", ReplyAction="http://tempuri.org/IService1/RegisterWarningsResponse")]
+        System.Threading.Tasks.Task<bool> RegisterWarningsAsync(int fk_sns, string type, System.DateTime date, bool read, string parameter);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1076,11 +1223,11 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.ValidadePatientAsync(id);
         }
         
-        public bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor) {
+        public bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor) {
             return base.Channel.RegisterPatient(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact, logged, numberDoctor);
         }
         
-        public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor) {
+        public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor) {
             return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact, logged, numberDoctor);
         }
         
@@ -1098,14 +1245,6 @@ namespace MedacProject.ServiceHealthClient {
         
         public System.Threading.Tasks.Task UpdateLoggedAsync(int fk_sns) {
             return base.Channel.UpdateLoggedAsync(fk_sns);
-        }
-        
-        public void UpdateLogged2(int fk_sns) {
-            base.Channel.UpdateLogged2(fk_sns);
-        }
-        
-        public System.Threading.Tasks.Task UpdateLogged2Async(int fk_sns) {
-            return base.Channel.UpdateLogged2Async(fk_sns);
         }
         
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
@@ -1228,12 +1367,28 @@ namespace MedacProject.ServiceHealthClient {
             return base.Channel.ViewOxygenSaturationCalendarAsync(fk_sns, date, date2);
         }
         
-        public MedacProject.ServiceHealthClient.Patient[] ViewActivePatients() {
+        public string[] ViewTime(int fk_sns) {
+            return base.Channel.ViewTime(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ViewTimeAsync(int fk_sns) {
+            return base.Channel.ViewTimeAsync(fk_sns);
+        }
+        
+        public string[] ViewActivePatients() {
             return base.Channel.ViewActivePatients();
         }
         
-        public System.Threading.Tasks.Task<MedacProject.ServiceHealthClient.Patient[]> ViewActivePatientsAsync() {
+        public System.Threading.Tasks.Task<string[]> ViewActivePatientsAsync() {
             return base.Channel.ViewActivePatientsAsync();
+        }
+        
+        public bool RegisterWarnings(int fk_sns, string type, System.DateTime date, bool read, string parameter) {
+            return base.Channel.RegisterWarnings(fk_sns, type, date, read, parameter);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterWarningsAsync(int fk_sns, string type, System.DateTime date, bool read, string parameter) {
+            return base.Channel.RegisterWarningsAsync(fk_sns, type, date, read, parameter);
         }
     }
 }

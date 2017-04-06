@@ -10,7 +10,7 @@
         <AssociationConnector Association="ModelMedac.PatientMeasurement" />
         <EntityTypeShape EntityType="ModelMedac.Doctor" Width="1.5" PointX="5.125" PointY="4.125" />
         <AssociationConnector Association="ModelMedac.DoctorPatient" />
-        <EntityTypeShape EntityType="ModelMedac.Alert" Width="1.5" PointX="0.875" PointY="2.75" />
+        <EntityTypeShape EntityType="ModelMedac.Alert" Width="1.5" PointX="0.5" PointY="2.625" />
         <AssociationConnector Association="ModelMedac.PatientAlert" />
       </Diagram>
     </edmx:Diagrams>

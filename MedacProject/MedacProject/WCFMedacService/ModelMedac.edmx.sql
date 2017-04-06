@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/06/2017 08:19:59
--- Generated from EDMX file: C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\ModelMedac.edmx
+-- Date Created: 04/06/2017 20:48:11
+-- Generated from EDMX file: D:\David_GIT\MyHealth\MedacProject\MedacProject\WCFMedacService\ModelMedac.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -23,6 +23,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_DoctorPatient]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PatientSet] DROP CONSTRAINT [FK_DoctorPatient];
 GO
+IF OBJECT_ID(N'[dbo].[FK_PatientAlert]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AlertSet] DROP CONSTRAINT [FK_PatientAlert];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -36,6 +39,9 @@ IF OBJECT_ID(N'[dbo].[MeasurementSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[DoctorSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DoctorSet];
+GO
+IF OBJECT_ID(N'[dbo].[AlertSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AlertSet];
 GO
 
 -- --------------------------------------------------
@@ -86,8 +92,10 @@ GO
 -- Creating table 'AlertSet'
 CREATE TABLE [dbo].[AlertSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Warning] nvarchar(max)  NOT NULL,
-    [Critical] nvarchar(max)  NOT NULL,
+    [Type] nvarchar(max)  NOT NULL,
+    [Date] datetime  NOT NULL,
+    [Read] bit  NOT NULL,
+    [Parameter] nvarchar(max)  NOT NULL,
     [Patient_Id] int  NOT NULL
 );
 GO

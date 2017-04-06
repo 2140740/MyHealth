@@ -15,8 +15,10 @@ namespace WCFMedacService
     public partial class Alert
     {
         public int Id { get; set; }
-        public string Warning { get; set; }
-        public string Critical { get; set; }
+        public string Type { get; set; }
+        public System.DateTime Date { get; set; }
+        public bool Read { get; set; }
+        public string Parameter { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

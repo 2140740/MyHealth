@@ -69,6 +69,11 @@ namespace Alert_System
                 ActivePatients FormActivePatients = new ActivePatients();
                 DialogResult = FormActivePatients.ShowDialog();
             }
+            if (e.Node.Text.Equals("Alerts"))
+            {
+                Alerts FormAlert = new Alerts();
+                DialogResult = FormAlert.ShowDialog();
+            }
         }
 
         private void registerMedicToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,6 +86,12 @@ namespace Alert_System
         {
             ActivePatients FormActivePatients = new ActivePatients();
             DialogResult = FormActivePatients.ShowDialog();
+        }
+
+        private void alertsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Alerts FormAlert = new Alerts();
+            DialogResult = FormAlert.ShowDialog();
         }
     }
 }

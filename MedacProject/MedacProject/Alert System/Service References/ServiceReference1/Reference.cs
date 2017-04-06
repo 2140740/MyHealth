@@ -62,7 +62,7 @@ namespace Alert_System.ServiceReference1 {
         private string NumberDoctorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OthercontactField;
+        private string OthercontactField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int PatientIDField;
@@ -253,12 +253,12 @@ namespace Alert_System.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Othercontact {
+        public string Othercontact {
             get {
                 return this.OthercontactField;
             }
             set {
-                if ((this.OthercontactField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.OthercontactField, value) != true)) {
                     this.OthercontactField = value;
                     this.RaisePropertyChanged("Othercontact");
                 }
@@ -718,16 +718,22 @@ namespace Alert_System.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CriticalField;
+        private System.DateTime DateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ParameterField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Alert_System.ServiceReference1.Patient PatientField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WarningField;
+        private bool ReadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -740,14 +746,14 @@ namespace Alert_System.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Critical {
+        public System.DateTime Date {
             get {
-                return this.CriticalField;
+                return this.DateField;
             }
             set {
-                if ((object.ReferenceEquals(this.CriticalField, value) != true)) {
-                    this.CriticalField = value;
-                    this.RaisePropertyChanged("Critical");
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
                 }
             }
         }
@@ -766,6 +772,19 @@ namespace Alert_System.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Parameter {
+            get {
+                return this.ParameterField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParameterField, value) != true)) {
+                    this.ParameterField = value;
+                    this.RaisePropertyChanged("Parameter");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public Alert_System.ServiceReference1.Patient Patient {
             get {
                 return this.PatientField;
@@ -779,14 +798,27 @@ namespace Alert_System.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Warning {
+        public bool Read {
             get {
-                return this.WarningField;
+                return this.ReadField;
             }
             set {
-                if ((object.ReferenceEquals(this.WarningField, value) != true)) {
-                    this.WarningField = value;
-                    this.RaisePropertyChanged("Warning");
+                if ((this.ReadField.Equals(value) != true)) {
+                    this.ReadField = value;
+                    this.RaisePropertyChanged("Read");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Type {
+            get {
+                return this.TypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TypeField, value) != true)) {
+                    this.TypeField = value;
+                    this.RaisePropertyChanged("Type");
                 }
             }
         }
@@ -1030,10 +1062,10 @@ namespace Alert_System.ServiceReference1 {
         System.Threading.Tasks.Task<Alert_System.ServiceReference1.PatientDC> ValidadePatientAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
-        bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor);
+        bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterPatient", ReplyAction="http://tempuri.org/IService1/RegisterPatientResponse")]
-        System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor);
+        System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePatient", ReplyAction="http://tempuri.org/IService1/UpdatePatientResponse")]
         void UpdatePatient(Alert_System.ServiceReference1.Patient patient);
@@ -1046,12 +1078,6 @@ namespace Alert_System.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged", ReplyAction="http://tempuri.org/IService1/UpdateLoggedResponse")]
         System.Threading.Tasks.Task UpdateLoggedAsync(int fk_sns);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged2", ReplyAction="http://tempuri.org/IService1/UpdateLogged2Response")]
-        void UpdateLogged2(int fk_sns);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateLogged2", ReplyAction="http://tempuri.org/IService1/UpdateLogged2Response")]
-        System.Threading.Tasks.Task UpdateLogged2Async(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterMeasurement", ReplyAction="http://tempuri.org/IService1/RegisterMeasurementResponse")]
         bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns);
@@ -1144,16 +1170,28 @@ namespace Alert_System.ServiceReference1 {
         System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewTime", ReplyAction="http://tempuri.org/IService1/ViewTimeResponse")]
-        System.DateTime[] ViewTime(int fk_sns);
+        string[] ViewTime(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewTime", ReplyAction="http://tempuri.org/IService1/ViewTimeResponse")]
-        System.Threading.Tasks.Task<System.DateTime[]> ViewTimeAsync(int fk_sns);
+        System.Threading.Tasks.Task<string[]> ViewTimeAsync(int fk_sns);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
         string[] ViewActivePatients();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
         System.Threading.Tasks.Task<string[]> ViewActivePatientsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterWarnings", ReplyAction="http://tempuri.org/IService1/RegisterWarningsResponse")]
+        bool RegisterWarnings(int fk_sns, string type, System.DateTime date, bool read, string parameter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/RegisterWarnings", ReplyAction="http://tempuri.org/IService1/RegisterWarningsResponse")]
+        System.Threading.Tasks.Task<bool> RegisterWarningsAsync(int fk_sns, string type, System.DateTime date, bool read, string parameter);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewWarnings", ReplyAction="http://tempuri.org/IService1/ViewWarningsResponse")]
+        string[] ViewWarnings(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewWarnings", ReplyAction="http://tempuri.org/IService1/ViewWarningsResponse")]
+        System.Threading.Tasks.Task<string[]> ViewWarningsAsync(int fk_sns);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1191,11 +1229,11 @@ namespace Alert_System.ServiceReference1 {
             return base.Channel.ValidadePatientAsync(id);
         }
         
-        public bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor) {
+        public bool RegisterPatient(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor) {
             return base.Channel.RegisterPatient(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact, logged, numberDoctor);
         }
         
-        public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, int othercontact, bool logged, string numberDoctor) {
+        public System.Threading.Tasks.Task<bool> RegisterPatientAsync(string firstname, string lastname, int phone, string email, System.DateTime birthdate, int cc_bi, int sns, string address, char gender, string allergies, double height, string othercontact, bool logged, string numberDoctor) {
             return base.Channel.RegisterPatientAsync(firstname, lastname, phone, email, birthdate, cc_bi, sns, address, gender, allergies, height, othercontact, logged, numberDoctor);
         }
         
@@ -1213,14 +1251,6 @@ namespace Alert_System.ServiceReference1 {
         
         public System.Threading.Tasks.Task UpdateLoggedAsync(int fk_sns) {
             return base.Channel.UpdateLoggedAsync(fk_sns);
-        }
-        
-        public void UpdateLogged2(int fk_sns) {
-            base.Channel.UpdateLogged2(fk_sns);
-        }
-        
-        public System.Threading.Tasks.Task UpdateLogged2Async(int fk_sns) {
-            return base.Channel.UpdateLogged2Async(fk_sns);
         }
         
         public bool RegisterMeasurement(int bloodpressuremin, int bloodpressuremax, int hearrate, int oxygensaturation, System.DateTime date, System.TimeSpan time, int fk_sns) {
@@ -1343,11 +1373,11 @@ namespace Alert_System.ServiceReference1 {
             return base.Channel.ViewOxygenSaturationCalendarAsync(fk_sns, date, date2);
         }
         
-        public System.DateTime[] ViewTime(int fk_sns) {
+        public string[] ViewTime(int fk_sns) {
             return base.Channel.ViewTime(fk_sns);
         }
         
-        public System.Threading.Tasks.Task<System.DateTime[]> ViewTimeAsync(int fk_sns) {
+        public System.Threading.Tasks.Task<string[]> ViewTimeAsync(int fk_sns) {
             return base.Channel.ViewTimeAsync(fk_sns);
         }
         
@@ -1357,6 +1387,22 @@ namespace Alert_System.ServiceReference1 {
         
         public System.Threading.Tasks.Task<string[]> ViewActivePatientsAsync() {
             return base.Channel.ViewActivePatientsAsync();
+        }
+        
+        public bool RegisterWarnings(int fk_sns, string type, System.DateTime date, bool read, string parameter) {
+            return base.Channel.RegisterWarnings(fk_sns, type, date, read, parameter);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegisterWarningsAsync(int fk_sns, string type, System.DateTime date, bool read, string parameter) {
+            return base.Channel.RegisterWarningsAsync(fk_sns, type, date, read, parameter);
+        }
+        
+        public string[] ViewWarnings(int fk_sns) {
+            return base.Channel.ViewWarnings(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ViewWarningsAsync(int fk_sns) {
+            return base.Channel.ViewWarningsAsync(fk_sns);
         }
     }
 }

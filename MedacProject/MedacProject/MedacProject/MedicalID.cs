@@ -33,9 +33,14 @@ namespace MedacProject
 
                 string[] listview= {p.Firstname,p.LastName,Convert.ToString(p.BirthDate.ToShortDateString()),Convert.ToString(p.Sns)};
 
-                ListViewItem linha = new ListViewItem(listview);
+               
 
-                listView1.Items.Add(linha);
+                foreach (string linha in listview)
+                {
+                    listView1.Items.Add(linha);
+                }
+
+                
 
             }
             catch (Exception)

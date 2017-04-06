@@ -42,7 +42,7 @@ namespace WCFMedacService
                 p.Gender = Convert.ToChar(pt.Gender);
                 p.Allergies = pt.Allergies;
                 p.Height = Convert.ToDouble(pt.Height);
-                p.Othercontact = Convert.ToInt32(pt.OtherContact);
+                p.Othercontact = pt.OtherContact;
                 p.Logged = Convert.ToBoolean(pt.Logged);
                 p.NumberDoctor = pt.Doctor.ProfessionalNumber;
 
@@ -53,7 +53,7 @@ namespace WCFMedacService
         public bool RegisterPatient(string firstname, string lastname, int phone,
             string email, DateTime birthdate, int cc_bi, int sns,
             string address, char gender, string allergies, double height,
-            int othercontact,bool logged, string numberDoctor)
+            string othercontact, bool logged, string numberDoctor)
         {
             Patient pt = new Patient();
             try
@@ -106,46 +106,31 @@ namespace WCFMedacService
             }
         }
 
-        public void UpdateLogged2(int fk_sns)
-        {
-            ModelMedacContainer context = new ModelMedacContainer();
-            Patient pt = context.PatientSet.First(i => i.SNS == fk_sns);
-
-            if (pt != null)
-            {
-                if (pt.Logged == true)
-                {
-                    pt.Logged = false;
-                }
-                context.SaveChanges();
-            }
-        }
-
         public void UpdatePatient(Patient patient)
         {
             ModelMedacContainer context = new ModelMedacContainer();
             Patient pt = context.PatientSet.First(i => i.Id == patient.Id);
 
-                if (pt != null)
-                {
-                    pt.Id = pt.Id;
-                    pt.FirstName = patient.FirstName;
-                    pt.LastName = patient.LastName;
-                    pt.Phone = patient.Phone;
-                    pt.Email = patient.Email;
-                    pt.BirthDate = patient.BirthDate;
-                    pt.CC_BI = patient.CC_BI;
-                    pt.SNS = patient.SNS;
-                    pt.Address = patient.Address;
-                    pt.Gender = patient.Gender;
-                    pt.Allergies = patient.Allergies;
-                    pt.Height = patient.Height;
-                    pt.OtherContact = patient.OtherContact;
-                    pt.Logged = patient.Logged;
-                    pt.Doctor = patient.Doctor;
+            if (pt != null)
+            {
+                pt.Id = pt.Id;
+                pt.FirstName = patient.FirstName;
+                pt.LastName = patient.LastName;
+                pt.Phone = patient.Phone;
+                pt.Email = patient.Email;
+                pt.BirthDate = patient.BirthDate;
+                pt.CC_BI = patient.CC_BI;
+                pt.SNS = patient.SNS;
+                pt.Address = patient.Address;
+                pt.Gender = patient.Gender;
+                pt.Allergies = patient.Allergies;
+                pt.Height = patient.Height;
+                pt.OtherContact = patient.OtherContact;
+                pt.Logged = patient.Logged;
+                pt.Doctor = patient.Doctor;
 
-                    context.SaveChanges();
-                }
+                context.SaveChanges();
+            }
         }
 
         public List<String> ViewActivePatients()
@@ -237,7 +222,9 @@ namespace WCFMedacService
 
             do
             {
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
                 foreach (var mte in m)
                 {
                     if (mte.BloodPressureMax != 0)
@@ -287,7 +274,9 @@ namespace WCFMedacService
 
             do
             {
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == dateForButton.Day);
                 foreach (var mte in m)
                 {
                     if (mte.BloodPressureMin != 0)
@@ -311,7 +300,9 @@ namespace WCFMedacService
             do
             {
 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == date.Day + date.Hour + date.Minute + date.Second);
                 foreach (var mte in m)
                 {
                     if (mte.BloodPressureMax != 0)
@@ -320,8 +311,8 @@ namespace WCFMedacService
                     }
                 }
 
-                date = date.AddDays(1);
-            } while (date.Day <= date2.Day);
+                date = date.AddSeconds(1);
+            } while (date.Second <= date2.Second);
 
             return ListBloodPressureMax;
         }
@@ -335,7 +326,9 @@ namespace WCFMedacService
             do
             {
 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute); ;
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == date.Day + date.Hour + date.Minute + date.Second);
                 foreach (var mte in m)
                 {
                     if (mte.BloodPressureMin != 0)
@@ -344,8 +337,8 @@ namespace WCFMedacService
                     }
                 }
 
-                date = date.AddDays(1);
-            } while (date.Day <= date2.Day);
+                date = date.AddSeconds(1);
+            } while (date.Second <= date2.Second);
 
             return ListBloodPressureMin;
         }
@@ -384,7 +377,9 @@ namespace WCFMedacService
 
             do
             {
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == dateForButton.Day);
                 foreach (var mte in m)
                 {
                     if (mte.HeartRate != 0)
@@ -409,7 +404,9 @@ namespace WCFMedacService
             do
             {
 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == date.Day + date.Hour + date.Minute + date.Second);
                 foreach (var mte in m)
                 {
                     if (mte.HeartRate != 0)
@@ -418,8 +415,8 @@ namespace WCFMedacService
                     }
                 }
 
-                date = date.AddDays(1);
-            } while (date.Day <= date2.Day);
+                date = date.AddSeconds(1);
+            } while (date.Second <= date2.Second);
 
             return ListHeartRate;
         }
@@ -455,10 +452,12 @@ namespace WCFMedacService
 
             DateTime dateForButton = DateTime.Now.AddDays(x);
 
-            
+
             do
             {
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == dateForButton.Day);
                 foreach (var mte in m)
                 {
                     if (mte.OxygenSaturation != 0)
@@ -468,7 +467,7 @@ namespace WCFMedacService
                 }
                 x = x + 1;
                 dateForButton = DateTime.Now.AddDays(x);
-            } while (x<=0);
+            } while (x <= 0);
 
             return ListOxygenSaturation;
         }
@@ -482,8 +481,10 @@ namespace WCFMedacService
 
             do
             {
-                
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
+
+                var m =
+                    context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns)
+                        .Where(z => z.Date.Day == date.Day + date.Hour + date.Minute + date.Second);
                 foreach (var mte in m)
                 {
                     if (mte.OxygenSaturation != 0)
@@ -492,28 +493,28 @@ namespace WCFMedacService
                     }
                 }
 
-                date = date.AddDays(1);
-            } while (date.Day <= date2.Day);
+                date = date.AddSeconds(1);
+            } while (date.Second <= date2.Second);
 
             return ListOxygenSaturation;
         }
 
         //Timer
-        public List<DateTime> ViewTime(int fk_sns)
+        public List<string> ViewTime(int fk_sns)
         {
             ModelMedacContainer context = new ModelMedacContainer();
 
-            List<DateTime> ListofTime = new List<DateTime>();
-            
+            List<string> ListofTime = new List<string>();
+
             var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
 
             foreach (var mte in m)
             {
                 if (!mte.Time.Equals(0))
                 {
-                    ListofTime.Add(Convert.ToDateTime(mte.Time));
+                    ListofTime.Add(mte.Time.ToString());
                 }
-                
+
 
             }
             return ListofTime;
@@ -560,5 +561,54 @@ namespace WCFMedacService
                 return d;
             }
         }
+
+        public bool RegisterWarnings(int fk_sns, string type, DateTime date, bool read, string parameter)
+        {
+            Alert w = new Alert();
+            try
+            {
+                ModelMedacContainer context = new ModelMedacContainer();
+                Patient p = context.PatientSet.FirstOrDefault(i => i.SNS == fk_sns);
+
+                if (w != null)
+                {
+
+
+                    w.Type = type;
+                    w.Date = Convert.ToDateTime(date);
+                    w.Read = false;
+                    w.Parameter = parameter;
+                    w.Patient = p;
+
+                    context.AlertSet.Add(w);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public List<string> ViewWarnings(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
+
+            List<string> ListWarnings = new List<string>();
+
+            var m = context.AlertSet.Where(i => i.Patient.SNS == fk_sns);
+
+            foreach (var mte in m)
+            {
+                {
+                    ListWarnings.Add(mte.Type + " " + mte.Date + " " + mte.Read + " " + mte.Parameter);
+                }
+
+
+            }
+            return ListWarnings;
+        }
     }
+
 }

@@ -42,5 +42,4 @@ C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\bin\Mi
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\bin\Microsoft.ApplicationInsights.xml
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.dll
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.pdb
-D:\David_GIT\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.csprojResolveAssemblyReference.cache
 C:\Users\david\Desktop\MyHealth\MedacProject\MedacProject\WCFMedacService\obj\Debug\WCFMedacService.csprojResolveAssemblyReference.cache

@@ -107,9 +107,6 @@
     <None Include="Service References\ServiceHealthClient\MedacProject.ServiceHealthClient.DoctorDC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceHealthClient\MedacProject.ServiceHealthClient.Patient.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\ServiceHealthClient\MedacProject.ServiceHealthClient.PatientDC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

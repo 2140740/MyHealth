@@ -75,9 +75,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Warning" Type="String" Nullable="false" />
-    <Property Name="Critical" Type="String" Nullable="false" />
     <NavigationProperty Name="Patient" Relationship="ModelMedac.PatientAlert" FromRole="Alert" ToRole="Patient" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Read" Type="Boolean" Nullable="false" />
+    <Property Name="Parameter" Type="String" Nullable="false" />
   </EntityType>
   <Association Name="PatientAlert">
     <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />

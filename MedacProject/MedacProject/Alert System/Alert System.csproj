@@ -67,6 +67,12 @@
     <Compile Include="Alert System.Designer.cs">
       <DependentUpon>Alert System.cs</DependentUpon>
     </Compile>
+    <Compile Include="Alerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alerts.Designer.cs">
+      <DependentUpon>Alerts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alert System.resx">
       <DependentUpon>Alert System.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alerts.resx">
+      <DependentUpon>Alerts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor.resx">
       <DependentUpon>Doctor.cs</DependentUpon>

@@ -64,8 +64,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Warning" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Critical" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Read" Type="bit" Nullable="false" />
+    <Property Name="Parameter" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Patient_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="PatientMeasurement">

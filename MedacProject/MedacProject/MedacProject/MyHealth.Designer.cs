@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyHealth));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +54,9 @@
             this.medicalId = new System.Windows.Forms.ToolStripMenuItem();
             this.medline = new System.Windows.Forms.ToolStripMenuItem();
             this.textBoxMedation = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -150,7 +154,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(283, 108);
+            this.label11.Location = new System.Drawing.Point(274, 106);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 13);
             this.label11.TabIndex = 10;
@@ -159,7 +163,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(430, 127);
+            this.label12.Location = new System.Drawing.Point(418, 127);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 11;
@@ -174,7 +178,7 @@
             // 
             // monitoring
             // 
-            this.monitoring.Location = new System.Drawing.Point(24, 127);
+            this.monitoring.Location = new System.Drawing.Point(12, 122);
             this.monitoring.Name = "monitoring";
             this.monitoring.Size = new System.Drawing.Size(158, 23);
             this.monitoring.TabIndex = 14;
@@ -197,9 +201,9 @@
             this.checkBoxBP.AutoSize = true;
             this.checkBoxBP.Location = new System.Drawing.Point(18, 38);
             this.checkBoxBP.Name = "checkBoxBP";
-            this.checkBoxBP.Size = new System.Drawing.Size(83, 17);
+            this.checkBoxBP.Size = new System.Drawing.Size(87, 17);
             this.checkBoxBP.TabIndex = 16;
-            this.checkBoxBP.Text = "Show Value";
+            this.checkBoxBP.Text = "Show Value*";
             this.checkBoxBP.UseVisualStyleBackColor = true;
             // 
             // checkBoxSPO
@@ -207,9 +211,9 @@
             this.checkBoxSPO.AutoSize = true;
             this.checkBoxSPO.Location = new System.Drawing.Point(18, 80);
             this.checkBoxSPO.Name = "checkBoxSPO";
-            this.checkBoxSPO.Size = new System.Drawing.Size(83, 17);
+            this.checkBoxSPO.Size = new System.Drawing.Size(87, 17);
             this.checkBoxSPO.TabIndex = 17;
-            this.checkBoxSPO.Text = "Show Value";
+            this.checkBoxSPO.Text = "Show Value*";
             this.checkBoxSPO.UseVisualStyleBackColor = true;
             // 
             // checkBoxHr
@@ -217,9 +221,9 @@
             this.checkBoxHr.AutoSize = true;
             this.checkBoxHr.Location = new System.Drawing.Point(18, 121);
             this.checkBoxHr.Name = "checkBoxHr";
-            this.checkBoxHr.Size = new System.Drawing.Size(83, 17);
+            this.checkBoxHr.Size = new System.Drawing.Size(87, 17);
             this.checkBoxHr.TabIndex = 18;
-            this.checkBoxHr.Text = "Show Value";
+            this.checkBoxHr.Text = "Show Value*";
             this.checkBoxHr.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -237,7 +241,7 @@
             this.panel1.Controls.Add(this.textbp);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.texthr);
-            this.panel1.Location = new System.Drawing.Point(24, 158);
+            this.panel1.Location = new System.Drawing.Point(12, 151);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(459, 153);
             this.panel1.TabIndex = 19;
@@ -258,7 +262,7 @@
             this.medline});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(497, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(483, 24);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -278,18 +282,43 @@
             // 
             // textBoxMedation
             // 
-            this.textBoxMedation.Location = new System.Drawing.Point(286, 124);
+            this.textBoxMedation.Location = new System.Drawing.Point(277, 122);
             this.textBoxMedation.Mask = "0000000";
             this.textBoxMedation.Name = "textBoxMedation";
             this.textBoxMedation.Size = new System.Drawing.Size(135, 20);
             this.textBoxMedation.TabIndex = 21;
             this.textBoxMedation.TextChanged += new System.EventHandler(this.textBoxMedation_TextChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 307);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(240, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "(*) Stop monitoring uncheck | Check to monitoring";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(436, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 13);
+            this.label7.TabIndex = 23;
+            // 
             // MyHealth
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 323);
+            this.ClientSize = new System.Drawing.Size(483, 329);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxMedation);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.validate);
@@ -341,6 +370,9 @@
         private System.Windows.Forms.ToolStripMenuItem medicalId;
         private System.Windows.Forms.MaskedTextBox textBoxMedation;
         private System.Windows.Forms.ToolStripMenuItem medline;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label7;
     }
 }
 
