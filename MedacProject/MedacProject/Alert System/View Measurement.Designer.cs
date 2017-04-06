@@ -42,7 +42,6 @@
             treeNode4,
             treeNode5});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Measurement));
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pressuregraph = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -53,17 +52,11 @@
             this.statisticData = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(12, 50);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(144, 20);
-            this.textBox8.TabIndex = 8;
             // 
             // button1
             // 
@@ -180,17 +173,25 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Patient SNS:";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(12, 50);
+            this.textBox8.Mask = "000000000";
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(144, 20);
+            this.textBox8.TabIndex = 31;
+            // 
             // View_Measurement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(819, 433);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.oxygengraph);
             this.Controls.Add(this.heartrategraph);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.pressuregraph);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -210,7 +211,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button pressuregraph;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
@@ -221,5 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem statisticData;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox textBox8;
     }
 }

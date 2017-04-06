@@ -265,11 +265,29 @@ namespace Alert_System
 
         private void Statisticdata_Load(object sender, EventArgs e)
         {
+            //-----------------------------------------------------------BP
+            dateTimePickerbp.Format = DateTimePickerFormat.Custom;
+            dateTimePickerbp.CustomFormat = "dddd, dd/MMMM/yyyy HH:mm:ss";
             dateTimePickerbp.MaxDate = DateTime.Today;
+            //-----------------------------------------------------------BP2
+            dateTimePickerbp2.Format = DateTimePickerFormat.Custom;
+            dateTimePickerbp2.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
             dateTimePickerbp2.MaxDate = DateTime.Today;
+            //-----------------------------------------------------------OS
+            dateTimePickeros.Format = DateTimePickerFormat.Custom;
+            dateTimePickeros.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
             dateTimePickeros.MaxDate = DateTime.Today;
+            //-----------------------------------------------------------OS2
+            dateTimePickeros2.Format = DateTimePickerFormat.Custom;
+            dateTimePickeros2.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
             dateTimePickeros2.MaxDate = DateTime.Today;
+            //-----------------------------------------------------------HR
+            dateTimePickerhr.Format = DateTimePickerFormat.Custom;
+            dateTimePickerhr.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
             dateTimePickerhr.MaxDate = DateTime.Today;
+            //-----------------------------------------------------------HR2
+            dateTimePickerhr2.Format = DateTimePickerFormat.Custom;
+            dateTimePickerhr2.CustomFormat = "dddd, dd-MMMM-yyyy HH:mm:ss";
             dateTimePickerhr2.MaxDate = DateTime.Today;
 
         }

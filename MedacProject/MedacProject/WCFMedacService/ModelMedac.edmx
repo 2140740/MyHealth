@@ -9,6 +9,7 @@
     <EntitySet Name="PatientSet" EntityType="ModelMedac.Store.PatientSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="MeasurementSet" EntityType="ModelMedac.Store.MeasurementSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DoctorSet" EntityType="ModelMedac.Store.DoctorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AlertSet" EntityType="ModelMedac.Store.AlertSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="PatientMeasurement" Association="ModelMedac.Store.PatientMeasurement">
       <End Role="Patient" EntitySet="PatientSet" />
       <End Role="Measurement" EntitySet="MeasurementSet" />
@@ -16,6 +17,10 @@
     <AssociationSet Name="DoctorPatient" Association="ModelMedac.Store.DoctorPatient">
       <End Role="Doctor" EntitySet="DoctorSet" />
       <End Role="Patient" EntitySet="PatientSet" />
+    </AssociationSet>
+    <AssociationSet Name="PatientAlert" Association="ModelMedac.Store.PatientAlert">
+      <End Role="Patient" EntitySet="PatientSet" />
+      <End Role="Alert" EntitySet="AlertSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="PatientSet">
@@ -59,6 +64,15 @@
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProfessionalNumber" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="AlertSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Warning" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Critical" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_Id" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="PatientMeasurement">
     <End Role="Patient" Type="ModelMedac.Store.PatientSet" Multiplicity="1" />
     <End Role="Measurement" Type="ModelMedac.Store.MeasurementSet" Multiplicity="*" />
@@ -83,6 +97,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PatientAlert">
+    <End Role="Patient" Type="ModelMedac.Store.PatientSet" Multiplicity="1" />
+    <End Role="Alert" Type="ModelMedac.Store.AlertSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Alert">
+        <PropertyRef Name="Patient_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -98,6 +124,11 @@
           <AssociationSet Name="DoctorPatient" Association="ModelMedac.DoctorPatient">
             <End Role="Doctor" EntitySet="DoctorSet" />
             <End Role="Patient" EntitySet="PatientSet" />
+          </AssociationSet>
+          <EntitySet Name="AlertSet" EntityType="ModelMedac.Alert" />
+          <AssociationSet Name="PatientAlert" Association="ModelMedac.PatientAlert">
+            <End Role="Patient" EntitySet="PatientSet" />
+            <End Role="Alert" EntitySet="AlertSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Patient">
@@ -120,6 +151,7 @@
           <NavigationProperty Name="Measurement" Relationship="ModelMedac.PatientMeasurement" FromRole="Patient" ToRole="Measurement" />
           <NavigationProperty Name="Doctor" Relationship="ModelMedac.DoctorPatient" FromRole="Patient" ToRole="Doctor" />
           <Property Name="Logged" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Alert" Relationship="ModelMedac.PatientAlert" FromRole="Patient" ToRole="Alert" />
         </EntityType>
         <EntityType Name="Measurement">
           <Key>
@@ -150,6 +182,19 @@
         <Association Name="DoctorPatient">
           <End Type="ModelMedac.Doctor" Role="Doctor" Multiplicity="1" />
           <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Alert">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Warning" Type="String" Nullable="false" />
+          <Property Name="Critical" Type="String" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="ModelMedac.PatientAlert" FromRole="Alert" ToRole="Patient" />
+        </EntityType>
+        <Association Name="PatientAlert">
+          <End Type="ModelMedac.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="ModelMedac.Alert" Role="Alert" Multiplicity="*" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -199,6 +244,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="AlertSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelMedac.Alert)">
+        <MappingFragment StoreEntitySet="AlertSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Warning" ColumnName="Warning" />
+          <ScalarProperty Name="Critical" ColumnName="Critical" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="PatientMeasurement" TypeName="ModelMedac.PatientMeasurement" StoreEntitySet="MeasurementSet">
       <EndProperty Name="Patient">
         <ScalarProperty Name="Id" ColumnName="Patient_Id" />
@@ -212,6 +266,14 @@
         <ScalarProperty Name="Id" ColumnName="Doctor_Id" />
       </EndProperty>
       <EndProperty Name="Patient">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PatientAlert" TypeName="ModelMedac.PatientAlert" StoreEntitySet="AlertSet">
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="Id" ColumnName="Patient_Id" />
+      </EndProperty>
+      <EndProperty Name="Alert">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

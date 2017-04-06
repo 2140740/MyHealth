@@ -327,6 +327,9 @@ namespace Alert_System.ServiceReference1 {
         private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Alert_System.ServiceReference1.Alert[] AlertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AllergiesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -390,6 +393,19 @@ namespace Alert_System.ServiceReference1 {
                 if ((object.ReferenceEquals(this.AddressField, value) != true)) {
                     this.AddressField = value;
                     this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Alert_System.ServiceReference1.Alert[] Alert {
+            get {
+                return this.AlertField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AlertField, value) != true)) {
+                    this.AlertField = value;
+                    this.RaisePropertyChanged("Alert");
                 }
             }
         }
@@ -678,6 +694,99 @@ namespace Alert_System.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ProfessionalNumberField, value) != true)) {
                     this.ProfessionalNumberField = value;
                     this.RaisePropertyChanged("ProfessionalNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Alert", Namespace="http://schemas.datacontract.org/2004/07/WCFMedacService")]
+    [System.SerializableAttribute()]
+    public partial class Alert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CriticalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Alert_System.ServiceReference1.Patient PatientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WarningField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Critical {
+            get {
+                return this.CriticalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CriticalField, value) != true)) {
+                    this.CriticalField = value;
+                    this.RaisePropertyChanged("Critical");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Alert_System.ServiceReference1.Patient Patient {
+            get {
+                return this.PatientField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatientField, value) != true)) {
+                    this.PatientField = value;
+                    this.RaisePropertyChanged("Patient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Warning {
+            get {
+                return this.WarningField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WarningField, value) != true)) {
+                    this.WarningField = value;
+                    this.RaisePropertyChanged("Warning");
                 }
             }
         }
@@ -1034,6 +1143,12 @@ namespace Alert_System.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewOxygenSaturationCalendar", ReplyAction="http://tempuri.org/IService1/ViewOxygenSaturationCalendarResponse")]
         System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewTime", ReplyAction="http://tempuri.org/IService1/ViewTimeResponse")]
+        System.DateTime[] ViewTime(int fk_sns);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewTime", ReplyAction="http://tempuri.org/IService1/ViewTimeResponse")]
+        System.Threading.Tasks.Task<System.DateTime[]> ViewTimeAsync(int fk_sns);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ViewActivePatients", ReplyAction="http://tempuri.org/IService1/ViewActivePatientsResponse")]
         string[] ViewActivePatients();
         
@@ -1226,6 +1341,14 @@ namespace Alert_System.ServiceReference1 {
         
         public System.Threading.Tasks.Task<int[]> ViewOxygenSaturationCalendarAsync(int fk_sns, System.DateTime date, System.DateTime date2) {
             return base.Channel.ViewOxygenSaturationCalendarAsync(fk_sns, date, date2);
+        }
+        
+        public System.DateTime[] ViewTime(int fk_sns) {
+            return base.Channel.ViewTime(fk_sns);
+        }
+        
+        public System.Threading.Tasks.Task<System.DateTime[]> ViewTimeAsync(int fk_sns) {
+            return base.Channel.ViewTimeAsync(fk_sns);
         }
         
         public string[] ViewActivePatients() {

@@ -237,7 +237,7 @@ namespace WCFMedacService
 
             do
             {
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == dateForButton.Day);
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
                 foreach (var mte in m)
                 {
                     if (mte.BloodPressureMax != 0)
@@ -335,7 +335,7 @@ namespace WCFMedacService
             do
             {
 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute); ;
                 foreach (var mte in m)
                 {
                     if (mte.BloodPressureMin != 0)
@@ -409,7 +409,7 @@ namespace WCFMedacService
             do
             {
 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
                 foreach (var mte in m)
                 {
                     if (mte.HeartRate != 0)
@@ -483,7 +483,7 @@ namespace WCFMedacService
             do
             {
                 
-                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day);
+                var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns).Where(z => z.Date.Day == date.Day + date.Hour + date.Minute);
                 foreach (var mte in m)
                 {
                     if (mte.OxygenSaturation != 0)
@@ -498,22 +498,26 @@ namespace WCFMedacService
             return ListOxygenSaturation;
         }
 
-        ////Timer
-        //public List<DateTime> ViewTime(int fk_sns)
-        //{
-        //    ModelMedacContainer context = new ModelMedacContainer();
+        //Timer
+        public List<DateTime> ViewTime(int fk_sns)
+        {
+            ModelMedacContainer context = new ModelMedacContainer();
 
-        //    List<DateTime> ListofTime = new List<DateTime>();
+            List<DateTime> ListofTime = new List<DateTime>();
+            
+            var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
 
-        //    var m = context.MeasurementSet.Where(i => i.Patient.SNS == fk_sns);
+            foreach (var mte in m)
+            {
+                if (!mte.Time.Equals(0))
+                {
+                    ListofTime.Add(Convert.ToDateTime(mte.Time));
+                }
+                
 
-        //    foreach (var mte in m)
-        //    {
-        //        ListofTime.Add(Convert.ToDateTime(mte.Time));
-
-        //    }
-        //    return ListofTime;
-        //}
+            }
+            return ListofTime;
+        }
 
         public bool RegisterDoctor(string name, string medicalid)
         {

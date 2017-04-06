@@ -26,6 +26,7 @@
   <xs:complexType name="Patient">
     <xs:sequence>
       <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Alert" nillable="true" type="tns:ArrayOfAlert" />
       <xs:element minOccurs="0" name="Allergies" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
       <xs:element minOccurs="0" name="CC_BI" type="xs:int" />
@@ -44,6 +45,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Patient" nillable="true" type="tns:Patient" />
+  <xs:complexType name="ArrayOfAlert">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Alert" nillable="true" type="tns:Alert" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlert" nillable="true" type="tns:ArrayOfAlert" />
+  <xs:complexType name="Alert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Critical" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Patient" nillable="true" type="tns:Patient" />
+      <xs:element minOccurs="0" name="Warning" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Alert" nillable="true" type="tns:Alert" />
   <xs:complexType name="Doctor">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />

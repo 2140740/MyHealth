@@ -201,7 +201,7 @@
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(270, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(392, 175);
+            this.groupBox1.Size = new System.Drawing.Size(441, 175);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Blood Pressure:";
@@ -239,7 +239,7 @@
             // 
             this.dateTimePickerbp2.Location = new System.Drawing.Point(171, 149);
             this.dateTimePickerbp2.Name = "dateTimePickerbp2";
-            this.dateTimePickerbp2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerbp2.Size = new System.Drawing.Size(254, 20);
             this.dateTimePickerbp2.TabIndex = 32;
             // 
             // choosedatespb
@@ -257,7 +257,7 @@
             // 
             this.dateTimePickerbp.Location = new System.Drawing.Point(171, 123);
             this.dateTimePickerbp.Name = "dateTimePickerbp";
-            this.dateTimePickerbp.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerbp.Size = new System.Drawing.Size(254, 20);
             this.dateTimePickerbp.TabIndex = 31;
             // 
             // lastthreedaysbp
@@ -290,7 +290,7 @@
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(270, 193);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(392, 181);
+            this.groupBox2.Size = new System.Drawing.Size(441, 181);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Heart Rate:";
@@ -328,7 +328,7 @@
             // 
             this.dateTimePickerhr2.Location = new System.Drawing.Point(171, 155);
             this.dateTimePickerhr2.Name = "dateTimePickerhr2";
-            this.dateTimePickerhr2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerhr2.Size = new System.Drawing.Size(254, 20);
             this.dateTimePickerhr2.TabIndex = 32;
             // 
             // choosedateshr
@@ -346,7 +346,7 @@
             // 
             this.dateTimePickerhr.Location = new System.Drawing.Point(171, 129);
             this.dateTimePickerhr.Name = "dateTimePickerhr";
-            this.dateTimePickerhr.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickerhr.Size = new System.Drawing.Size(254, 20);
             this.dateTimePickerhr.TabIndex = 31;
             // 
             // lastthreedayshr
@@ -440,7 +440,7 @@
             this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(270, 380);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(392, 175);
+            this.groupBox3.Size = new System.Drawing.Size(441, 175);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Oxygen Saturation:";
@@ -478,14 +478,14 @@
             // 
             this.dateTimePickeros2.Location = new System.Drawing.Point(171, 151);
             this.dateTimePickeros2.Name = "dateTimePickeros2";
-            this.dateTimePickeros2.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickeros2.Size = new System.Drawing.Size(254, 20);
             this.dateTimePickeros2.TabIndex = 30;
             // 
             // dateTimePickeros
             // 
             this.dateTimePickeros.Location = new System.Drawing.Point(171, 125);
             this.dateTimePickeros.Name = "dateTimePickeros";
-            this.dateTimePickeros.Size = new System.Drawing.Size(212, 20);
+            this.dateTimePickeros.Size = new System.Drawing.Size(254, 20);
             this.dateTimePickeros.TabIndex = 28;
             // 
             // choosedatesos
@@ -607,7 +607,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 561);
+            this.ClientSize = new System.Drawing.Size(719, 561);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.groupBox3);

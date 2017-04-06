@@ -51,8 +51,8 @@
             this.updatePatientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMeasurement = new System.Windows.Forms.ToolStripMenuItem();
             this.registerMedicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.activePatientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +106,13 @@
             this.registerMedicToolStripMenuItem.Text = "Doctor";
             this.registerMedicToolStripMenuItem.Click += new System.EventHandler(this.registerMedicToolStripMenuItem_Click);
             // 
+            // activePatientsToolStripMenuItem
+            // 
+            this.activePatientsToolStripMenuItem.Name = "activePatientsToolStripMenuItem";
+            this.activePatientsToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.activePatientsToolStripMenuItem.Text = "Active Patients";
+            this.activePatientsToolStripMenuItem.Click += new System.EventHandler(this.activePatientsToolStripMenuItem_Click);
+            // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(0, 27);
@@ -138,13 +145,6 @@
             this.treeView1.Size = new System.Drawing.Size(154, 253);
             this.treeView1.TabIndex = 1;
             this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
-            // 
-            // activePatientsToolStripMenuItem
-            // 
-            this.activePatientsToolStripMenuItem.Name = "activePatientsToolStripMenuItem";
-            this.activePatientsToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.activePatientsToolStripMenuItem.Text = "Active Patients";
-            this.activePatientsToolStripMenuItem.Click += new System.EventHandler(this.activePatientsToolStripMenuItem_Click);
             // 
             // AlertSytem
             // 

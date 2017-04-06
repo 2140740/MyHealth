@@ -75,14 +75,14 @@ namespace WCFMedacService
         [OperationContract]
         List<int> ViewOxygenSaturationCalendar(int fk_sns, DateTime date, DateTime date2);
 
+        [OperationContract]
+        List<DateTime> ViewTime(int fk_sns);
+
+        [OperationContract]
+        List<string> ViewActivePatients();
+
         //[OperationContract]
-        //List<DateTime> ViewTime(int fk_sns);
-
-        [OperationContract]
-        List<String> ViewActivePatients();
-
-        [OperationContract]
-        List<Measurement> ViewMeasurements(int fk_sns);
+        //List<Measurement> ViewMeasurements(int fk_sns);
     }
 
     [DataContract]

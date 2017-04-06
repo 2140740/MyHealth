@@ -114,6 +114,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alert.cs">
+      <DependentUpon>ModelMedac.tt</DependentUpon>
+    </Compile>
     <Compile Include="Doctor.cs">
       <DependentUpon>ModelMedac.tt</DependentUpon>
     </Compile>

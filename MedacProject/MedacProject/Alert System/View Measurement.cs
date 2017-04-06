@@ -48,6 +48,8 @@ namespace Alert_System
 
             int[] mtmax = web.ViewBloodPressureMax(fk_sns);
 
+            DateTime[] hora = web.ViewTime(fk_sns);
+
             chart1.Series.Add("Blood Pressure Max");
 
             chart1.Series["Blood Pressure Max"].ChartArea = "ChartArea1";
@@ -60,7 +62,9 @@ namespace Alert_System
 
             for (int i = 1; i <= mtmax.Length; i++)
             {
-                chart1.Series[1].Points.AddY(Convert.ToInt32(mtmax[i - 1]));
+                chart1.Series[1].Points.AddXY(hora,Convert.ToInt32(mtmax[i - 1]));
+                //chart1.Series[1].Points.AddY(Convert.ToInt32(mtmax[i - 1]));
+                //chart1.ChartAreas[0].AxisX = hora;
             }
             //BloodPressureMin
 
@@ -85,6 +89,7 @@ namespace Alert_System
             //Heart Rate
             int[] hr = web.ViewHearRate(fk_sns);
 
+            
             chart1.Series.Add("Heart Rate");
 
             chart1.Series["Heart Rate"].ChartArea = "ChartArea1";
